@@ -1,0 +1,32 @@
+<style lang="css">
+.doc-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>
+
+<template>
+  <docpage withoutPadding="true" title="组件使用实例">
+    <dashboard></dashboard>
+  </docpage>
+</template>
+
+<script>
+import wepy from 'wepy';
+import docpage from '../components/docpage';
+import dashboard from '../components/dashboard';
+
+export default class Home extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: '组件展示'
+  }
+
+  components = {
+    docpage,
+    dashboard
+  }
+
+  onLoad() {}
+}
+</script>

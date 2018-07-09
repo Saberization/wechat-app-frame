@@ -1,0 +1,15 @@
+{
+	"description": "wechat.frame",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "touristappid",
+	"projectname": "wechat.frame",
+	"miniprogramRoot": "./dist",
+	"condition": {}
+}

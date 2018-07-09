@@ -1,0 +1,156 @@
+<style lang='css'>
+@import '../zanui/panel.wxss';
+@import '../zanui/cell.wxss';
+
+.logo {
+  display: block;
+  margin: 40px auto;
+  width: 92px;
+  height: 82px;
+}
+</style>
+<template>
+  <view class="container">
+
+    <image class="logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png" />
+
+    <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
+      <view class="zan-panel-title">{{ group.title }}</view>
+      <view class="zan-panel">
+        <navigator wx:for="{{ group.content }}" wx:key="name" class="zan-cell zan-cell--access" url="{{ item.path }}">
+          <view class="zan-cell__bd">{{ item.name }}</view>
+          <view class="zan-cell__ft"></view>
+        </navigator>
+      </view>
+    </block>
+
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class Dashboard extends wepy.page {
+  data = {
+    list: {
+      base: {
+        title: '基础组件',
+        content: [
+          {
+            name: 'Badge 徽章',
+            path: '/example/badge'
+          },
+          {
+            name: 'Button 按钮',
+            path: '/example/btn'
+          },
+          {
+            name: 'Capsule 胶囊',
+            path: '/example/capsule'
+          },
+          {
+            name: 'Card 卡片',
+            path: '/example/card'
+          },
+          {
+            name: 'Cell 单元格',
+            path: '/example/cell'
+          },
+          {
+            name: 'Helper 基础样式',
+            path: '/example/helper'
+          },
+          {
+            name: 'Icon 图标',
+            path: '/example/icon'
+          },
+          {
+            name: 'Layout 布局',
+            path: '/example/layout'
+          },
+          {
+            name: 'Loadmore 加载',
+            path: '/example/loadmore'
+          },
+          {
+            name: 'Noticebar 通告栏',
+            path: '/example/noticebar'
+          },
+          {
+            name: 'Panel 面板',
+            path: '/example/panel'
+          },
+          {
+            name: 'Popup 弹出层',
+            path: '/example/popup'
+          },
+          {
+            name: 'Select 选择',
+            path: '/example/select'
+          },
+          {
+            name: 'Stepper 计数器',
+            path: '/example/stepper'
+          },
+          {
+            name: 'Steps 步骤条',
+            path: '/example/steps'
+          },
+          {
+            name: 'Switch 开关',
+            path: '/example/switch'
+          },
+          {
+            name: 'Tab 标签',
+            path: '/example/tab'
+          },
+          {
+            name: 'Tag 标记',
+            path: '/example/tag'
+          }
+        ]
+      },
+      form: {
+        title: '表单',
+        content: [
+          {
+            name: 'Field 输入框',
+            path: '/example/field'
+          }
+        ]
+      },
+      action: {
+        title: '操作反馈',
+        content: [
+          {
+            name: 'Actionsheet 行动按钮',
+            path: '/example/actionsheet'
+          },
+          {
+            name: 'Dialog 弹出框',
+            path: '/example/dialog'
+          },
+          {
+            name: 'Toast 轻提示',
+            path: '/example/toast'
+          },
+          {
+            name: 'TopTips 顶部提示',
+            path: '/example/toptips'
+          }
+        ]
+      }
+    }
+  }
+
+  methods = {}
+
+  onLoad() {
+    wepy.getSystemInfo().then(data => {
+      if (data.SDKVersion < '1.4.0') {
+        wepy.showModal({ content: `SDKVersion最低要求1.4.0，当前版本${data.SDKVersion}`, title: '微信版本过低' })
+      }
+    })
+  }
+}
+</script>
