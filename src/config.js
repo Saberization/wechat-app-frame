@@ -3,84 +3,84 @@ export default {
     title: '基础组件',
     content: [{
       name: 'Badge 徽章',
-      path: './example/badge'
+      path: '/example/badge.wxml'
     }, {
       name: 'Button 按钮',
-      path: './example/btn'
+      path: '/example/btn'
     }, {
       name: 'Capsule 胶囊',
-      path: './example/capsule'
+      path: '/example/capsule'
     }, {
       name: 'Card 卡片',
-      path: './example/card'
+      path: '/example/card'
     }, {
       name: 'Cell 单元格',
-      path: './example/cell'
+      path: '/example/cell'
     }, {
       name: 'Helper 基础样式',
-      path: './example/helper'
+      path: '../example/helper'
     }, {
       name: 'Icon 图标',
-      path: './example/icon'
+      path: '../example/icon'
     }, {
       name: 'Layout 布局',
-      path: './example/layout'
+      path: '../example/layout'
     }, {
       name: 'loading 加载',
-      path: './example/loadmore'
+      path: '../example/loadmore'
     }, {
       name: 'Noticebar 通告栏',
-      path: './example/noticebar'
+      path: '../example/noticebar'
     }, {
       name: 'Panel 面板',
-      path: './example/panel'
+      path: '../example/panel'
     }, {
       name: 'Popup 弹出层',
-      path: './example/popup'
+      path: '../example/popup'
     }, {
       name: 'Select 选择',
-      path: './example/select'
+      path: '../example/select'
     }, {
       name: 'Stepper 计数器',
-      path: './example/stepper'
+      path: '../example/stepper'
     }, {
       name: 'Steps 步骤条',
-      path: './example/steps'
+      path: '../example/steps'
     }, {
       name: 'Switch 开关',
-      path: './example/switch'
+      path: '../example/switch'
     }, {
       name: 'Tab 标签',
-      path: './example/tab'
+      path: '../example/tab'
     }, {
       name: 'Tag 标记',
-      path: './example/tag'
+      path: '../example/tag'
     }]
   },
   form: {
     title: '表单',
     content: [{
       name: 'Field 输入框',
-      path: './example/field'
+      path: '../example/field'
     }]
   },
   action: {
     title: '操作反馈',
     content: [{
       name: 'Actionsheet 行动按钮',
-      path: './example/actionsheet'
+      path: '../example/actionsheet'
     }, {
       name: 'Dialog 弹出框',
-      path: './example/dialog'
+      path: '../example/dialog'
     }, {
       name: 'Toast 轻提示',
-      path: './example/toast'
+      path: '../example/toast'
     }, {
       name: 'TopTips 顶部提示',
-      path: './example/toptips'
+      path: '../example/toptips'
     }, {
       name: 'Datetime 时间选择器',
-      path: './example/dialog'
+      path: '../example/dialog'
     }]
   }
 };

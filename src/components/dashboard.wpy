@@ -11,7 +11,6 @@
   padding-left: 15px;
   margin-top: 10px;
 }
-
 </style>
 
 <template>
@@ -19,11 +18,7 @@
     <view class="zan-c-gray-darker zan-font-14 dashboard-title">{{item.title}}</view>
 
     <view class="zan-panel">
-      <view class="zan-cell zan-cell--access" 
-        wx:for="{{item.content}}" wx:key="_idx" 
-        wx:for-item="_item" 
-        @tap="openPage({{_item.path}})"
-      >
+      <view class="zan-cell zan-cell--access" wx:for="{{item.content}}" wx:key="_idx" wx:for-item="_item" @tap="openPage({{_item.path}})">
         <view class="zan-cell__bd">{{_item.name}}</view>
         <view class="zan-cell__ft"></view>
       </view>
@@ -38,14 +33,14 @@ import listdata from '../config.js';
 export default class Dashboard extends wepy.component {
   data = {
     listdata
-  }
+  };
 
   methods = {
     openPage(path) {
       wx.navigateTo({
         url: path
-      })
+      });
     }
-  }
+  };
 }
 </script>
