@@ -3,7 +3,7 @@ export default {
     title: '基础组件',
     content: [{
       name: 'Badge 徽章',
-      path: '/example/badge.wxml'
+      path: '/example/badge'
     }, {
       name: 'Button 按钮',
       path: '/example/btn'
