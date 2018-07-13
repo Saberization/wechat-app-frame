@@ -8,7 +8,7 @@ function partStartWithZero(num, strlen) {
   return (zeros + num).slice(-strlen);
 }
 
-module.exports.genNumber = function genNumber(begin, end, strlen) {
+export function genNumber(begin, end, strlen) {
   var nums = [];
   while (begin <= end) {
     nums.push(partStartWithZero(begin, strlen));
@@ -17,7 +17,7 @@ module.exports.genNumber = function genNumber(begin, end, strlen) {
   return nums;
 };
 
-module.exports.moment = function moment(date) {
+export function moment(date) {
   var formatStr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'YYYY:MM:DD';
 
   if (!date && date !== 0) date = new Date();
@@ -85,7 +85,7 @@ module.exports.moment = function moment(date) {
   return formatStr;
 };
 
-module.exports.iso2utc = function (string) {
+export function iso2utc (string) {
   var regexp = "([0-9]{4})(-([0-9]{2})(-([0-9]{2})(T([0-9]{2}):([0-9]{2})(:([0-9]{2})(\.([0-9]+))?)?(Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?";
   if (string) {
     var d = string.match(new RegExp(regexp));

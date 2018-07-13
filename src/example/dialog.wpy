@@ -34,7 +34,9 @@ import wepy from 'wepy'
 import zanDialog from '../components/dialog'
 
 export default class Dialog extends wepy.page {
-  config = {}
+  config = {
+    navigationBarTitleText: 'Dialog 提示框'
+  }
   components = {
     zanDialog
   }

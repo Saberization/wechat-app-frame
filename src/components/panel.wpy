@@ -1,0 +1,79 @@
+<style>
+  .zan-panel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zan-panel__title {
+    font-size: 14px;
+    line-height: 1;
+    color: #999;
+    padding: 20px 15px 10px 15px;
+  }
+
+  .zan-panel__content {
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .zan-panel__content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: 0 solid #e5e5e5;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+
+  .zan-panel--without-border::after {
+    border: 0 none;
+  }
+</style>
+
+<template>
+  <view class="zan-panel">
+    <view wx:if="{{title}}" class="zan-panel__title">{{title}}</view>
+
+    <view class="zan-panel__content {{ hideBorder ? 'zan-panel--without-border' : '' }}">
+      <slot></slot>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Panel extends wepy.component {
+    /**
+     * 组件的属性列表
+     * 用于组件自定义设置
+     */
+    props = {
+      // 标题
+      title: {
+        type: String,
+        default: ''
+      },
+      // 内容区顶部是否取消10像素的间距
+      hideTop: {
+        type: Boolean,
+        default: false
+      },
+      // 内容区顶部是否取消边框
+      hideBorder: {
+        type: Boolean,
+        default: false
+      }
+    };
+  }
+</script>

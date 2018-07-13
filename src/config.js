@@ -79,8 +79,8 @@ export default {
       name: 'TopTips 顶部提示',
       path: '../example/toptips'
     }, {
-      name: 'Datetime 时间选择器',
-      path: '../example/dialog'
+      name: 'Datepicker 时间选择器',
+      path: '../example/datepicker'
     }]
   }
 };

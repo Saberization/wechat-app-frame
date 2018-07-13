@@ -1,42 +1,43 @@
-<style lang='css'>
-@import '../zanui/panel.wxss';
+<style>
+    .panel-example {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .padding15 {
+        padding: 15px;
+    }
 </style>
 
 <template>
-<view class="container">
+    <docPage title="PANEL">
+        <panel class="panel-example">
+            <view class="padding15">PANEL 内容区域</view>
+        </panel>
 
-  <view class="doc-title zan-hairline--bottom">PANEL</view>
+        <panel title="标题" class="panel-example">
+            <view style="padding: 15px;">带有标题的 PANEL</view>
+        </panel>
 
-  <view class="zan-panel-title">标题</view>
-  <view class="zan-panel">
-    <view style="padding: 15px;">内容</view>
-  </view>
-
-  <view class="zan-panel">
-    <view style="padding: 15px;">内容</view>
-  </view>
-
-  <view class="zan-panel zan-panel--without-border">
-    <view style="padding: 15px;">无边框的panel</view>
-  </view>
-
-  <view class="zan-panel">
-    <view style="padding: 15px;">内容</view>
-  </view>
-
-</view>
+        <panel title="标题" class="panel-example" hideBorder="true">
+            <view style="padding: 15px;">带标题无边框的 PANEL</view>
+        </panel>
+    </docPage>
 </template>
 
 <script>
-import wepy from 'wepy'
+    import wepy from 'wepy'
+    import docPage from '../components/docpage';
+    import Panel from '../components/panel';
 
-export default class Panel extends wepy.page {
-  config = {
-    navigationBarTitleText: 'Panel 面板'
-  }
-  components = {}
-  data = {}
-  methods = {}
-  onLoad() {}
-}
+    export default class panel extends wepy.page {
+        config = {
+            navigationBarTitleText: 'panel 面板'
+        }
+
+        components = {
+            docPage,
+            'panel': Panel
+        }
+    }
 </script>

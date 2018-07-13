@@ -1,12 +1,5 @@
-<style lang="css">
-.doc-content {
-  padding-left: 0;
-  padding-right: 0;
-}
-</style>
-
 <template>
-  <docpage withoutPadding="true" title="组件使用实例">
+  <docpage title="组件使用实例">
     <dashboard></dashboard>
   </docpage>
 </template>

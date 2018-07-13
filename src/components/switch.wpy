@@ -112,7 +112,7 @@ export default class Switch extends wepy.component {
 
       console.info('[zan:switch:change]', { componentId, checked: !checked })
 
-      this.$emit('zanSwitchChange')
+      this.$emit('Switch')
     }
   }
 }

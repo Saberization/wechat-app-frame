@@ -26,12 +26,17 @@
 .doc-content--without-pd {
   padding: 15px 0;
 }
+
+.doc-content--nopd {
+  padding-left: 0;
+  padding-right: 0;
+}
 </style>
 
 <template>
   <view class="doc-container">
     <view class="doc-title">{{ title }}</view>
-    <view class="doc-content {{ withoutPadding ? 'doc-content--without-pd' : '' }}">
+    <view class="doc-content {{ withoutPadding ? 'doc-content--without-pd' : '.doc-content--nopd' }}">
       <slot></slot>
     </view>
   </view>
