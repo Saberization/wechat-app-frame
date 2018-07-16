@@ -1,0 +1,64 @@
+<style>
+  @import '/zanui/cell.wxss';
+
+  .panel-example {
+    display: block;
+    margin-top: 15px;
+  }
+</style>
+
+<template>
+  <docPage title="Picker">
+    <panel>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">单行列表</view>
+        <view class="zan-cell__ft">
+          <spicker :type="selector" :array="array1" @pickerfn.user="bindPickerChange"></spicker>
+        </view>
+      </view>
+
+      <view class="zan-cell">
+        <view class="zan-cell__bd">单行列表</view>
+        <view class="zan-cell__ft">
+          <spicker2 :type="selector" :array="array2" @pickerfn.user="bindPickerChange2"></spicker2>
+        </view>
+      </view>
+    </panel>
+  </docPage>
+</template>
+
+<script>
+  import wepy from 'wepy';
+  import docPage from '../components/docpage';
+  import panel from '../components/panel';
+  import spicker from '../components/picker';
+
+  export default class Picker extends wepy.page {
+    config = {
+      navigationBarTitleText: 'picker 选择器'
+    };
+
+    components = {
+      docPage,
+      panel,
+      spicker,
+      spicker2: spicker
+    };
+
+    data = {
+      array1: ['C8', '远坂凛', '艾蕾'],
+      array2: ['saber', 'rin'],
+      index: 0
+    };
+
+    methods = {
+      bindPickerChange(e) {
+        console.log(e);
+      },
+
+      bindPickerChange2(e) {
+        console.log('bindPickerChange2');
+      }
+    };
+  }
+</script>

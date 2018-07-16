@@ -43,7 +43,7 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/home',
-      'example/datepicker',
+      'example/picker',
       'example/badge',
       'example/btn',
       'example/capsule',

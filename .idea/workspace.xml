@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeb6ffea-cfcc-4b8e-ae9c-8518024f2db3" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/picker.wpy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/example/picker.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/datetime_picker/date-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/datetime_picker/date-picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/datetime_picker/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/datetime_picker/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/datetime_picker/index.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/datetime_picker/index.wxss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/datetime_picker/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/datetime_picker/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/datetime.wpy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/docpage.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/docpage.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/switch.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/switch.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/datepicker.wpy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/example/cell.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/example/cell.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/example/dialog.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/example/dialog.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/example/panel.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/example/panel.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/example/datepicker.wpy" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,28 +21,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="wechat-app-frame" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="datepicker.wpy" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/example/datepicker.wpy">
+      <file leaf-file-name="picker.wpy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/example/picker.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="334">
+              <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
               <folding>
-                <element signature="e#430#454#0" expanded="true" />
+                <element signature="e#403#427#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datepicker.wpy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/datepicker.wpy">
+      <file leaf-file-name="picker.wpy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/picker.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-636">
-              <caret line="59" column="99" selection-start-line="59" selection-start-column="88" selection-end-line="59" selection-end-column="99" />
-              <folding>
-                <element signature="e#1486#1510#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="101">
+              <caret line="1228" column="9" selection-start-line="1228" selection-start-column="3" selection-end-line="1228" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -61,6 +54,9 @@
       <find>zanSwitch</find>
       <find>zanSwitchChange</find>
       <find>datepicker</find>
+      <find>attached</find>
+      <find>Panel</find>
+      <find>.fui-page-cover.siderbar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,12 +66,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/components/cell.wpy" />
-        <option value="$PROJECT_DIR$/src/example/cell.wpy" />
         <option value="$PROJECT_DIR$/src/components/switch.wpy" />
-        <option value="$PROJECT_DIR$/src/app.wpy" />
-        <option value="$PROJECT_DIR$/src/components/datepicker.wpy" />
         <option value="$PROJECT_DIR$/src/components/panel.wpy" />
+        <option value="$PROJECT_DIR$/src/components/datepicker.wpy" />
         <option value="$PROJECT_DIR$/src/example/datepicker.wpy" />
+        <option value="$PROJECT_DIR$/src/example/cell.wpy" />
+        <option value="$PROJECT_DIR$/src/config.js" />
+        <option value="$PROJECT_DIR$/src/app.wpy" />
+        <option value="$PROJECT_DIR$/src/components/actionsheet.wpy" />
+        <option value="$PROJECT_DIR$/src/components/dashboard.wpy" />
+        <option value="$PROJECT_DIR$/src/example/btn.wpy" />
+        <option value="$PROJECT_DIR$/../wuhou_9.3.2/epoint-web/src/main/webapp/frame/fui/pages/themes/dream/dream.css" />
+        <option value="$PROJECT_DIR$/src/components/picker.wpy" />
+        <option value="$PROJECT_DIR$/src/example/picker.wpy" />
       </list>
     </option>
   </component>
@@ -95,10 +98,10 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="563" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="366" />
     <option name="y" value="23" />
-    <option name="width" value="717" />
+    <option name="width" value="913" />
     <option name="height" value="719" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -107,13 +110,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="wechat-app-frame" type="b2602c69:ProjectViewProjectNode" />
               <item name="wechat-app-frame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat-app-frame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat-app-frame" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat-app-frame" type="b2602c69:ProjectViewProjectNode" />
@@ -136,6 +143,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,18 +182,19 @@
       <option name="presentableId" value="Default" />
       <updated>1531391401212</updated>
       <workItem from="1531391405644" duration="3435000" />
-      <workItem from="1531446199705" duration="1858000" />
+      <workItem from="1531446199705" duration="18200000" />
+      <workItem from="1531721119686" duration="9069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5293000" />
+    <option name="totallyTimeSpent" value="30704000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="563" y="23" width="717" height="719" extended-state="0" />
+    <frame x="0" y="23" width="1279" height="719" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24856322" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7814313" visible="true" weight="0.16852146" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -193,9 +202,9 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19453377" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1688103" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.21856867" side_tool="true" visible="true" weight="0.16852146" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -212,43 +221,39 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/example/datepicker.wpy">
+    <entry file="file://$PROJECT_DIR$/src/example/picker.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="494">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
           <folding>
-            <element signature="e#430#454#0" expanded="true" />
+            <element signature="e#403#427#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/datepicker.wpy">
+    <entry file="file://$PROJECT_DIR$/src/components/picker.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23180">
+          <caret line="1220" column="6" selection-start-line="1220" selection-start-column="6" selection-end-line="1220" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/picker.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/picker.wpy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1444">
           <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-          <folding>
-            <element signature="e#1486#1510#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/cell.wpy" />
-    <entry file="file://$PROJECT_DIR$/src/example/btn.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/cellgroup.wpy" />
-    <entry file="file://$PROJECT_DIR$/src/example/badge.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/example/actionsheet.wpy">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/example/capsule.wpy">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -278,63 +283,178 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.wpy">
+    <entry file="file://$PROJECT_DIR$/src/example/noticebar.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        <state relative-caret-position="70">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/switch.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="82" column="34" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/panel.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/example/cell.wpy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#view#0;n#view#0;n#view#3;n#view#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="213">
+          <caret line="82" column="30" selection-start-line="82" selection-start-column="30" selection-end-line="82" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/example/panel.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="209">
+          <caret line="18" column="59" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/badge.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/field.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="89" column="26" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/panel.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="55" column="51" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/popup.wpy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/popmanager.wpy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zanui/card.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/cell.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
           <folding>
-            <element signature="e#605#628#0" expanded="true" />
+            <element signature="n#style#0;n#view#0;n#view#0;n#panel#2;n#view#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/datepicker.wpy">
+    <entry file="file://$PROJECT_DIR$/src/example/helper.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-636">
-          <caret line="59" column="99" selection-start-line="59" selection-start-column="88" selection-end-line="59" selection-end-column="99" />
+        <state relative-caret-position="390">
+          <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/btn.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="56" column="43" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
           <folding>
-            <element signature="e#1486#1510#0" expanded="true" />
+            <element signature="n#style#0;n#view#6;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#view#8;n#view#0;n#template#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/example/datepicker.wpy">
+    <entry file="file://$PROJECT_DIR$/src/example/actionsheet.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="228">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/dashboard.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
           <folding>
-            <element signature="e#430#454#0" expanded="true" />
+            <element signature="e#676#700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/actionsheet.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="14" />
+          <folding>
+            <element signature="e#101#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../learn-vue/day-1/01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-239">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../learn-vue/day-1/02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-395">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../learn-vue/day-1/03.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wuhou_9.3.2/epoint-web/src/main/webapp/frame/fui/pages/themes/dream/dream.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="1821" column="28" selection-start-line="1821" selection-start-column="28" selection-end-line="1821" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/picker.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="1228" column="9" selection-start-line="1228" selection-start-column="3" selection-end-line="1228" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/example/picker.wpy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding>
+            <element signature="e#403#427#0" expanded="true" />
           </folding>
         </state>
       </provider>

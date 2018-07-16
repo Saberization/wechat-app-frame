@@ -79,6 +79,9 @@ export default {
       name: 'TopTips 顶部提示',
       path: '../example/toptips'
     }, {
+      name: 'Picker 选择器',
+      path: '../example/picker'
+    }, {
       name: 'Datepicker 时间选择器',
       path: '../example/datepicker'
     }]
