@@ -13,14 +13,26 @@
       <view class="zan-cell">
         <view class="zan-cell__bd">单行列表</view>
         <view class="zan-cell__ft">
-          <picker :type="singleType" :array="singleArray" :index="singleIndex" @picker.user="bindChangePicker"></picker>
+          <picker
+            :type="singleType"
+            :array="singleArray"
+            :index="singleIndex"
+            :placeholder="'请选择选项'"
+            :evtcallback="'picker'"
+          ></picker>
         </view>
       </view>
 
       <view class="zan-cell">
         <view class="zan-cell__bd">多行列表</view>
         <view class="zan-cell__ft">
-          <multiPicker :type="multiType" :array="multiArray" :index="multiIndex" :key="keyName"></multiPicker>
+          <multiPicker
+            :type="multiType"
+            :array="multiArray"
+            :index="multiIndex"
+            :key="'name'"
+            :evtcallback="'multiPicker'"
+          ></multiPicker>
         </view>
       </view>
     </panel>
@@ -50,7 +62,6 @@ export default class Picker extends wepy.page {
     singleArray: ['Saber', 'Rin'],
     singleIndex: 0,
     multiType: 'multiSelector',
-    keyName: 'name',
     multiArray: [[{
       id: 0,
       name: 'Saber'
@@ -118,9 +129,13 @@ export default class Picker extends wepy.page {
     multiIndex: [0, 0, 0]
   };
 
-  methods = {
-    bindChangePicker(value, index, e) {
-      console.log(value, index);
+  events = {
+    'multiPicker': () => {
+
+    },
+
+    'picker': () => {
+
     }
   };
 }
