@@ -1,10 +1,10 @@
 <style>
-  @import '/zanui/cell.wxss';
+@import '/zanui/cell.wxss';
 
-  .panel-example {
-    display: block;
-    margin-top: 15px;
-  }
+.panel-example {
+  display: block;
+  margin-top: 15px;
+}
 </style>
 
 <template>
@@ -13,14 +13,14 @@
       <view class="zan-cell">
         <view class="zan-cell__bd">单行列表</view>
         <view class="zan-cell__ft">
-          <spicker :type="selector" :array="array1" @pickerfn.user="bindPickerChange"></spicker>
+          <picker :type="singleType" :array="singleArray" :index="singleIndex" @picker.user="bindChangePicker"></picker>
         </view>
       </view>
 
       <view class="zan-cell">
-        <view class="zan-cell__bd">单行列表</view>
+        <view class="zan-cell__bd">多行列表</view>
         <view class="zan-cell__ft">
-          <spicker2 :type="selector" :array="array2" @pickerfn.user="bindPickerChange2"></spicker2>
+          <multiPicker :type="multiType" :array="multiArray" :index="multiIndex" :key="keyName"></multiPicker>
         </view>
       </view>
     </panel>
@@ -28,37 +28,100 @@
 </template>
 
 <script>
-  import wepy from 'wepy';
-  import docPage from '../components/docpage';
-  import panel from '../components/panel';
-  import spicker from '../components/picker';
+import wepy from 'wepy';
+import docPage from '../components/docpage';
+import panel from '../components/panel';
+import spicker from '../components/picker';
 
-  export default class Picker extends wepy.page {
-    config = {
-      navigationBarTitleText: 'picker 选择器'
-    };
+export default class Picker extends wepy.page {
+  config = {
+    navigationBarTitleText: 'picker 选择器'
+  };
 
-    components = {
-      docPage,
-      panel,
-      spicker,
-      spicker2: spicker
-    };
+  components = {
+    docPage,
+    panel,
+    picker: spicker,
+    multiPicker: spicker
+  };
 
-    data = {
-      array1: ['C8', '远坂凛', '艾蕾'],
-      array2: ['saber', 'rin'],
-      index: 0
-    };
+  data = {
+    singleType: 'selector',
+    singleArray: ['Saber', 'Rin'],
+    singleIndex: 0,
+    multiType: 'multiSelector',
+    keyName: 'name',
+    multiArray: [[{
+      id: 0,
+      name: 'Saber'
+    }, {
+      id: 1,
+      name: 'Rin'
+    }, {
+      id: 2,
+      name: 'Eriri'
+    }], [{
+      id: 0,
+      name: 'Saber1'
+    }, {
+      id: 0,
+      name: 'Saber1'
+    }, {
+      id: 0,
+      name: 'Saber1'
+    }, {
+      id: 1,
+      name: 'Rin1'
+    }, {
+      id: 1,
+      name: 'Rin1'
+    }, {
+      id: 1,
+      name: 'Rin1'
+    }, {
+      id: 2,
+      name: 'Eriri1'
+    }, {
+      id: 2,
+      name: 'Eriri1'
+    }, {
+      id: 2,
+      name: 'Eriri1'
+    }], [{
+      id: 0,
+      name: 'Saber2'
+    }, {
+      id: 0,
+      name: 'Saber2'
+    }, {
+      id: 0,
+      name: 'Saber2'
+    }, {
+      id: 1,
+      name: 'Rin2'
+    }, {
+      id: 1,
+      name: 'Rin2'
+    }, {
+      id: 1,
+      name: 'Rin2'
+    }, {
+      id: 2,
+      name: 'Eriri2'
+    }, {
+      id: 2,
+      name: 'Eriri2'
+    }, {
+      id: 2,
+      name: 'Eriri2'
+    }]],
+    multiIndex: [0, 0, 0]
+  };
 
-    methods = {
-      bindPickerChange(e) {
-        console.log(e);
-      },
-
-      bindPickerChange2(e) {
-        console.log('bindPickerChange2');
-      }
-    };
-  }
+  methods = {
+    bindChangePicker(value, index, e) {
+      console.log(value, index);
+    }
+  };
+}
 </script>

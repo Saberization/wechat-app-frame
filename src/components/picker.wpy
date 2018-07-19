@@ -1222,18 +1222,27 @@
     value="{{index}}"
     bindchange="bindChangePicker"
     disabled="{{disabled}}"
-    >
-    {{array[index]}}
+  >
+    {{result}}
   </picker>
 
   <picker
     wx:if="{{type === 'multiSelector'}}"
     mode="{{type}}"
-  ></picker>
+    range="{{array}}"
+    value="{{index}}"
+    disabled="{{disabled}}"
+    bindcolumnchange="bindMultiPickerColumnChange"
+    bindchange='bindMultiPickerChange'
+    range-key="{{key}}"
+  >
+    {{result}}
+  </picker>
 </template>
 
 <script>
   import wepy from 'wepy';
+  import util from '../core/util.js';
 
   export default class Picker extends wepy.component {
     props = {
@@ -1246,18 +1255,55 @@
         default: ['test1', 'test2', 'test3', 'test4']
       },
       index: {
-        type: Number,
-        default: 0
+        type: Object,
+        default: 0,
+        twoWay: true
       },
       disabled: {
         type: Boolean,
         default: false
+      },
+      key: {
+        type: String
+      }
+    };
+
+    computed = {
+      result() {
+        const arr = this.array,
+          type = this.type,
+          index = this.index,
+          key = this.key;
+
+        // 首先要确保是 array 是数组
+        if (Array.isArray(arr)) {
+          // 判断是否是二位数组
+          if (util.isMultiArray(arr) && type === 'multiSelector') {
+
+          }
+          // 否则是单列
+          else if(type === 'selector') {
+            return arr[index];
+          }
+        }
       }
     };
 
     methods = {
       bindChangePicker(e) {
-        this.$emit('pickerfn', e.detail);
+        const index = e.detail.value;
+
+        this.index = index;
+        this.$apply();
+        this.$emit('picker', this.array[index], index, e);
+      },
+
+      bindMultiPickerChange(e) {
+        // console.log(e);
+      },
+
+      bindMultiPickerColumnChange(e) {
+        // console.log(e);
       }
     };
   };
