@@ -1216,11 +1216,11 @@ icon {
 
 <template>
   <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{array}}" value="{{index}}" bindchange="bindChangePicker" disabled="{{disabled}}">
-    {{placeholder ? placeholder : result}}
+    {{placeholder ? placeholder : result.text}}
   </picker>
 
   <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{array}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindMultiPickerChange' range-key="{{key}}">
-    {{placeholder ? placeholder : result}}
+    {{placeholder ? placeholder : result.text}}
   </picker>
 </template>
 
@@ -1254,13 +1254,37 @@ export default class Picker extends wepy.component {
     placeholder: {
       type: String
     },
-    evtcallback: {
+    success: {
       type: String
     }
   };
 
   computed = {
     result() {
+      return this.methods.core.call(this);
+    }
+  };
+
+  methods = {
+    bindChangePicker(e) {
+      const index = e.detail.value;
+
+      this.placeholder = '';
+      this.index = index;
+      this.$apply();
+      this.methods.process.call(this);
+    },
+
+    bindMultiPickerChange(e) {
+      // console.log(e);
+    },
+
+    bindMultiPickerColumnChange(e) {
+      // console.log(e);
+    },
+
+    // picker 组件处理逻辑的主要代码
+    core() {
       const arr = this.array,
         type = this.type,
         index = this.index,
@@ -1274,7 +1298,6 @@ export default class Picker extends wepy.component {
         let result = [];
 
         // 判断是否是二维数组
-        console.log(type);
         if (util.isMultiArray(arr) && type === 'multiSelector') {
           for (let i = 0, len = arr.length; i < len; i++) {
             const itemArray = arr[i],
@@ -1289,56 +1312,40 @@ export default class Picker extends wepy.component {
 
           text = result.join(' ');
 
-          // 有事件则处理事件
-          if (callbackName) {
-            this.$emit(callbackName, {
-              text: text,
-              value: result,
-              index: index
-            });
-          }
-
-          return text;
-
+          return {
+            text: text,
+            value: result,
+            index: index
+          };
         } else if (type === 'selector') {
           // 否则是单列
           text = arr[index];
 
-          if (callbackName) {
-            this.$emit(callbackName, {
-              text: text,
-              value: text,
-              index: index
-            });
-          }
-
-          return text;
+          return {
+            text: text,
+            value: text,
+            index: index
+          };
         }
+      }
+    },
+
+    process() {
+      // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
+      if (this.success && !this.placeholder) {
+        const result = this.methods.core.call(this);
+
+        this.$emit(this.success, {
+          text: result.text,
+          value: result.value,
+          index: result.index
+        });
       }
     }
   };
 
-  methods = {
-    bindChangePicker(e) {
-      const index = e.detail.value;
-
-      this.placeholder = '';
-      this.index = index;
-      this.$apply();
-      this.$emit('picker', {
-        value: this.array[index],
-        index: index,
-        e: e
-      });
-    },
-
-    bindMultiPickerChange(e) {
-      // console.log(e);
-    },
-
-    bindMultiPickerColumnChange(e) {
-      // console.log(e);
-    }
-  };
+  onLoad() {
+    this.methods.process.call(this);
+  }
 }
 </script>

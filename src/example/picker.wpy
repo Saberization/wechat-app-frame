@@ -17,8 +17,8 @@
             :type="singleType"
             :array="singleArray"
             :index="singleIndex"
-            :placeholder="'请选择选项'"
-            :evtcallback="'picker'"
+            
+            :success="singleSuccess"
           ></picker>
         </view>
       </view>
@@ -30,8 +30,8 @@
             :type="multiType"
             :array="multiArray"
             :index="multiIndex"
-            :key="'name'"
-            :evtcallback="'multiPicker'"
+            :placeholder="multiPlaceholder"
+            :success="multiSuccess"
           ></multiPicker>
         </view>
       </view>
@@ -61,7 +61,10 @@ export default class Picker extends wepy.page {
     singleType: 'selector',
     singleArray: ['Saber', 'Rin'],
     singleIndex: 0,
+    singlePlaceholder: '请选择',
+    singleSuccess: 'picker',
     multiType: 'multiSelector',
+    multiSuccess: 'multiPicker',
     multiArray: [[{
       id: 0,
       name: 'Saber'
@@ -126,16 +129,17 @@ export default class Picker extends wepy.page {
       id: 2,
       name: 'Eriri2'
     }]],
-    multiIndex: [0, 0, 0]
+    multiIndex: [0, 0, 0],
+    multiPlaceholder: '请选择种类'
   };
 
   events = {
-    'multiPicker': () => {
-
+    'multiPicker': (result) => {
+      console.log('multiPicker: ' + result.text);
     },
 
-    'picker': () => {
-
+    'picker': (result) => {
+      console.log('singlePicker: ' + result.text);
     }
   };
 }
