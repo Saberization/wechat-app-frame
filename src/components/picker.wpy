@@ -1336,8 +1336,19 @@ export default class Picker extends wepy.component {
         column = detail.column,
         value = detail.value;
 
-      if (column === 0) {
-        
+      let id;
+
+      switch (column) {
+        case 0:
+          id = resultdata[0][value].id;
+
+          for (let i = 1, len = array.length; i < len; i++) {
+            console.log(array[i]);
+          }
+          break;
+      
+        default:
+          break;
       }
     }
   };
