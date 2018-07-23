@@ -1215,26 +1215,12 @@ icon {
 </style>
 
 <template>
-  <picker 
-    wx:if="{{type === 'selector'}}"
-    mode="{{type}}"
-    range="{{array}}"
-    value="{{index}}"
-    bindchange="bindChangePicker"
-    disabled="{{disabled}}"
-  >
-    {{placeholder ? placeholder : result.text}}
+  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindChangePicker" disabled="{{disabled}}">
+    {{placeholder ? placeholder : showResult}}
   </picker>
 
-  <picker 
-    wx:if="{{type === 'multiSelector'}}"
-    mode="{{type}}" range="{{array}}"
-    value="{{index}}" disabled="{{disabled}}"
-    bindcolumnchange="bindMultiPickerColumnChange"
-    bindchange='bindMultiPickerChange'
-    range-key="{{key}}"
-  >
-    {{placeholder ? placeholder : result.text}}
+  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindMultiPickerChange' range-key="{{key}}">
+    {{placeholder ? placeholder : showResult}}
   </picker>
 </template>
 
@@ -1276,105 +1262,127 @@ export default class Picker extends wepy.component {
     }
   };
 
+  data = {
+    // 结果值
+    resultdata: ''
+  };
+
   computed = {
-    result() {
-      return this.methods.core.call(this);
+    // 展示结果
+    showResult() {
+      if (Array.isArray(this.resultdata)) {
+        const arr = this.resultdata,
+          type = this.type,
+          index = this.index,
+          key = this.key,
+          callbackName = this.evtcallback,
+          placeholder = this.placeholder;
+
+        let result = [];
+
+        if (
+          type === 'multiSelector' &&
+          util.isMultiArray(arr) &&
+          Array.isArray(index)
+        ) {
+          for (let i = 0, len = index.length; i < len; i++) {
+            const itemIndex = index[i],
+              item = arr[i][itemIndex];
+
+            result.push(item[key]);
+          }
+
+          result = result.join(' ');
+
+          // 响应页面事件
+          this.responseEvt({
+            text: result,
+            value: result,
+            which: index
+          });
+
+          return result;
+        } else if (
+          type === 'selector' &&
+          typeof parseInt(index, 10) === 'number'
+        ) {
+          this.responseEvt({
+            text: arr[index],
+            value: arr[index],
+            which: index
+          });
+
+          return arr[index];
+        }
+      }
     }
   };
 
   methods = {
     bindChangePicker(e) {
-      const index = e.detail.value;
-
       this.placeholder = '';
-      this.index = index;
-      this.$apply();
-      this.methods.process.call(this);
+      this.index = e.detail.value;
     },
 
     bindMultiPickerChange(e) {
-      const indexArr = e.detail.value;
-
-      this.index = indexArr;
+      this.index = e.detail.value;
       this.placeholder = '';
-      this.$apply();
-
-      for (let i = 0, len = indexArr.length; i < len; i++) {
-        const itemIndex = indexArr[i];
-      }
     },
 
     bindMultiPickerColumnChange(e) {
-      // console.log(e);
-    },
+      const detail = e.detail,
+        array = this.array,
+        resultdata = this.resultdata,
+        column = detail.column,
+        value = detail.value;
 
-    // picker 组件处理逻辑的主要代码
-    core() {
-      const arr = this.array,
-        type = this.type,
-        index = this.index,
-        key = this.key,
-        callbackName = this.evtcallback;
-
-      let text = '';
-
-      // 首先要确保是 array 是数组
-      if (Array.isArray(arr)) {
-        let result = [];
-
-        // 判断是否是二维数组
-        if (util.isMultiArray(arr) && type === 'multiSelector') {
-
-          console.log(index);
-
-          for (let i = 0, len = index.length; i < len; i++) {
-            const itemIndex = index[i],
-              item = arr[i][itemIndex];
-
-            // 如果数组每项是 object 类型的话
-            if (Object.prototype.toString.call(item).includes('object')) {
-              result.push(item.name);
-            }
-            // 如果数组每项是 string 类型的话
-            else {
-              result.push(item);
-            }
-          }
-
-          return {
-            text: result.join(' '),
-            value: result,
-            which: index
-          };
-        } else if (type === 'selector') {
-          // 否则是单列
-          text = arr[index];
-
-          return {
-            text: text,
-            value: text,
-            which: index
-          };
-        }
-      }
-    },
-
-    process() {
-      // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
-      if (this.success && !this.placeholder) {
-        const result = this.methods.core.call(this);
-
-        this.$emit(this.success, {
-          text: result.text,
-          value: result.value,
-          which: result.index
-        });
+      if (column === 0) {
+        
       }
     }
   };
 
+  responseEvt(options) {
+    // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
+    if (this.success && !this.placeholder) {
+      this.$emit(this.success, options);
+    }
+  }
+
   onLoad() {
-    this.methods.process.call(this);
+    const array = this.array,
+      placeholder = this.placeholder;
+
+    // 只有当数据在多列picker中需要处理
+    if (this.type === 'multiSelector') {
+      const index = this.index,
+        result = [],
+        col_1 = array[0]; // 第一列
+
+      let key = col_1[index[0]].id;
+
+      // 保存第一列第一项
+      result.push(col_1);
+
+      for (let i = 1, len = array.length; i < len; i++) {
+        const itemArr = array[i];
+
+        for (let k = 0, len = itemArr.length; k < len; k++) {
+          const _item = itemArr[k];
+
+          if (key === _item.id) {
+            result[i] = result[i] ? result[i] : [];
+            result[i].push(_item);
+          }
+        }
+      }
+
+      this.resultdata = result;
+    } else {
+      this.resultdata = this.array;
+    }
+
+    this.$apply();
   }
 }
 </script>
