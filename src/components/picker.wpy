@@ -1215,11 +1215,25 @@ icon {
 </style>
 
 <template>
-  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{array}}" value="{{index}}" bindchange="bindChangePicker" disabled="{{disabled}}">
+  <picker 
+    wx:if="{{type === 'selector'}}"
+    mode="{{type}}"
+    range="{{array}}"
+    value="{{index}}"
+    bindchange="bindChangePicker"
+    disabled="{{disabled}}"
+  >
     {{placeholder ? placeholder : result.text}}
   </picker>
 
-  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{array}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindMultiPickerChange' range-key="{{key}}">
+  <picker 
+    wx:if="{{type === 'multiSelector'}}"
+    mode="{{type}}" range="{{array}}"
+    value="{{index}}" disabled="{{disabled}}"
+    bindcolumnchange="bindMultiPickerColumnChange"
+    bindchange='bindMultiPickerChange'
+    range-key="{{key}}"
+  >
     {{placeholder ? placeholder : result.text}}
   </picker>
 </template>
@@ -1256,6 +1270,9 @@ export default class Picker extends wepy.component {
     },
     success: {
       type: String
+    },
+    test: {
+      type: Object
     }
   };
 
@@ -1276,7 +1293,15 @@ export default class Picker extends wepy.component {
     },
 
     bindMultiPickerChange(e) {
-      // console.log(e);
+      const indexArr = e.detail.value;
+
+      this.index = indexArr;
+      this.placeholder = '';
+      this.$apply();
+
+      for (let i = 0, len = indexArr.length; i < len; i++) {
+        const itemIndex = indexArr[i];
+      }
     },
 
     bindMultiPickerColumnChange(e) {
@@ -1299,23 +1324,27 @@ export default class Picker extends wepy.component {
 
         // 判断是否是二维数组
         if (util.isMultiArray(arr) && type === 'multiSelector') {
-          for (let i = 0, len = arr.length; i < len; i++) {
-            const itemArray = arr[i],
-              _item = itemArray[i];
 
-            if (util.isObject(_item)) {
-              result.push(_item[key]);
-            } else {
-              result.push(_item);
+          console.log(index);
+
+          for (let i = 0, len = index.length; i < len; i++) {
+            const itemIndex = index[i],
+              item = arr[i][itemIndex];
+
+            // 如果数组每项是 object 类型的话
+            if (Object.prototype.toString.call(item).includes('object')) {
+              result.push(item.name);
+            }
+            // 如果数组每项是 string 类型的话
+            else {
+              result.push(item);
             }
           }
 
-          text = result.join(' ');
-
           return {
-            text: text,
+            text: result.join(' '),
             value: result,
-            index: index
+            which: index
           };
         } else if (type === 'selector') {
           // 否则是单列
@@ -1324,7 +1353,7 @@ export default class Picker extends wepy.component {
           return {
             text: text,
             value: text,
-            index: index
+            which: index
           };
         }
       }
@@ -1338,7 +1367,7 @@ export default class Picker extends wepy.component {
         this.$emit(this.success, {
           text: result.text,
           value: result.value,
-          index: result.index
+          which: result.index
         });
       }
     }

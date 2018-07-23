@@ -17,7 +17,6 @@
             :type="singleType"
             :array="singleArray"
             :index="singleIndex"
-            
             :success="singleSuccess"
           ></picker>
         </view>
@@ -76,55 +75,37 @@ export default class Picker extends wepy.page {
       name: 'Eriri'
     }], [{
       id: 0,
-      name: 'Saber1'
+      name: 'saber1'
     }, {
       id: 0,
-      name: 'Saber1'
-    }, {
-      id: 0,
-      name: 'Saber1'
+      name: 'saber2'
     }, {
       id: 1,
       name: 'Rin1'
     }, {
       id: 1,
-      name: 'Rin1'
-    }, {
-      id: 1,
-      name: 'Rin1'
+      name: 'Rin2'
     }, {
       id: 2,
       name: 'Eriri1'
     }, {
       id: 2,
-      name: 'Eriri1'
-    }, {
-      id: 2,
-      name: 'Eriri1'
+      name: 'Eriri2'
     }], [{
       id: 0,
-      name: 'Saber2'
-    }, {
-      id: 0,
-      name: 'Saber2'
+      name: 'Saber1'
     }, {
       id: 0,
       name: 'Saber2'
     }, {
       id: 1,
-      name: 'Rin2'
-    }, {
-      id: 1,
-      name: 'Rin2'
+      name: 'Rin1'
     }, {
       id: 1,
       name: 'Rin2'
     }, {
       id: 2,
-      name: 'Eriri2'
-    }, {
-      id: 2,
-      name: 'Eriri2'
+      name: 'Eriri1'
     }, {
       id: 2,
       name: 'Eriri2'
