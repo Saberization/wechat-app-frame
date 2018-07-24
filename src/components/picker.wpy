@@ -1215,11 +1215,11 @@ icon {
 </style>
 
 <template>
-  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindPickerChangeOrMultiPickerChange" disabled="{{disabled}}" range-key="{{key}}">
+  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindPickerChangeOrMultiPickerChange" disabled="{{disabled}}" range-key="{{key}}" bindcancel="bindPickerCancel">
     {{placeholder ? placeholder : showPageText}}
   </picker>
 
-  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindPickerChangeOrMultiPickerChange' range-key="{{key}}">
+  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindPickerChangeOrMultiPickerChange' bindcancel="bindPickerCancel" range-key="{{key}}">
     {{placeholder ? placeholder : showPageText}}
   </picker>
 </template>
@@ -1266,8 +1266,8 @@ export default class Picker extends wepy.component {
     success: {
       type: String
     },
-    test: {
-      type: Object
+    cancel: {
+      type: String
     }
   };
 
@@ -1404,6 +1404,11 @@ export default class Picker extends wepy.component {
           }
           break;
       }
+    },
+
+    // 绑定点击遮罩或者取消按钮事件
+    bindPickerCancel() {
+      this.$emit(this.cancel);
     }
   };
 

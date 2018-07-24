@@ -18,6 +18,7 @@
             :array="singleArray"
             :index="singleIndex"
             :success="singleSuccess"
+            :cancel="singleCancel"
           ></picker>
         </view>
       </view>
@@ -31,6 +32,7 @@
             :index="multiIndex"
             :placeholder="multiPlaceholder"
             :success="multiSuccess"
+            :cancel="multiCancel"
           ></multiPicker>
         </view>
       </view>
@@ -69,8 +71,10 @@ export default class Picker extends wepy.page {
     singleIndex: 0,
     singlePlaceholder: '请选择',
     singleSuccess: 'picker',
+    singleCancel: 'singleCancel',
     multiType: 'multiSelector',
     multiSuccess: 'multiPicker',
+    multiCancel: 'multiCancel',
     multiArray: citydata.citydata,
     multiIndex: [0, 0],
     multiPlaceholder: '请选择种类'
@@ -83,6 +87,14 @@ export default class Picker extends wepy.page {
 
     'picker': (result) => {
       console.log(result);
+    },
+
+    'singleCancel': () => {
+      console.log('singleCancel');
+    },
+
+    'multiCancel': () => {
+      console.log('multiCancel');
     }
   };
 }
