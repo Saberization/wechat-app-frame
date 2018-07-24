@@ -1343,8 +1343,19 @@ export default class Picker extends wepy.component {
           id = resultdata[0][value].id;
 
           for (let i = 1, len = array.length; i < len; i++) {
-            console.log(array[i]);
+            const itemArr = array[i];
+
+            resultdata[i] = [];
+            itemArr.filter((e, _i) => {
+              if (e.id === id) {
+                resultdata[i].push(e);
+              }
+            });
           }
+          break;
+
+        case 1:
+
           break;
       
         default:
