@@ -1365,10 +1365,7 @@ export default class Picker extends wepy.component {
 
               if (Array.isArray(_children) && _children.length >= 1) {
                 _children.forEach(e => {
-                  resultdata[2].push({
-                    text: e.text,
-                    value: e.value
-                  });
+                  resultdata[2].push(e);
                 });
               }
             }
@@ -1380,10 +1377,19 @@ export default class Picker extends wepy.component {
         case 1:
           const index = this.index;
 
-          index[2] = 0;
           index[1] = value;
+          index[2] = 0;
+          resultdata[2] = [];
 
-          console.log();
+          const col3_data = array[index[0]].children[value].children;
+
+          // 如果有第三列的话
+          if (Array.isArray(col3_data)) {
+            col3_data.forEach(e => {
+              resultdata[2].push(e);
+            });
+          }
+
           break;
       }
     }
