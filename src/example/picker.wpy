@@ -43,6 +43,7 @@ import wepy from 'wepy';
 import docPage from '../components/docpage';
 import panel from '../components/panel';
 import spicker from '../components/picker';
+import citydata from '../assets/city.data';
 
 export default class Picker extends wepy.page {
   config = {
@@ -58,59 +59,20 @@ export default class Picker extends wepy.page {
 
   data = {
     singleType: 'selector',
-    singleArray: ['Saber', 'Rin'],
+    singleArray: [{
+      value: 'Saber',
+      text: 'Saber'
+    }, {
+      value: 'Rin',
+      text: 'Rin'
+    }],
     singleIndex: 0,
     singlePlaceholder: '请选择',
     singleSuccess: 'picker',
     multiType: 'multiSelector',
     multiSuccess: 'multiPicker',
-    multiArray: [[{
-      id: 0,
-      name: 'Saber'
-    }, {
-      id: 1,
-      name: 'Rin'
-    }, {
-      id: 2,
-      name: 'Eriri'
-    }], [{
-      id: 0,
-      name: 'saber1'
-    }, {
-      id: 0,
-      name: 'saber2'
-    }, {
-      id: 1,
-      name: 'Rin1'
-    }, {
-      id: 1,
-      name: 'Rin2'
-    }, {
-      id: 2,
-      name: 'Eriri1'
-    }, {
-      id: 2,
-      name: 'Eriri2'
-    }], [{
-      id: 0,
-      name: 'Saber1'
-    }, {
-      id: 0,
-      name: 'Saber2'
-    }, {
-      id: 1,
-      name: 'Rin1'
-    }, {
-      id: 1,
-      name: 'Rin2'
-    }, {
-      id: 2,
-      name: 'Eriri1'
-    }, {
-      id: 2,
-      name: 'Eriri2'
-    }]],
-    multiIndex: [0, 0, 0],
+    multiArray: citydata.citydata3,
+    multiIndex: [2, 2, 2],
     multiPlaceholder: '请选择种类'
   };
 
