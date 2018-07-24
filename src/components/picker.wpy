@@ -1369,10 +1369,7 @@ export default class Picker extends wepy.component {
           }
 
           children.forEach((e, i) => {
-            resultdata[1].push({
-              value: e.value,
-              text: e.text
-            });
+            resultdata[1].push(e);
 
             if (i === 0) {
               const _children = e.children;
@@ -1413,7 +1410,8 @@ export default class Picker extends wepy.component {
   onLoad() {
     const type = this.type,
       array = this.array,
-      index = this.index;
+      index = this.index,
+      indexlen = index.length;
 
     if (type === 'multiSelector') {
       const index = this.index,
@@ -1423,37 +1421,34 @@ export default class Picker extends wepy.component {
 
       resultdata[0] = [];
 
+      if (indexlen === 3) {
+        resultdata[1] = [];
+        resultdata[2] = [];
+      }
+      else if (indexlen === 2) {
+        resultdata[1] = [];
+      }
+
       array.forEach((e, i) => {
         // 批量添加第一列，第一列是一开始就需要展示出来的
-        resultdata[0].push({
-          value: e.value,
-          text: e.text
-        });
+        resultdata[0].push(e);
 
-        const children = e.children;
+        if (i === index[0]) {
+          const children = e.children;
 
-        if (i === index[0] && Array.isArray(children)) {
-          resultdata[1] = [];
+          if (Array.isArray(children)) {
+            children.forEach((_e, _i) => {
+              resultdata[1].push(_e);
 
-          children.forEach((_e, _i) => {
-            resultdata[1].push({
-              value: _e.value,
-              text: _e.text
-            });
+              const _children = _e.children;
 
-            const _children = _e.children;
-
-            if (_i === index[1] && Array.isArray(_children)) {
-              resultdata[2] = [];
-
-              _children.forEach(__e => {
-                resultdata[2].push({
-                  value: __e.value,
-                  text: __e.text
+              if (_i === index[1] && indexlen === 3 && Array.isArray(_children)) {
+                _children.forEach(__e => {
+                  resultdata[2].push(__e);
                 });
-              });
-            }
-          });
+              }
+            });
+          }
         }
       });
     } else if (type === 'selector') {
