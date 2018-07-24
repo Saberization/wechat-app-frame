@@ -1216,11 +1216,11 @@ icon {
 
 <template>
   <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindPickerChangeOrMultiPickerChange" disabled="{{disabled}}" range-key="{{key}}">
-    {{placeholder ? placeholder : showResult}}
+    {{placeholder ? placeholder : showPageText}}
   </picker>
 
   <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindPickerChangeOrMultiPickerChange' range-key="{{key}}">
-    {{placeholder ? placeholder : showResult}}
+    {{placeholder ? placeholder : showPageText}}
   </picker>
 </template>
 
@@ -1276,71 +1276,66 @@ export default class Picker extends wepy.component {
   data = {
     // 结果值
     resultdata: [],
-    pickerData: {}
+    showPageText: ''
   };
 
-  computed = {
-    // 展示结果
-    showResult() {
-      const resultdata = this.resultdata;
+  // 核心代码
+  computePicker() {
+    const resultdata = this.resultdata;
 
-      if (Array.isArray(resultdata) && resultdata.length >= 1) {
-        const type = this.type,
-          index = this.index,
-          key = this.key,
-          placeholder = this.placeholder;
+    if (Array.isArray(resultdata) && resultdata.length >= 1) {
+      const type = this.type,
+        index = this.index,
+        key = this.key,
+        indexlen = index.length,
+        placeholder = this.placeholder;
 
-        let text = '',
-          value = '';
+      let text = '',
+        value = '';
 
-        if (type === 'multiSelector') {
-          let col1 = resultdata[0][index[0]],
-            col2 = resultdata[1][index[1]],
-            col3 = resultdata[2] ? resultdata[2][index[2]] : '';
+      if (type === 'multiSelector') {
+        let col1 = resultdata[0][index[0]],
+          col2 = resultdata[1][index[1]],
+          col3 = resultdata[2] ? resultdata[2][index[2]] : '';
 
-          text =
-            col1.text +
-            ' ' +
-            col2.text +
-            ' ' +
-            (typeof col3 === 'object' ? col3.text : '');
+        text = col1.text + ' ' + col2.text;
+        value = col1.value + ' ' + col2.value;
 
-          value =
-            col1.value +
-            ' ' +
-            col2.value +
-            ' ' +
-            (typeof col3 === 'object' ? col3.value : '');
-        } else if (
-          type === 'selector' &&
-          typeof parseInt(index, 10) === 'number'
-        ) {
-          const item = resultdata[index];
-
-          value = item.value;
-          text = item.text;
+        if (typeof col3 === 'object') {
+          text += ' ' + col3.text;
+          value += ' ' + col3.value;
         }
+      } else if (
+        type === 'selector' &&
+        typeof parseInt(index, 10) === 'number'
+      ) {
+        const item = resultdata[index];
 
-        this.pickerData = {
-          text: text,
-          value: value,
-          which: index
-        };
-
-        return key === 'text' ? text : value;
+        value = item.value;
+        text = item.text;
       }
+
+      return {
+        text: text,
+        value: value,
+        which: index
+      };
     }
-  };
+  }
 
   methods = {
     bindPickerChangeOrMultiPickerChange(e) {
       this.index = e.detail.value;
       this.placeholder = '';
 
+      const param = this.computePicker();
+
+      this.showPageText = param.text;
+
       this.$nextTick(function() {
         // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
         if (this.success && !this.placeholder) {
-          this.$emit(this.success, this.pickerData);
+          this.$emit(this.success, param);
         }
       });
     },
@@ -1350,6 +1345,8 @@ export default class Picker extends wepy.component {
         array = this.array, // 原始数据
         resultdata = this.resultdata, // 筛选过后的数据
         column = detail.column,
+        index = this.index,
+        indexlen = index.length,
         value = detail.value; // 滚动的是 column 列中的第几项
 
       // 只需要考虑两种情况，也就是滑动第一列与滑动第二列，即 column 为 0 或者 为 1
@@ -1359,11 +1356,17 @@ export default class Picker extends wepy.component {
           // 当前数据
           const children = array[value].children;
 
-          this.index = [value, 0, 0];
+          if (indexlen === 3) {
+            this.index = [value, 0, 0];
 
-          // 需要将原先的置空
-          resultdata[1] = [];
-          resultdata[2] = [];
+            // 需要将原先的置空
+            resultdata[1] = [];
+            resultdata[2] = [];
+          } else if (indexlen === 2) {
+            this.index = [value, 0];
+
+            resultdata[1] = [];
+          }
 
           children.forEach((e, i) => {
             resultdata[1].push({
@@ -1374,7 +1377,7 @@ export default class Picker extends wepy.component {
             if (i === 0) {
               const _children = e.children;
 
-              if (Array.isArray(_children) && _children.length >= 1) {
+              if (Array.isArray(_children) && indexlen === 3) {
                 _children.forEach(e => {
                   resultdata[2].push(e);
                 });
@@ -1386,21 +1389,22 @@ export default class Picker extends wepy.component {
 
         // 当滚动的是第二列，第三列数据变更
         case 1:
-          const index = this.index;
+          if (indexlen === 2) {
+            index[1] = value;
+          } else if (indexlen === 3) {
+            index[1] = value;
+            index[2] = 0;
+            resultdata[2] = [];
 
-          index[1] = value;
-          index[2] = 0;
-          resultdata[2] = [];
+            const col3_data = array[index[0]].children[value].children;
 
-          const col3_data = array[index[0]].children[value].children;
-
-          // 如果有第三列的话
-          if (Array.isArray(col3_data)) {
-            col3_data.forEach(e => {
-              resultdata[2].push(e);
-            });
+            // 如果有第三列的话
+            if (Array.isArray(col3_data)) {
+              col3_data.forEach(e => {
+                resultdata[2].push(e);
+              });
+            }
           }
-
           break;
       }
     }
@@ -1412,7 +1416,9 @@ export default class Picker extends wepy.component {
       index = this.index;
 
     if (type === 'multiSelector') {
-      const index = this.index;
+      const index = this.index,
+        indexlen = index.length;
+
       let resultdata = this.resultdata;
 
       resultdata[0] = [];
@@ -1452,9 +1458,9 @@ export default class Picker extends wepy.component {
       });
     } else if (type === 'selector') {
       this.resultdata = array;
-      this.result = array[index];
     }
 
+    this.showPageText = this.computePicker().text;
     this.$apply();
   }
 }

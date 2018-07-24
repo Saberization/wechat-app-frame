@@ -71,8 +71,8 @@ export default class Picker extends wepy.page {
     singleSuccess: 'picker',
     multiType: 'multiSelector',
     multiSuccess: 'multiPicker',
-    multiArray: citydata.citydata3,
-    multiIndex: [2, 2, 2],
+    multiArray: citydata.citydata,
+    multiIndex: [0, 0, 0],
     multiPlaceholder: '请选择种类'
   };
 
