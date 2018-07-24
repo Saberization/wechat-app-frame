@@ -1215,11 +1215,11 @@ icon {
 </style>
 
 <template>
-  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindChangePicker" disabled="{{disabled}}" range-key="{{key}}">
+  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindPickerChangeOrMultiPickerChange" disabled="{{disabled}}" range-key="{{key}}">
     {{placeholder ? placeholder : showResult}}
   </picker>
 
-  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindMultiPickerChange' range-key="{{key}}">
+  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindPickerChangeOrMultiPickerChange' range-key="{{key}}">
     {{placeholder ? placeholder : showResult}}
   </picker>
 </template>
@@ -1275,14 +1275,15 @@ export default class Picker extends wepy.component {
 
   data = {
     // 结果值
-    resultdata: []
+    resultdata: [],
+    pickerData: {}
   };
 
   computed = {
     // 展示结果
     showResult() {
       const resultdata = this.resultdata;
-      
+
       if (Array.isArray(resultdata) && resultdata.length >= 1) {
         const type = this.type,
           index = this.index,
@@ -1292,14 +1293,24 @@ export default class Picker extends wepy.component {
         let text = '',
           value = '';
 
-        if (
-          type === 'multiSelector'
-        ) {
-          this.responseEvt({
-            text: text,
-            value: value,
-            which: index
-          });
+        if (type === 'multiSelector') {
+          let col1 = resultdata[0][index[0]],
+            col2 = resultdata[1][index[1]],
+            col3 = resultdata[2] ? resultdata[2][index[2]] : '';
+
+          text =
+            col1.text +
+            ' ' +
+            col2.text +
+            ' ' +
+            (typeof col3 === 'object' ? col3.text : '');
+
+          value =
+            col1.value +
+            ' ' +
+            col2.value +
+            ' ' +
+            (typeof col3 === 'object' ? col3.value : '');
         } else if (
           type === 'selector' &&
           typeof parseInt(index, 10) === 'number'
@@ -1308,13 +1319,13 @@ export default class Picker extends wepy.component {
 
           value = item.value;
           text = item.text;
-
-          this.responseEvt({
-            text: text,
-            value: value,
-            which: index
-          });
         }
+
+        this.pickerData = {
+          text: text,
+          value: value,
+          which: index
+        };
 
         return key === 'text' ? text : value;
       }
@@ -1322,16 +1333,16 @@ export default class Picker extends wepy.component {
   };
 
   methods = {
-    bindChangePicker(e) {
-      this.placeholder = '';
-      this.index = e.detail.value;
-    },
-
-    bindMultiPickerChange(e) {
+    bindPickerChangeOrMultiPickerChange(e) {
       this.index = e.detail.value;
       this.placeholder = '';
 
-      console.log(e.detail);
+      this.$nextTick(function() {
+        // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
+        if (this.success && !this.placeholder) {
+          this.$emit(this.success, this.pickerData);
+        }
+      });
     },
 
     bindMultiPickerColumnChange(e) {
@@ -1395,16 +1406,10 @@ export default class Picker extends wepy.component {
     }
   };
 
-  responseEvt(options) {
-    // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
-    if (this.success && !this.placeholder) {
-      this.$emit(this.success, options);
-    }
-  }
-
   onLoad() {
     const type = this.type,
-      array = this.array;
+      array = this.array,
+      index = this.index;
 
     if (type === 'multiSelector') {
       const index = this.index;
@@ -1445,9 +1450,9 @@ export default class Picker extends wepy.component {
           });
         }
       });
-    }
-    else if (type === 'selector') {
+    } else if (type === 'selector') {
       this.resultdata = array;
+      this.result = array[index];
     }
 
     this.$apply();

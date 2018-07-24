@@ -78,11 +78,11 @@ export default class Picker extends wepy.page {
 
   events = {
     'multiPicker': (result) => {
-      console.log('multiPicker: ' + result.text);
+      console.log(result);
     },
 
     'picker': (result) => {
-      console.log('singlePicker: ' + result.text);
+      console.log(result);
     }
   };
 }
