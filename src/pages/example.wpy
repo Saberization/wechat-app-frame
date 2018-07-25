@@ -9,7 +9,7 @@ import wepy from 'wepy';
 import docpage from '../components/docpage';
 import dashboard from '../components/dashboard';
 
-export default class Home extends wepy.page {
+export default class Example extends wepy.page {
   config = {
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '组件展示'

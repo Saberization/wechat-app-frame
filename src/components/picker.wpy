@@ -1,5 +1,5 @@
 <style lang="css">
-@import '../assets/picker.wxss';
+@import '../assets/frame.wxss';
 </style>
 
 <template>

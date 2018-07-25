@@ -1,0 +1,32 @@
+<style lang="css">
+
+</style>
+
+<template>
+    <gallerySlider></gallerySlider>
+</template>
+
+<script>
+    import wepy from 'wepy';
+    import gallerySlider from '@/components/galleryslider'
+
+    export default class Home extends wepy.page {
+        config = {
+            navigationBarTitleText: '首页'
+        };
+
+        components = {
+            gallerySlider
+        };
+
+        data = {
+            imgUrls: []
+        };
+
+        async onLoad() {
+            await wx.request({
+                url: ''
+            });
+        }
+    }
+</script>
