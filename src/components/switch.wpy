@@ -100,19 +100,21 @@ export default class Switch extends wepy.component {
       type: Boolean,
       default: false
     },
-    componentId: String
+    componentId: String,
+    success: String
   }
   data = {}
   methods = {
     handleZanSwitchChange(e) {
       let dataset = e.currentTarget.dataset
       let { checked, loading, disabled, componentId } = dataset
+      const success = this.success
 
-      if (loading || disabled) return
+      if (loading || disabled) return;
 
-      console.info('[zan:switch:change]', { componentId, checked: !checked })
-
-      this.$emit('Switch')
+      if (success) {
+        this.$emit(success)
+      }
     }
   }
 }

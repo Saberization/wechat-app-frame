@@ -1,0 +1,77 @@
+<style>
+@import '../zanui/cell.wxss';
+
+.panel-example {
+  display: block;
+  margin-top: 15px;
+}
+</style>
+
+<template>
+  <docPage title="DatePicker">
+    <panel>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">日期选择器</view>
+        <view class="zan-cell__ft">
+          <datePicker
+            type="date"
+            placeholder="请选择日期"
+            success="triggerDatePickerSuccess"
+            cancel="triggerDatePickerCancel"
+            fields="day"
+          ></datePicker>
+        </view>
+      </view>
+
+      <view class="zan-cell">
+        <view class="zan-cell__bd">时间选择器</view>
+        <view class="zan-cell__ft">
+          <timePicker
+            type="time"
+            placeholder="请选择时间"
+            success="triggerTimePickerSuccess"
+            cancel="triggerTimePickerCancel"
+          ></timePicker>
+        </view>
+      </view>
+    </panel>
+  </docPage>
+</template>
+
+<script>
+import wepy from 'wepy';
+import docPage from '../components/docpage';
+import panel from '../components/panel';
+import datePicker from '../components/datepicker';
+
+export default class DatePicker extends wepy.page {
+  config = {
+    navigationBarTitleText: 'DatePicker 日期选择器'
+  };
+
+  events = {
+    'triggerDatePickerSuccess': result => {
+      console.log('日期选择结果：' + result);
+    },
+
+    'triggerDatePickerCancel': result => {
+      console.log('取消选择');
+    },
+
+    'triggerTimePickerSuccess': result => {
+      console.log('时间选择结果：' + result);
+    },
+
+    'triggerTimePickerCancel': result => {
+      console.log('取消选择');
+    }
+  };
+
+  components = {
+    docPage,
+    datePicker,
+    timePicker: datePicker,
+    panel
+  };
+}
+</script>

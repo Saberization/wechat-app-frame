@@ -14,11 +14,11 @@
         <view class="zan-cell__bd">单行列表</view>
         <view class="zan-cell__ft">
           <picker
-            :type="singleType"
+            type="selector"
             :array="singleArray"
-            :index="singleIndex"
-            :success="singleSuccess"
-            :cancel="singleCancel"
+            index="0"
+            success="picker"
+            cancel="singleCancel"
           ></picker>
         </view>
       </view>
@@ -27,12 +27,12 @@
         <view class="zan-cell__bd">多行列表</view>
         <view class="zan-cell__ft">
           <multiPicker
-            :type="multiType"
+            type="multiSelector"
             :array="multiArray"
             :index="multiIndex"
-            :placeholder="multiPlaceholder"
-            :success="multiSuccess"
-            :cancel="multiCancel"
+            placeholder="请选择种类"
+            success="multiPicker"
+            cancel="multiCancel"
           ></multiPicker>
         </view>
       </view>
@@ -45,7 +45,7 @@ import wepy from 'wepy';
 import docPage from '../components/docpage';
 import panel from '../components/panel';
 import spicker from '../components/picker';
-import citydata from '../assets/city.data';
+import citydata from '../assets/citydata.min';
 
 export default class Picker extends wepy.page {
   config = {
@@ -69,15 +69,8 @@ export default class Picker extends wepy.page {
       text: 'Rin'
     }],
     singleIndex: 0,
-    singlePlaceholder: '请选择',
-    singleSuccess: 'picker',
-    singleCancel: 'singleCancel',
-    multiType: 'multiSelector',
-    multiSuccess: 'multiPicker',
-    multiCancel: 'multiCancel',
-    multiArray: citydata.citydata,
-    multiIndex: [0, 0],
-    multiPlaceholder: '请选择种类'
+    multiArray: citydata.citydata3,
+    multiIndex: [0, 0, 0]
   };
 
   events = {

@@ -1,0 +1,120 @@
+<style lang="css">
+@import '../assets/picker';
+</style>
+
+<template>
+  <picker
+    mode="{{type}}" 
+    value="{{type === 'date' ? curDate : curTime}}"
+    start="{{startDate}}"
+    end="{{endDate}}"
+    bindchange="bindchange"
+    success="{{success}}"
+    bindcancel="bindcancel"
+    disabled="{{disabled}}"
+    fields="{{fields}}">
+    {{placeholder ? placeholder : dateResult}}
+  </picker>
+</template>
+
+<script>
+import wepy from 'wepy';
+import utilMixin from '../mixins/mixin.js';
+
+const appendZero = function(num) {
+  if (num < 10) {
+    return '0' + num;
+  }
+
+  return num;
+};
+
+export default class DatePicker extends wepy.component {
+  props = {
+    type: {
+      type: String,
+      default: 'date'
+    },
+    curDate: {
+      type: String,
+      default: (function() {
+        const today = new Date();
+
+        return (
+          today.getFullYear() +
+          '-' +
+          appendZero(today.getMonth() + 1) +
+          '-' +
+          appendZero(today.getDate())
+        );
+      })()
+    },
+    curTime: {
+      type: String,
+      default: function() {
+        const today = new Date();
+
+        return appendZero(today.getHours()) + ':' + appendZero(today.getDate());
+      }()
+    },
+    startDate: {
+      type: String,
+      default: ''
+    },
+    endDate: {
+      type: String,
+      default: ''
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    success: {
+      type: String,
+      default: ''
+    },
+    cancel: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    fields: {
+      type: String,
+      default: 'day'
+    }
+  };
+
+  data = {
+    dateResult: ''
+  };
+
+  mixins = [utilMixin];
+
+  methods = {
+    bindchange(e) {
+      const value = e.detail.value,
+        success = this.success;
+
+      this.placeholder = '';
+      this.dateResult = value;
+
+      if (success) {
+        this.$nextTick(function() {
+          this.$emit(success, value);
+        });
+      }
+    },
+
+    bindcancel(e) {
+      const cancel = this.cancel;
+
+      if (cancel) {
+        this.$emit(cancel);
+      }
+    }
+  };
+}
+</script>
