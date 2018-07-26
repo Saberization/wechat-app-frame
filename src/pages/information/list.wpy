@@ -1,33 +1,94 @@
 <style lang="css">
-    
+@import '/zanui/cell.wxss';
 </style>
 
 <template>
-    
+    <panel-list>
+        <view class="zan-cell zan-cell--access" wx:for="{{list}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
+            <view class="zan-cell__bd">
+                <view class="zan-cell__text">{{item.title}}</view>
+                <view class="zan-cell__desc">附加描述</view>
+            </view>
+            <view class="zan-cell__ft">{{item.date}}</view>
+        </view>
+    </panel-list>
 </template>
 
 <script>
-    import wepy from 'wepy'
+import wepy from 'wepy';
+import panel from '../../components/panel';
 
-    export default class informationList extends wepy.page {
-        config = {
-            navigationBarTitleText: '资讯',
-            enablePullDownRefresh: true
-        };
+export default class informationList extends wepy.page {
+  config = {
+    navigationBarTitleText: '资讯',
+    enablePullDownRefresh: true,
+    onReachBottomDistance: 50
+  };
 
-        data = {
-            currentPage: 0
-        };
+  data = {
+    currentPage: 0,
+    list: []
+  };
 
-        onPullDownRefresh(options) {
-            console.log(options);
-            setTimeout(() => {
-                wx.stopPullDownRefresh();
-            }, 800);
-        }
+  components = {
+    'panel-list': panel
+  };
 
-        onLoad() {
-            this.onPullDownRefresh();
-        }
+  methods = {
+    openList(guid) {
+      console.log(guid);
     }
+  };
+
+  // 下拉刷新触发
+  onPullDownRefresh() {
+    //  显示导航栏加载动画
+    wx.showNavigationBarLoading();
+
+    this.currentPage = 0;
+    this.list = [];
+
+    this.getList(this.currentPage, this.list, () => {
+        // 刷新完毕停止刷新
+        wx.stopPullDownRefresh();
+        // 关闭导航栏加载动画
+        wx.hideNavigationBarLoading();
+    });
+  };
+
+  //  上拉加载触发
+  onReachBottom() {
+    wx.showLoading({
+        title: '正在加载'
+    });
+
+    this.currentPage++;
+    this.getList(this.currentPage, this.list, () => {
+        wx.hideLoading();
+    });
+  };
+
+  async getList(currentPage, list, callback) {
+    const serverUrl = this.$parent.globalData.serverUrl;
+    const request = await wepy.request({
+      url: serverUrl + 'list',
+      data: {
+        currentPage: currentPage
+      },
+      method: 'post'
+    });
+
+    request.data.list.forEach(e => {
+      list.push(e);
+    });
+
+    callback && callback();
+    this.$apply();
+  }
+
+  onLoad() {
+    // 进入页面手动触发一次下拉刷新
+    wx.startPullDownRefresh();
+  }
+}
 </script>
