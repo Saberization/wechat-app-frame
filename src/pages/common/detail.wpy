@@ -1,18 +1,36 @@
 <style lang="css">
-    
+    .container {
+        background-color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .top {
+        height: 75px;
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .userinfo {
+        margin-top: 27px;
+        font-size: 12px;
+    }
+
+    .content {
+        margin-top: 10px;
+    }
 </style>
 
 <template>
     <view class="container">
         <view class="top">
-            <view class="title">{{title}}</view>
+            <view class="title zan-font-16 zan-font-bold text-center">{{title}}</view>
             <view class="userinfo">
-                <text>发布人：{{name}}</text>
-                <text>发布时间：{{date}}</text>
+                <text class="zan-c-blue zan-pull-left">发布人：{{name}}</text>
+                <text class="zan-c-blue zan-pull-right">发布时间：{{date}}</text>
             </view>
         </view>
 
-        <view class="content">
+        <view class="content zan-c-gray-darker zan-font-16">
             {{content}}
         </view>
     </view>

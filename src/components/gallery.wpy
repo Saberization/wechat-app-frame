@@ -24,7 +24,7 @@
         current-item-id="{{currentItemId}}">
 
         <block wx:for="{{imgUrls}}" wx:key="{{*this.id}}">
-            <swiper-item item-id="{{item.id}}">
+            <swiper-item item-id="{{item.id}}" @tap="triggerTap({{item.id}})">
                 <text wx:if="{{item.title}}" class="swiper-item-text" style="background-color: {{fontBg}}; color: {{fontColor}}; font-size: {{fontSize}}">{{item.title}}</text>
                 <image src="{{item.url}}" />
             </swiper-item>
@@ -99,6 +99,19 @@ export default class Gallery extends wepy.component {
     fontSize: {
       type: String,
       default: '14px'
+    },
+    success: {
+      type: String
+    }
+  };
+
+  methods = {
+    triggerTap(id) {
+      const success = this.success;
+
+      if (success) {
+        this.$emit(success, id)
+      }
     }
   };
 }

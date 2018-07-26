@@ -29,7 +29,7 @@
 
 <template>
     <!-- 轮播图 -->
-    <gallery :imgUrls.sync="imgUrls"></gallery>
+    <gallery :imgUrls.sync="imgUrls" success="triggerGalleryClick"></gallery>
 
     <!-- 导航区域 -->
     <view class="container nav">
@@ -63,6 +63,12 @@ export default class Home extends wepy.page {
     gallery,
     'nav-panel': panel,
     'news-panel': panel
+  };
+
+  events = {
+    'triggerGalleryClick': id => {
+      console.log('你点击了：' + id);
+    }
   };
 
   data = {

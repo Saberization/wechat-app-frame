@@ -1,5 +1,6 @@
 <style lang="css">
 @import './zanui/helper.wxss';
+@import './zanui/color.wxss';
 
 .container {
   background: #f9f9f9;
@@ -33,6 +34,9 @@
   line-height: 20px;
   color: #666;
 }
+.text-center {
+  text-align: center;
+}
 </style>
 
 <script>
@@ -44,6 +48,7 @@ export default class extends wepy.app {
     pages: [
       'pages/home/home',
       'pages/showcase',
+      'pages/information/list',
       'pages/common/detail',
       'example/picker',
       'example/badge',

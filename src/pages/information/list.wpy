@@ -1,0 +1,22 @@
+<style lang="css">
+    
+</style>
+
+<template>
+    
+</template>
+
+<script>
+    import wepy from 'wepy'
+
+    export default class ClassName extends wepy.page {
+        config = {
+            navigationBarTitleText: '资讯',
+            enablePullDownRefresh: true
+        };
+
+        onPullDownRefresh() {
+            console.log(66);
+        }
+    }
+</script>
