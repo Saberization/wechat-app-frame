@@ -1,5 +1,9 @@
 <style lang="css">
 @import '/zanui/cell.wxss';
+
+.zan-cell:active {
+  background-color: #d1d1d1;
+}
 </style>
 
 <template>
@@ -36,7 +40,9 @@ export default class informationList extends wepy.page {
 
   methods = {
     openList(guid) {
-      console.log(guid);
+      this.$navigate('../common/detail', {
+        guid: guid
+      });
     }
   };
 
@@ -49,24 +55,24 @@ export default class informationList extends wepy.page {
     this.list = [];
 
     this.getList(this.currentPage, this.list, () => {
-        // 刷新完毕停止刷新
-        wx.stopPullDownRefresh();
-        // 关闭导航栏加载动画
-        wx.hideNavigationBarLoading();
+      // 刷新完毕停止刷新
+      wx.stopPullDownRefresh();
+      // 关闭导航栏加载动画
+      wx.hideNavigationBarLoading();
     });
-  };
+  }
 
   //  上拉加载触发
   onReachBottom() {
     wx.showLoading({
-        title: '正在加载'
+      title: '正在加载'
     });
 
     this.currentPage++;
     this.getList(this.currentPage, this.list, () => {
-        wx.hideLoading();
+      wx.hideLoading();
     });
-  };
+  }
 
   async getList(currentPage, list, callback) {
     const serverUrl = this.$parent.globalData.serverUrl;
@@ -78,9 +84,17 @@ export default class informationList extends wepy.page {
       method: 'post'
     });
 
-    request.data.list.forEach(e => {
-      list.push(e);
-    });
+    const datalist = request.data.list;
+
+    if (Array.isArray(datalist) && datalist.length >= 1) {
+      datalist.forEach(e => {
+        list.push(e);
+      });
+    } else {
+      wx.showToast({
+        title: '已加载完毕'
+      });
+    }
 
     callback && callback();
     this.$apply();

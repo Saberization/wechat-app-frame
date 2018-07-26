@@ -130,7 +130,7 @@ export default class Home extends wepy.page {
     this.$apply();
   }
 
-  async onShow() {
+  async onLoad() {
     const serverUrl = this.$parent.globalData.serverUrl;
 
     // 获取轮播图

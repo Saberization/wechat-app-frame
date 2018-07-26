@@ -68,9 +68,11 @@
             this.name = data.name;
 
             this.$apply();
+            wx.hideNavigationBarLoading();
         }
 
         onLoad(params) {
+            wx.showNavigationBarLoading();
             this.getDetail(this.$parent.globalData.serverUrl, params.guid);
         }
     }
