@@ -42,6 +42,7 @@ import 'wepy-async-function';
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/home/home',
       'pages/example',
       'example/picker',
       'example/badge',
@@ -67,7 +68,8 @@ export default class extends wepy.app {
       'example/toast',
       'example/toptips',
       'example/actionsheet',
-      'example/datepicker'
+      'example/datepicker',
+      'example/gallery'
     ],
     window: {
       navigationBarBackgroundColor: '#FAFAFA',
@@ -79,7 +81,8 @@ export default class extends wepy.app {
   };
 
   globalData = {
-    userInfo: null
+    userInfo: null,
+    serverUrl: 'http://yapi.demo.qunar.com/mock/14843/'
   };
 
   constructor() {

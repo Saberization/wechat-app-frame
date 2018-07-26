@@ -55,6 +55,9 @@ export default {
     }, {
       name: 'Tag 标记',
       path: '../example/tag'
+    }, {
+      name: 'Gallery 轮播图',
+      path: '../example/gallery'
     }]
   },
   form: {

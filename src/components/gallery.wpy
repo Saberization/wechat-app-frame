@@ -1,0 +1,83 @@
+<style lang="css">
+@import '../assets/frame.wxss';
+</style>
+
+<template>
+    <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        circular="{{circular}}"
+        vertical="{{vertical}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        previous-margin="{{previousMargin}}px"
+        next-margin="{{nextMargin}}px"
+        current="{{current}}"
+        current-item-id="{{currentItemId}}">
+
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+            <swiper-item item-id="{{item.id}}">
+                <image src="{{item.url}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+</template>
+
+<script>
+import wepy from 'wepy';
+
+export default class Gallery extends wepy.component {
+  props = {
+    imgUrls: {
+      type: Array,
+      default: [{
+        id: 'gallery1',
+        url: 'http://dummyimage.com/320x200',
+      }, {
+        id: 'gallery2',
+        url: 'http://dummyimage.com/320x199',
+      }]
+    },
+    indicatorDots: {
+      type: Boolean,
+      default: true
+    },
+    vertical: {
+      type: Boolean,
+      default: false
+    },
+    autoplay: {
+      type: Boolean,
+      default: true
+    },
+    circular: {
+      type: Boolean,
+      default: true
+    },
+    interval: {
+      type: Number,
+      default: 2000
+    },
+    duration: {
+      type: Number,
+      default: 500
+    },
+    previousMargin: {
+      type: Number,
+      default: 0
+    },
+    nextMargin: {
+      type: Number,
+      default: 0
+    },
+    current: {
+        type: Number,
+        default: 0
+    },
+    currentItemId: {
+        type: String,
+        default: ''
+    }
+  };
+}
+</script>

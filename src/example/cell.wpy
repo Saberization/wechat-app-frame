@@ -63,7 +63,7 @@
     <panel>
       <view class="zan-cell zan-cell--access">
         <view class="zan-cell__bd">单行列表</view>
-        <view class="zan-cell__ft">详细信息</view>
+        <view class="zan-cell__ft">详细信息(右侧带箭头)</view>
       </view>
     </panel>
 

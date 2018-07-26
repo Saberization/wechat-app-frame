@@ -1,0 +1,50 @@
+<style lang="css">
+.container {
+  padding-top: 0;
+}
+</style>
+
+<template>
+    <gallery :imgUrls.sync="{{imgUrls}}" :autoplay="{{autoplay}}" :circular="{{circular}}" :interval="{{interval}}" :duration="{{duration}}"></gallery>
+</template>
+
+<script>
+import wepy from 'wepy';
+import gallery from '../components/gallery';
+
+export default class Gallery extends wepy.page {
+  config = {
+    navigationBarTitleText: 'Gallery 轮播图'
+  };
+
+  data = {
+    imgUrls: [
+      {
+        id: 'gallery1',
+        imgUrl: 'http://dummyimage.com/320x200'
+      },
+      {
+        id: 'gallery2',
+        imgUrl: 'http://dummyimage.com/320x200'
+      },
+      {
+        id: 'gallery3',
+        imgUrl: 'http://dummyimage.com/320x200'
+      }
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    circular: true,
+    interval: 2000,
+    duration: 500
+  };
+
+  components = {
+    gallery
+  };
+
+  onShow() {
+    this.$apply();
+  }
+}
+</script>
