@@ -1,5 +1,13 @@
 <style lang="css">
 @import '../assets/frame.wxss';
+
+.swiper-item-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px 5px;
+}
 </style>
 
 <template>
@@ -15,8 +23,9 @@
         current="{{current}}"
         current-item-id="{{currentItemId}}">
 
-        <block wx:for="{{imgUrls}}" wx:key="*this">
+        <block wx:for="{{imgUrls}}" wx:key="{{*this.id}}">
             <swiper-item item-id="{{item.id}}">
+                <text wx:if="{{item.title}}" class="swiper-item-text" style="background-color: {{fontBg}}; color: {{fontColor}}; font-size: {{fontSize}}">{{item.title}}</text>
                 <image src="{{item.url}}" />
             </swiper-item>
         </block>
@@ -30,6 +39,7 @@ export default class Gallery extends wepy.component {
   props = {
     imgUrls: {
       type: Array,
+      twoWay: true,
       default: [{
         id: 'gallery1',
         url: 'http://dummyimage.com/320x200',
@@ -77,6 +87,18 @@ export default class Gallery extends wepy.component {
     currentItemId: {
         type: String,
         default: ''
+    },
+    fontBg: {
+      type: String,
+      default: 'rgba(0, 0, 0, .3)'
+    },
+    fontColor: {
+      type: String,
+      default: '#fff'
+    },
+    fontSize: {
+      type: String,
+      default: '14px'
     }
   };
 }

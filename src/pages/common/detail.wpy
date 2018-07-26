@@ -1,0 +1,59 @@
+<style lang="css">
+    
+</style>
+
+<template>
+    <view class="container">
+        <view class="top">
+            <view class="title">{{title}}</view>
+            <view class="userinfo">
+                <text>发布人：{{name}}</text>
+                <text>发布时间：{{date}}</text>
+            </view>
+        </view>
+
+        <view class="content">
+            {{content}}
+        </view>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+
+    export default class ClassName extends wepy.page {
+        config = {
+            navigationBarTitleText: '详情页'
+        };
+
+        data = {
+            title: '',
+            date: '',
+            content: '',
+            name: ''
+        };
+
+        async getDetail(serverUrl, guid) {
+            const result = await wepy.request({
+                url: serverUrl + 'detail',
+                data: JSON.stringify({
+                    guid: guid
+                }),
+                method: 'post'
+            });
+
+            const data = result.data;
+
+            this.title = data.title;
+            this.date = data.date,
+            this.content = data.content;
+            this.name = data.name;
+
+            this.$apply();
+        }
+
+        onLoad(params) {
+            this.getDetail(this.$parent.globalData.serverUrl, params.guid);
+        }
+    }
+</script>

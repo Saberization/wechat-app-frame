@@ -34,14 +34,14 @@
     <!-- 导航区域 -->
     <view class="container nav">
         <nav-panel class="panel-example" title="快捷导航">
-            <view wx:for="{{ nav }}" wx:key="item" class="icon-wrap">
+            <view wx:for="{{ nav }}" wx:key="{{*this.name}}" class="icon-wrap">
                 <view class="zan-icon zan-icon-{{ item.icon }}" style="color: #80848f"></view>
                 <view class="icon-classname">{{item.name}}</view>
             </view>
         </nav-panel>
 
         <news-panel title="新闻">
-            <view class="zan-cell zan-cell--access" wx:for="{{news}}" wx:key="item">
+            <view class="zan-cell zan-cell--access" wx:for="{{news}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
                 <view class="zan-cell__bd">{{item.title}}</view>
                 <view class="zan-cell__ft">{{item.date}}</view>
             </view>
@@ -86,6 +86,14 @@ export default class Home extends wepy.page {
       }
     ],
     news: []
+  };
+
+  methods = {
+      openList(guid) {
+          this.$navigate('../common/detail', {
+              guid: guid
+          });
+      }
   };
 
   async getGallery(serverUrl) {

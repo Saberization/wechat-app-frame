@@ -5,7 +5,7 @@
 </style>
 
 <template>
-    <gallery :imgUrls.sync="{{imgUrls}}" :autoplay="{{autoplay}}" :circular="{{circular}}" :interval="{{interval}}" :duration="{{duration}}"></gallery>
+    <gallery :imgUrls.sync="imgUrls" :autoplay="autoplay" :circular="circular" :interval="interval" :duration="duration"></gallery>
 </template>
 
 <script>
@@ -21,15 +21,18 @@ export default class Gallery extends wepy.page {
     imgUrls: [
       {
         id: 'gallery1',
-        imgUrl: 'http://dummyimage.com/320x200'
+        url: 'http://dummyimage.com/320x200',
+        title: 'Saber1'
       },
       {
         id: 'gallery2',
-        imgUrl: 'http://dummyimage.com/320x200'
+        url: 'http://dummyimage.com/320x200',
+        title: 'Saber2'
       },
       {
         id: 'gallery3',
-        imgUrl: 'http://dummyimage.com/320x200'
+        url: 'http://dummyimage.com/320x200',
+        title: 'Saber3'
       }
     ],
     indicatorDots: true,
@@ -44,6 +47,7 @@ export default class Gallery extends wepy.page {
   };
 
   onShow() {
+    console.log(this.imgUrls);
     this.$apply();
   }
 }
