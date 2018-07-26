@@ -9,14 +9,25 @@
 <script>
     import wepy from 'wepy'
 
-    export default class ClassName extends wepy.page {
+    export default class informationList extends wepy.page {
         config = {
             navigationBarTitleText: '资讯',
             enablePullDownRefresh: true
         };
 
-        onPullDownRefresh() {
-            console.log(66);
+        data = {
+            currentPage: 0
+        };
+
+        onPullDownRefresh(options) {
+            console.log(options);
+            setTimeout(() => {
+                wx.stopPullDownRefresh();
+            }, 800);
+        }
+
+        onLoad() {
+            this.onPullDownRefresh();
         }
     }
 </script>
