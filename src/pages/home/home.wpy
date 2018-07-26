@@ -28,25 +28,25 @@
 </style>
 
 <template>
-    <!-- 轮播图 -->
-    <gallery :imgUrls.sync="imgUrls" success="triggerGalleryClick"></gallery>
+  <!-- 轮播图 -->
+  <gallery :imgUrls.sync="imgUrls" success="triggerGalleryClick"></gallery>
 
-    <!-- 导航区域 -->
-    <view class="container nav">
-        <nav-panel class="panel-example" title="快捷导航">
-            <view wx:for="{{ nav }}" wx:key="{{*this.name}}" class="icon-wrap">
-                <view class="zan-icon zan-icon-{{ item.icon }}" style="color: #80848f"></view>
-                <view class="icon-classname">{{item.name}}</view>
-            </view>
-        </nav-panel>
+  <!-- 导航区域 -->
+  <view class="container nav">
+    <nav-panel class="panel-example" title="快捷导航">
+      <view wx:for="{{ nav }}" wx:key="{{*this.name}}" class="icon-wrap" @tap="openPage({{item.url}})">
+        <view class="zan-icon zan-icon-{{ item.icon }}" style="color: #80848f"></view>
+        <view class="icon-classname">{{item.name}}</view>
+      </view>
+    </nav-panel>
 
-        <news-panel title="新闻">
-            <view class="zan-cell zan-cell--access" wx:for="{{news}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
-                <view class="zan-cell__bd">{{item.title}}</view>
-                <view class="zan-cell__ft">{{item.date}}</view>
-            </view>
-        </news-panel>
-    </view>
+    <news-panel title="新闻">
+      <view class="zan-cell zan-cell--access" wx:for="{{news}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
+        <view class="zan-cell__bd">{{item.title}}</view>
+        <view class="zan-cell__ft">{{item.date}}</view>
+      </view>
+    </news-panel>
+  </view>
 </template>
 
 <script>
@@ -66,7 +66,7 @@ export default class Home extends wepy.page {
   };
 
   events = {
-    'triggerGalleryClick': id => {
+    triggerGalleryClick: id => {
       console.log('你点击了：' + id);
     }
   };
@@ -80,7 +80,8 @@ export default class Home extends wepy.page {
       },
       {
         name: '信息',
-        icon: 'records'
+        icon: 'records',
+        url: '../information/list'
       },
       {
         name: '支付宝',
@@ -95,11 +96,15 @@ export default class Home extends wepy.page {
   };
 
   methods = {
-      openList(guid) {
-          this.$navigate('../common/detail', {
-              guid: guid
-          });
-      }
+    openList(guid) {
+      this.$navigate('../common/detail', {
+        guid: guid
+      });
+    },
+
+    openPage(path) {
+      this.$navigate(path);
+    }
   };
 
   async getGallery(serverUrl) {
