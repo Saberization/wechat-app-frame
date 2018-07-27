@@ -3,12 +3,12 @@
 </style>
 
 <template>
-  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" bindchange="bindPickerChangeOrMultiPickerChange" disabled="{{disabled}}" range-key="{{key}}" bindcancel="bindPickerCancel">
-    {{placeholder ? placeholder : showPageText}}
+  <picker wx:if="{{type === 'selector'}}" mode="{{type}}" range="{{pickerData}}" value="{{index}}" bindchange="bindPickerChange" disabled="{{disabled}}" range-key="{{key}}" bindcancel="bindPickerCancel">
+    {{placeholder ? placeholder : pickerData[index][key]}}
   </picker>
 
-  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{resultdata}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindPickerChangeOrMultiPickerChange' bindcancel="bindPickerCancel" range-key="{{key}}">
-    {{placeholder ? placeholder : showPageText}}
+  <picker wx:if="{{type === 'multiSelector'}}" mode="{{type}}" range="{{pickerData}}" value="{{index}}" disabled="{{disabled}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange='bindMultiPickerChange' bindcancel="bindPickerCancel" range-key="{{key}}">
+    {{placeholder ? placeholder : (pickerData[0][index[0]][key] + ' ' + pickerData[1][index[1]][key] + (pickerData[2][index[2]][key] ? (' ' + pickerData[2][index[2]][key]) : ''))}}
   </picker>
 </template>
 
@@ -21,27 +21,20 @@ export default class Picker extends wepy.component {
       type: String,
       default: 'selector'
     },
-    array: {
-      type: Array,
-      default: [
-        {
-          value: 'Saber',
-          text: 'Saber'
-        },
-        {
-          value: 'Rin',
-          text: 'Rin'
-        }
-      ]
-    },
     index: {
       type: Object,
       default: 0,
       twoWay: true
     },
+    multiIndex: {
+      type: Object,
+      default: [0, 0, 0],
+      twoWay: true
+    },
     disabled: {
       type: Boolean,
-      default: false
+      twoWay: true,
+      default: true
     },
     key: {
       type: String,
@@ -60,133 +53,136 @@ export default class Picker extends wepy.component {
 
   data = {
     // 结果值
-    resultdata: [],
-    showPageText: ''
+    pickerData: [],
+    multiPickerData: []
   };
 
-  // 核心代码
-  computePicker() {
-    const resultdata = this.resultdata;
-
-    if (Array.isArray(resultdata) && resultdata.length >= 1) {
-      const type = this.type,
-        index = this.index,
-        key = this.key,
-        indexlen = index.length,
-        placeholder = this.placeholder;
-
-      let text = '',
-        value = '';
-
-      if (type === 'multiSelector') {
-        let col1 = resultdata[0][index[0]],
-          col2 = resultdata[1][index[1]],
-          col3 = resultdata[2] ? resultdata[2][index[2]] : '';
-
-        text = col1.text + ' ' + col2.text;
-        value = col1.value + ' ' + col2.value;
-
-        if (typeof col3 === 'object') {
-          text += ' ' + col3.text;
-          value += ' ' + col3.value;
-        }
-      } else if (
-        type === 'selector' &&
-        typeof parseInt(index, 10) === 'number'
-      ) {
-        const item = resultdata[index];
-
-        value = item.value;
-        text = item.text;
-      }
-
-      return {
-        text: text,
-        value: value,
-        which: index
-      };
-    }
-  }
-
   methods = {
-    bindPickerChangeOrMultiPickerChange(e) {
+    bindPickerChange(e) {
       this.index = e.detail.value;
       this.placeholder = '';
 
-      const param = this.computePicker();
+      if (this.success && !this.placeholder) {
+        const param = this.pickerData[this.index];
 
-      this.showPageText = param.text;
+        this.$emit(this.success, param);
+      }
+    },
 
-      this.$nextTick(function() {
-        // 页面加载后，观测是否有picker的回调函数，并且无placeholder，默认选中第一个
-        if (this.success && !this.placeholder) {
-          this.$emit(this.success, param);
+    bindMultiPickerChange(e) {
+      const index = e.detail.value;
+      const pickerData = this.pickerData;
+      const index_1 = index[0],
+        index_2 = index[1],
+        index_3 = index[2];
+
+      this.index = index;
+      this.placeholder = '';
+
+      if (this.success && !this.placeholder) {
+        let text = '',
+          value = '';
+
+        if (pickerData.length === 3) {
+          text =
+            pickerData[0][index_1].text +
+            ' ' +
+            pickerData[1][index_2].text +
+            ' ' +
+            pickerData[2][index_3].text;
+          value =
+            pickerData[0][index_1].value +
+            ' ' +
+            pickerData[1][index_2].value +
+            ' ' +
+            pickerData[2][index_3].value;
+        } else {
+          text =
+            pickerData[0][index_1].text + ' ' + pickerData[1][index_2].text;
+          value =
+            pickerData[0][index_1].value + ' ' + pickerData[1][index_2].value;
         }
-      });
+
+        this.$emit(this.success, {
+          text: text,
+          value: value
+        });
+      }
     },
 
     bindMultiPickerColumnChange(e) {
-      const detail = e.detail,
-        array = this.array, // 原始数据
-        resultdata = this.resultdata, // 筛选过后的数据
-        column = detail.column,
+      const multiPickerData = this.multiPickerData,
         index = this.index,
-        indexlen = index.length,
-        value = detail.value; // 滚动的是 column 列中的第几项
+        value = e.detail.value,
+        pickerData = this.pickerData,
+        column = e.detail.column;
 
-      // 只需要考虑两种情况，也就是滑动第一列与滑动第二列，即 column 为 0 或者 为 1
       switch (column) {
-        // 当滑动第一列的时候，需要联动修改第二列与第三列的数据
         case 0:
-          // 当前数据
-          const children = array[value].children;
+          index[0] = value;
+          index[1] = 0;
+          index[2] = index[2] ? 0 : index[2];
+          pickerData[1] = [];
 
-          if (indexlen === 3) {
-            this.index = [value, 0, 0];
-
-            // 需要将原先的置空
-            resultdata[1] = [];
-            resultdata[2] = [];
-          } else if (indexlen === 2) {
-            this.index = [value, 0];
-
-            resultdata[1] = [];
+          if (index[2] || index[2] == 0) {
+            pickerData[2] = [];
           }
 
-          children.forEach((e, i) => {
-            resultdata[1].push(e);
+          const children = multiPickerData[value].children;
 
-            if (i === 0) {
-              const _children = e.children;
+          if (Array.isArray(children) && children.length >= 1) {
+            children.forEach((e, i) => {
+              pickerData[1].push({
+                text: e.text,
+                value: e.value
+              });
 
-              if (Array.isArray(_children) && indexlen === 3) {
-                _children.forEach(e => {
-                  resultdata[2].push(e);
-                });
+              if (
+                pickerData[2] &&
+                Array.isArray(pickerData[2]) &&
+                i === index[2]
+              ) {
+                const _children = e.children;
+
+                if (Array.isArray(_children) && _children.length >= 1) {
+                  _children.forEach(__e => {
+                    pickerData[2].push({
+                      text: __e.text,
+                      value: __e.value
+                    });
+                  });
+                }
               }
-            }
-          });
+            });
+          }
 
+          this.$apply();
           break;
 
-        // 当滚动的是第二列，第三列数据变更
         case 1:
-          if (indexlen === 2) {
-            index[1] = value;
-          } else if (indexlen === 3) {
-            index[1] = value;
+          index[1] = value;
+
+          if (index[2] || index[2] == 0) {
+            const children =
+              multiPickerData[index[0]].children[index[1]].children;
+
+            pickerData[2] = [];
             index[2] = 0;
-            resultdata[2] = [];
 
-            const col3_data = array[index[0]].children[value].children;
-
-            // 如果有第三列的话
-            if (Array.isArray(col3_data)) {
-              col3_data.forEach(e => {
-                resultdata[2].push(e);
+            if (Array.isArray(children) && children.length >= 1) {
+              children.forEach(e => {
+                pickerData[2].push({
+                  text: e.text,
+                  value: e.value
+                });
               });
             }
           }
+
+          this.$apply();
+          break;
+
+        default:
           break;
       }
     },
@@ -196,59 +192,67 @@ export default class Picker extends wepy.component {
       if (this.cancel) {
         this.$emit(this.cancel);
       }
-    }
-  };
+    },
 
-  onLoad() {
-    const type = this.type,
-      array = this.array,
-      index = this.index,
-      indexlen = index.length;
+    handlePickerData(data) {
+      this.pickerData = data;
+      this.disabled = false;
+      this.$apply();
+    },
 
-    if (type === 'multiSelector') {
-      const index = this.index,
-        indexlen = index.length;
+    handleMultiPickerData(data) {
+      const index = this.index;
+      const indexLen = index.length;
+      const pickerData = this.pickerData;
+      const index_2 = index[1];
+      const index_3 = index[2];
 
-      let resultdata = this.resultdata;
+      console.log(data);
 
-      resultdata[0] = [];
+      // 初始值
+      this.multiPickerData = data;
 
-      if (indexlen === 3) {
-        resultdata[1] = [];
-        resultdata[2] = [];
-      }
-      else if (indexlen === 2) {
-        resultdata[1] = [];
-      }
+      index.forEach((e, i) => {
+        pickerData[i] = [];
+      });
 
-      array.forEach((e, i) => {
-        // 批量添加第一列，第一列是一开始就需要展示出来的
-        resultdata[0].push(e);
+      data.forEach((e, i) => {
+        pickerData[0].push({
+          text: e.text,
+          value: e.value
+        });
 
-        if (i === index[0]) {
+        if (i == index_2) {
           const children = e.children;
 
-          if (Array.isArray(children)) {
+          if (Array.isArray(children && children.length >= 1)) {
             children.forEach((_e, _i) => {
-              resultdata[1].push(_e);
+              pickerData[1].push({
+                text: e.text,
+                value: e.value
+              });
 
-              const _children = _e.children;
+              // 如果有3列的话
+              if (index_3 == 0 || index_3) {
+                const _children = _e.children;
 
-              if (_i === index[1] && indexlen === 3 && Array.isArray(_children)) {
                 _children.forEach(__e => {
-                  resultdata[2].push(__e);
+                  pickerData[2].push({
+                    text: __e.text,
+                    value: __e.value
+                  });
                 });
+              } else {
+                return;
               }
             });
           }
         }
       });
-    } else if (type === 'selector') {
-      this.resultdata = array;
-    }
 
-    this.showPageText = this.computePicker().text;
-    this.$apply();
-  }
+      this.disabled = false;
+      this.$apply();
+    }
+  };
 }
 </script>

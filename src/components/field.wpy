@@ -130,7 +130,7 @@ export default class Field extends wepy.component {
       event.componentId = this.componentId
 
       if (triggerFoucs) {
-        return this.$emit(triggerChange, event)
+        return this.$emit(triggerFoucs, event)
       }
     },
 
@@ -139,7 +139,7 @@ export default class Field extends wepy.component {
       event.componentId = this.componentId
 
       if (triggerBlur) {
-        return this.$emit(triggerChange, event)
+        return this.$emit(triggerBlur, event)
       }
     }
   }

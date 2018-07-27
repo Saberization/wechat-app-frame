@@ -15,10 +15,10 @@
         <view class="zan-cell__ft">
           <picker
             type="selector"
-            :array="singleArray"
             index="0"
             success="picker"
             cancel="singleCancel"
+            placeholder="请选择"
           ></picker>
         </view>
       </view>
@@ -28,7 +28,6 @@
         <view class="zan-cell__ft">
           <multiPicker
             type="multiSelector"
-            :array="multiArray"
             :index="multiIndex"
             placeholder="请选择种类"
             success="multiPicker"
@@ -44,7 +43,7 @@
 import wepy from 'wepy';
 import docPage from '../components/docpage';
 import panel from '../components/panel';
-import spicker from '../components/picker';
+import picker from '../components/picker';
 import citydata from '../assets/citydata.min';
 
 export default class Picker extends wepy.page {
@@ -55,22 +54,27 @@ export default class Picker extends wepy.page {
   components = {
     docPage,
     panel,
-    picker: spicker,
-    multiPicker: spicker
+    picker,
+    multiPicker: picker
   };
 
   data = {
     singleType: 'selector',
-    singleArray: [{
-      value: 'Saber',
-      text: 'Saber'
-    }, {
-      value: 'Rin',
-      text: 'Rin'
-    }],
     singleIndex: 0,
     multiArray: citydata.citydata3,
     multiIndex: [0, 0, 0]
+  };
+
+  getPickerData() {
+    this.$invoke('picker', 'handlePickerData', [{
+      text: 'Saber',
+      value: 'Saber'
+    }, {
+      text: 'Rin',
+      value: 'Rin'
+    }]);
+
+    this.$invoke('multiPicker', 'handleMultiPickerData', citydata.citydata3);
   };
 
   events = {
@@ -90,5 +94,9 @@ export default class Picker extends wepy.page {
       console.log('multiCancel');
     }
   };
+
+  onLoad() {
+    this.getPickerData();
+  }
 }
 </script>

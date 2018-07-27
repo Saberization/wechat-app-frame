@@ -1,19 +1,50 @@
 <style lang="css">
 @import '../../zanui/panel.wxss';
+@import '../../zanui/btn.wxss';
 </style>
 
 <template>
     <view class="zan-panel">
-        <field-name :options="field_name" :value="value"></field-name>
-        <field-tel :options="field_tel" :value="value"></field-tel>
-        <field-addr :options="field_addr" :value="value"></field-addr>
-        <field-phone :options="field_phone" :value="value"></field-phone>
+        <repeat for="{{component_field}}" key="index" index="index" item="item">
+            <field :options="item" :value="value" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
+        </repeat>
+
+        <view class="zan-cell zan-field">
+            <view class="zan-cell__hd zan-field__title">验证码</view>
+            <input type="text" placeholder="请输入短信验证码" class="zan-field__input zan-cell__bd" />
+            <view class="zan-cell__ft">
+                <button class="zan-btn zan-btn--mini zan-btn--primary">获取验证码</button>
+            </view>
+        </view>
+
+        <view class="zan-cell">
+            <view class="zan-cell__bd">选择日期</view>
+            <view class="zan-cell__ft">
+                <date-picker type="date" placeholder="请选择时间" success="chooseDate"></date-picker>
+            </view>
+        </view>
+
+        <view class="zan-cell">
+            <view class="zan-cell__bd">事项</view>
+            <view class="zan-cell__ft">
+                <single-picker type='selector' placeholder="请选择事项" success="choosePicker"></single-picker>
+            </view>
+        </view>
+
+        <view class="zan-cell">
+            <view class="zan-cell__bd">类别</view>
+            <view class="zan-cell__ft">
+                <multi-picker type="multiSelector" placeholder="请选择类别" :index="multiIndex" success="chooseMultiPicker"></multi-picker>
+            </view>
+        </view>
     </view>
 </template>
 
 <script>
 import wepy from 'wepy';
 import field from '../../components/field';
+import picker from '../../components/picker';
+import datePicker from '../../components/datepicker';
 
 export default class ClassName extends wepy.page {
   config = {
@@ -21,31 +52,80 @@ export default class ClassName extends wepy.page {
   };
 
   components = {
-    'field-name': field,
-    'field-tel': field,
-    'field-addr': field,
-    'field-phone': field
+    field,
+    'date-picker': datePicker,
+    'single-picker': picker,
+    'multi-picker': picker
   };
 
   data = {
-    field_name: {
-      title: '姓名',
-      placeholder: '请输入姓名'
-    },
-    field_tel: {
-      title: '电话',
-      type: 'number',
-      placeholder: '请输入电话'
-    },
-    field_addr: {
-      title: '地址',
-      placeholder: '请输入地址'
-    },
-    field_phone: {
-      title: '手机号',
-      placeholder: '请输入手机号'
-    },
+    component_field: [
+      {
+        title: '姓名',
+        placeholder: '请输入姓名',
+        name: 'name'
+      },
+      {
+        title: '手机',
+        placeholder: '请输入手机号',
+        type: 'number',
+        name: 'phone'
+      },
+      {
+        title: '地址',
+        placeholder: '请输入地址',
+        name: 'addr'
+      }
+    ],
+    multiIndex: [0, 0],
     value: ''
   };
+
+  events = {
+    handleChange(e) {
+      console.log(e.detail);
+    },
+
+    handleFocus(e) {
+      console.log(e.detail);
+    },
+
+    handleBlur(e) {
+      console.log(e.detail);
+    },
+
+    choosePicker(e) {},
+
+    chooseMultiPicker(e) {},
+
+    chooseDate(e) {}
+  };
+
+  async getMatter(serverUrl) {
+    let result = await wepy.request({
+      url: serverUrl + 'matter',
+      method: 'post'
+    });
+
+    this.$invoke('single-picker', 'handlePickerData', result.data.list);
+  };
+
+  async getCategory(serverUrl) {
+    let result = await wepy.request({
+      url: serverUrl + 'getCategory',
+      method: 'post'
+    });
+
+    this.$invoke('multi-picker', 'handleMultiPickerData', result.data.list);
+  };
+
+  onLoad() {
+    const serverUrl = this.$parent.globalData.serverUrl;
+
+    //  获取注意事项
+    this.getMatter(serverUrl);
+    // 获取类别
+    this.getCategory(serverUrl);
+  }
 }
 </script>
