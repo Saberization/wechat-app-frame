@@ -1,11 +1,23 @@
 ## 一、小程序开发有哪些痛点
 
+### 1.1 小程序架构
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1ftofaxob2yj30y00qgq9s.jpg)
+
+小程序和Web开发最大的区别就在于它的视图层和逻辑层完全分离。
+
+优势与限制优势：1、视图操作基于数据绑定。2、支持模块化。模块化最大的特点就是可以依赖于第三方。3、丰富的内置组件。4、登录API获取code，提升用户体验。5、优秀的系统调用能力。6、样式支持自适应单位rpx。限制：1、无法动态创建视图节点。2、不支持组件开发。3、不支持NPM包。4、页面最多只能打开5层。5、5个并发网络请求。6、http特性不完善。7、无法外跳。
+
 1) 频繁调用 `setData` 及 `setData` 过程中页面跳闪
 2) 组件化支持能力太弱(几乎没有)
 3) 不能使用 `less、jade` 等
 4) 无法使用 `NPM` 包及 `ES` 高级语法
 5) `request` 并发次数限制
 6) 一个页面对应 `4` 个文件，看的眼花缭乱
+
+### 1.2 主流框架特性
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1ftofcuyctfj310u0n4jzi.jpg)
 
 ## 二、wepy基础介绍
 
@@ -141,4 +153,23 @@ onLoad () {
 onLoad (params, data) {
   data.preload.list.then((list) => render(list));
 
+```
+
+预查询数据示例：
+
+```js
+// page1.wpy 使用封装的 redirect 方法跳转时，会调用 page2 的 onPrefetch 方法
+methods: {
+  tap () {
+    this.$redirect('./page2');
+  }
+}
+
+// page2.wpy 直接从参数中拿到 onPrefetch 中返回的数据
+onPrefetch () {
+  return api.getBigList();
+}
+onLoad (params, data) {
+  data.prefetch.then((list) => render(list));
+}
 ```
