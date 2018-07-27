@@ -1,0 +1,51 @@
+<style lang="css">
+@import '../../zanui/panel.wxss';
+</style>
+
+<template>
+    <view class="zan-panel">
+        <field-name :options="field_name" :value="value"></field-name>
+        <field-tel :options="field_tel" :value="value"></field-tel>
+        <field-addr :options="field_addr" :value="value"></field-addr>
+        <field-phone :options="field_phone" :value="value"></field-phone>
+    </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import field from '../../components/field';
+
+export default class ClassName extends wepy.page {
+  config = {
+    navigationBarTitleText: '表单页面'
+  };
+
+  components = {
+    'field-name': field,
+    'field-tel': field,
+    'field-addr': field,
+    'field-phone': field
+  };
+
+  data = {
+    field_name: {
+      title: '姓名',
+      placeholder: '请输入姓名'
+    },
+    field_tel: {
+      title: '电话',
+      type: 'number',
+      placeholder: '请输入电话'
+    },
+    field_addr: {
+      title: '地址',
+      placeholder: '请输入地址'
+    },
+    field_phone: {
+      title: '手机号',
+      placeholder: '请输入手机号'
+    },
+    value: ''
+  };
+}
+</script>

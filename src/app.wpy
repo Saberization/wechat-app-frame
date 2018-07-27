@@ -49,6 +49,7 @@ export default class extends wepy.app {
       'pages/home/home',
       'pages/showcase',
       'pages/information/list',
+      'pages/form/form',
       'pages/common/detail',
       'example/picker',
       'example/badge',

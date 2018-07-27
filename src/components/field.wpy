@@ -78,9 +78,9 @@
       placeholder="{{ options.placeholder }}"
       class="zan-field__input zan-cell__bd {{ options.right ? 'zan-field__input--right' : '' }}"
       placeholder-class="zan-field__placeholder"
-      bindinput="handleZanFieldChange"
-      bindfocus="handleZanFieldFocus"
-      bindblur="handleZanFieldBlur"
+      bindinput="handleChange"
+      bindfocus="handleFocus"
+      bindblur="handleBlur"
       data-component-id="{{ componentId || '' }}"/>
   </view>
 </template>
@@ -103,7 +103,10 @@ export default class Field extends wepy.component {
         placeholder: '询问收银员后输入'
       }
     },
-    componentId: String
+    componentId: String,
+    triggerChange: String,
+    triggerFoucs: String,
+    triggerBlur: String
   }
   data = {}
   methods = {
@@ -113,28 +116,31 @@ export default class Field extends wepy.component {
       this.options.value = ''
       this.$apply()
     },
-    handleZanFieldChange(event) {
+    handleChange(event) {
+      const triggerChange = this.triggerChange
       event.componentId = this.componentId
 
-      console.info('[zan:field:change]', event)
-
-      return this.$emit('zanFieldChange', event)
+      if (triggerChange) {
+        return this.$emit(triggerChange, event)
+      }
     },
 
-    handleZanFieldFocus(event) {
+    handleFocus(event) {
+      const triggerFoucs = this.triggerFoucs
       event.componentId = this.componentId
 
-      console.info('[zan:field:focus]', event)
-
-      return this.$emit('zanFieldFocus', event)
+      if (triggerFoucs) {
+        return this.$emit(triggerChange, event)
+      }
     },
 
-    handleZanFieldBlur(event) {
+    handleBlur(event) {
+      const triggerBlur = this.triggerBlur
       event.componentId = this.componentId
 
-      console.info('[zan:field:blur]', event)
-
-      return this.$emit('zanFieldBlur', event)
+      if (triggerBlur) {
+        return this.$emit(triggerChange, event)
+      }
     }
   }
 }

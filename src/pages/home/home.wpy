@@ -34,7 +34,7 @@
   <!-- 导航区域 -->
   <view class="container nav">
     <nav-panel class="panel-example" title="快捷导航">
-      <view wx:for="{{ nav }}" wx:key="{{*this.name}}" class="icon-wrap" @tap="openPage({{item.url}})">
+      <view wx:for="{{ nav }}" wx:key="{{*this.name}}" class="icon-wrap" @tap="openNav({{item.url}})">
         <view class="zan-icon zan-icon-{{ item.icon }}" style="color: #80848f"></view>
         <view class="icon-classname">{{item.name}}</view>
       </view>
@@ -102,8 +102,11 @@ export default class Home extends wepy.page {
       });
     },
 
-    openPage(path) {
-      this.$navigate(path);
+    openNav(path) {
+      typeof path === 'string' ? this.$navigate(path) : wx.showToast({
+        title: '暂无页面路径',
+        icon: 'none'
+      });
     }
   };
 

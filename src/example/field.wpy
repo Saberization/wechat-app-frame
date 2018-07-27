@@ -13,9 +13,9 @@
   <!-- Field 基础用法 -->
   <view class="zan-panel-title">基础用法</view>
   <view class="zan-panel">
-    <zanField1 :options="base_name" :value="value" componentId="zanField1"></zanField1>
-    <zanField2 :options="base_tel" :value="value" componentId="zanField2"></zanField2>
-    <zanField3 :options="base_address" :value="value" componentId="zanField3"></zanField3>
+    <zanField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="zanField1"></zanField1>
+    <zanField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="zanField2"></zanField2>
+    <zanField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="zanField3"></zanField3>
   </view>
 
   <view class="zan-btns">
@@ -228,22 +228,22 @@ export default class field extends wepy.page {
     }
   }
   events = {
-    zanFieldChange(e) {
+    handleChange(e) {
       const { componentId, detail } = e
 
-      console.log('[zan:field:change]', componentId, detail)
+      console.log('[change]', componentId, detail)
     },
 
-    zanFieldFocus(e) {
+    handleFocus(e) {
       const { componentId, detail } = e
 
-      console.log('[zan:field:focus]', componentId, detail)
+      console.log('[focus]', componentId, detail)
     },
 
-    zanFieldBlur(e) {
+    handleBlur(e) {
       const { componentId, detail } = e
 
-      console.log('[zan:field:blur]', componentId, detail)
+      console.log('[blur] ' + componentId, detail);
     }
   }
   onLoad() {}
