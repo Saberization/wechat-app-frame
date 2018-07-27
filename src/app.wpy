@@ -1,4 +1,4 @@
-<style lang="css">
+<style lang="less">
 @import './zanui/helper.wxss';
 @import './zanui/color.wxss';
 

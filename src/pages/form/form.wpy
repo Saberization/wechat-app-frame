@@ -110,6 +110,8 @@ export default class ClassName extends wepy.page {
     handleChange(e) {
         const componentId = e.target.dataset.componentId;
         this[componentId] = e.detail.value;
+
+        console.log(e.detail.value);
     },
 
     handleFocus(e) {
