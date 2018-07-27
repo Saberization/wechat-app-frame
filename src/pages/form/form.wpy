@@ -1,12 +1,16 @@
 <style lang="css">
 @import '../../zanui/panel.wxss';
 @import '../../zanui/btn.wxss';
+
+.mt10 {
+    margin-top: 10px;
+}
 </style>
 
 <template>
     <view class="zan-panel">
         <repeat for="{{component_field}}" key="index" index="index" item="item">
-            <field :options="item" :value="value" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
+            <field :options="item" :value="value" :componentId="item.name" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
         </repeat>
 
         <view class="zan-cell zan-field">
@@ -37,6 +41,8 @@
                 <multi-picker type="multiSelector" placeholder="请选择类别" :index="multiIndex" success="chooseMultiPicker"></multi-picker>
             </view>
         </view>
+
+        <button class="zan-btn zan-btn--primary mt10" @tap="submit">提交</button>
     </view>
 </template>
 
@@ -56,6 +62,25 @@ export default class ClassName extends wepy.page {
     'date-picker': datePicker,
     'single-picker': picker,
     'multi-picker': picker
+  };
+
+  methods = {
+      submit() {
+          console.log(this.name, this.phone, this.addr);
+
+          wx.showLoading({
+              title: '正在提交'
+          });
+
+          setTimeout(() => {
+              wx.hideLoading();
+
+              wx.showToast({
+                  title: '提交成功',
+                  icon: 'success'
+              });
+          }, 1000);
+      }
   };
 
   data = {
@@ -83,7 +108,8 @@ export default class ClassName extends wepy.page {
 
   events = {
     handleChange(e) {
-      console.log(e.detail);
+        const componentId = e.target.dataset.componentId;
+        this[componentId] = e.detail.value;
     },
 
     handleFocus(e) {
@@ -91,14 +117,20 @@ export default class ClassName extends wepy.page {
     },
 
     handleBlur(e) {
-      console.log(e.detail);
+      console.log(e);
     },
 
-    choosePicker(e) {},
+    choosePicker(result) {
+        console.log(result);
+    },
 
-    chooseMultiPicker(e) {},
+    chooseMultiPicker(result) {
+        console.log(result);
+    },
 
-    chooseDate(e) {}
+    chooseDate(result) {
+        console.log(result);
+    }
   };
 
   async getMatter(serverUrl) {

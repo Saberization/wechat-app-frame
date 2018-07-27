@@ -207,8 +207,6 @@ export default class Picker extends wepy.component {
       const index_2 = index[1];
       const index_3 = index[2];
 
-      console.log(data);
-
       // 初始值
       this.multiPickerData = data;
 
@@ -225,11 +223,11 @@ export default class Picker extends wepy.component {
         if (i == index_2) {
           const children = e.children;
 
-          if (Array.isArray(children && children.length >= 1)) {
+          if (Array.isArray(children) && children.length >= 1) {
             children.forEach((_e, _i) => {
               pickerData[1].push({
-                text: e.text,
-                value: e.value
+                text: _e.text,
+                value: _e.value
               });
 
               // 如果有3列的话
