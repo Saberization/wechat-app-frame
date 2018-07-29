@@ -18,7 +18,7 @@
     <zanField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="zanField3"></zanField3>
   </view>
 
-  <view class="zan-btns">
+  <view class="esp-btns">
     <button
       class="zan-btn zan-btn--primary"
       bindtap="clearInput">清除输入</button>
@@ -30,7 +30,7 @@
     <zanField4 :options="notitle" :value="textareaValue" componentId="zanField4"></zanField4>
   </view>
 
-  <view class="zan-btns">
+  <view class="esp-btns">
     <button
       class="zan-btn zan-btn--primary"
       bindtap="clearTextarea">清除输入</button>
@@ -48,7 +48,7 @@
     <view class="zan-panel">
       <zanField8 :options="form_name" componentId="zanField8"></zanField8>
       <zanField9 :options="form_tel" componentId="zanField9"></zanField9>
-      <view class="zan-btns">
+      <view class="esp-btns">
         <button
           class="zan-btn zan-btn--primary"
           formType="submit">提交数据</button>

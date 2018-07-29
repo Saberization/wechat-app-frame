@@ -1,15 +1,15 @@
 <style lang="css">
-@import '../zanui/btn.wxss';
+@import '../espui/btn.wxss';
 </style>
 
 <template>
 <block>
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom zan-hairline--bottom">ACTIONSHEET</view>
+  <view class="doc-title">ACTIONSHEET</view>
 
-  <view class="zan-btns" style="margin-top: 30vh;">
-    <button class="zan-btn" bindtap="toggleActionsheet">
+  <view class="esp-btns" style="margin-top: 30vh;">
+    <button class="esp-btn" bindtap="toggleActionsheet">
       Actionsheet
     </button>
   </view>

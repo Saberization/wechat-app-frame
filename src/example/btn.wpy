@@ -10,7 +10,7 @@
 
     <view class="zan-panel-title">普通按钮</view>
     <view class="zan-panel">
-      <view class="zan-btns">
+      <view class="esp-btns">
         <button class="zan-btn">取消订单</button>
         <button class="zan-btn zan-btn--primary">确认付款</button>
         <button class="zan-btn zan-btn--danger">确认付款</button>
@@ -41,7 +41,7 @@
 
     <view class="zan-panel-title">Loading</view>
     <view class="zan-panel">
-      <view class="zan-btns">
+      <view class="esp-btns">
         <button class="zan-btn zan-btn--loading">取消订单</button>
         <button class="zan-btn zan-btn--loading zan-btn--primary">确认付款</button>
         <button class="zan-btn zan-btn--loading zan-btn--danger">确认付款</button>
@@ -51,7 +51,7 @@
 
     <view class="zan-panel-title">Disabled</view>
     <view class="zan-panel">
-      <view class="zan-btns">
+      <view class="esp-btns">
         <button class="zan-btn zan-btn--disabled" disabled>取消订单</button>
         <button class="zan-btn zan-btn--disabled zan-btn--primary" disabled>确认付款</button>
         <button class="zan-btn zan-btn--disabled zan-btn--danger" disabled>确认付款</button>

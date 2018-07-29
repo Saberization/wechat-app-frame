@@ -7,7 +7,7 @@
 
   <view class="doc-title zan-hairline--bottom">POPUP</view>
 
-  <view class="zan-btns" style="margin-top: 30vh;">
+  <view class="esp-btns" style="margin-top: 30vh;">
     <button class="zan-btn" bindtap="togglePopup">
       弹出popup
     </button>
@@ -26,7 +26,7 @@
   </view>
 
   <zanPopup1>
-    <view class="zan-btns">
+    <view class="esp-btns">
       <button class="zan-btn" @tap="togglePopup">
         关闭 popup
       </button>
@@ -34,7 +34,7 @@
   </zanPopup1>
 
   <zanPopup2 direction="left">
-    <view class="zan-btns">
+    <view class="esp-btns">
       <button class="zan-btn" @tap="toggleLeftPopup">
         关闭 popup
       </button>
@@ -43,7 +43,7 @@
 
 
   <zanPopup3 direction="right">
-    <view class="zan-btns">
+    <view class="esp-btns">
       <button class="zan-btn" @tap="toggleRightPopup">
         关闭 popup
       </button>
@@ -55,7 +55,7 @@
   </zanPopup4>
 
   <zanPopup5 direction="bottom">
-    <view class="zan-btns">
+    <view class="esp-btns">
       <button class="zan-btn" @tap="toggleBottomPopup">
         关闭 popup
       </button>

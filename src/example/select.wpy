@@ -31,7 +31,7 @@
         </view>
       </view>
 
-      <view class="zan-btns">
+      <view class="esp-btns">
         <button
           class="zan-btn zan-btn--primary"
           formType="submit">提交数据</button>

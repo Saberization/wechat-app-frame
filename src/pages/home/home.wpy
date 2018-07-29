@@ -76,8 +76,7 @@ export default class Home extends wepy.page {
     nav: [
       {
         name: '地区',
-        icon: 'location',
-        url: 'https://www.baidu.com/'
+        icon: 'location'
       },
       {
         name: '信息',
