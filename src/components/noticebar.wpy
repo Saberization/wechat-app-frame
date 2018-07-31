@@ -1,5 +1,5 @@
 <style lang="scss">
-.zan-noticebar {
+.esp-noticebar {
   color: #f60;
   padding: 9px 10px;
   font-size: 12px;
@@ -8,7 +8,7 @@
 }
 </style>
 <template>
-  <view class="zan-noticebar">
+  <view class="esp-noticebar">
     <view
       id="{{ componentId }}__content-wrap"
       style="height: 18px; overflow: hidden; position: relative;"
@@ -36,7 +36,7 @@ export default class Noticebar extends wepy.component {
     currentComponent: {}
   }
   methods = {
-    initZanNoticeBarScroll() {
+    initEspNoticeBarScroll() {
       let componentId = this.componentId
       let currentComponent = {
         width: undefined,
@@ -66,7 +66,7 @@ export default class Noticebar extends wepy.component {
                     timingFunction: 'linear'
                   })
                   this.currentComponent = currentComponent
-                  this.methods.scrollZanNoticeBar.call(this, componentId, mstime)
+                  this.methods.scrollEspNoticeBar.call(this, componentId, mstime)
                 }
               })
               .exec()
@@ -77,7 +77,7 @@ export default class Noticebar extends wepy.component {
         .exec()
     },
 
-    scrollZanNoticeBar(componentId, mstime) {
+    scrollEspNoticeBar(componentId, mstime) {
       let currentComponent = this.currentComponent
       let resetAnimationData = currentComponent.resetAnimation.translateX(currentComponent.wrapWidth).step()
       this.animationData = resetAnimationData.export()
@@ -89,7 +89,7 @@ export default class Noticebar extends wepy.component {
       }, 100)
 
       setTimeout(() => {
-        this.methods.scrollZanNoticeBar.call(this, componentId, mstime)
+        this.methods.scrollEspNoticeBar.call(this, componentId, mstime)
       }, mstime)
     }
   }

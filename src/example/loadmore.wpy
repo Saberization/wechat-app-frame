@@ -7,24 +7,24 @@
 
   <view class="doc-title esp-hairline-bottom">LOADMORE</view>
 
-  <zanLoadmore1 :loading="_true" > </zanLoadmore1>
-  <zanLoadmore2 :nodata="_true" nodata_str="暂无数据 Wepy"></zanLoadmore2>
-  <zanLoadmore3 :nomore="_true" ></zanLoadmore3>
+  <espLoadmore1 :loading="_true" > </espLoadmore1>
+  <espLoadmore2 :nodata="_true" nodata_str="暂无数据 Esp"></espLoadmore2>
+  <espLoadmore3 :nomore="_true" ></espLoadmore3>
 </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanLoadmore from '../components/loadmore'
+import espLoadmore from '../components/loadmore'
 
 export default class Loadmore extends wepy.page {
   config = {
     navigationBarTitleText: 'Loadmore 加载'
   }
   components = {
-    zanLoadmore1: zanLoadmore,
-    zanLoadmore2: zanLoadmore,
-    zanLoadmore3: zanLoadmore
+    espLoadmore1: espLoadmore,
+    espLoadmore2: espLoadmore,
+    espLoadmore3: espLoadmore
   }
   data = {
     _true: true,
