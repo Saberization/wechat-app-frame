@@ -20,7 +20,7 @@
       <view class="esp-card-detail">
         <view class="esp-card-detail-row">
           <view class="esp-card-right-col">¥ 999.99</view>
-          <view class="esp-card-left-col zan-ellipsis--l2">
+          <view class="esp-card-left-col esp-ellipsis-l2">
              红烧牛肉【虚拟商品】【有库存】【有sku】
           </view>
         </view>

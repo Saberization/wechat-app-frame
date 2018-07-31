@@ -15,7 +15,7 @@
 
 <template>
   <view wx:for="{{listdata}}" wx:key="idx">
-    <view class="zan-c-gray-darker zan-font-14 dashboard-title">{{item.title}}</view>
+    <view class="zan-c-gray-darker esp-font-14 dashboard-title">{{item.title}}</view>
 
     <view class="esp-panel">
       <view class="esp-cell esp-cell-access" wx:for="{{item.content}}" wx:key="_idx" wx:for-item="_item" @tap="openPage({{_item.path}})">

@@ -23,14 +23,14 @@
 <template>
     <view class="container">
         <view class="top">
-            <view class="title zan-font-16 zan-font-bold text-center">{{title}}</view>
+            <view class="title esp-font-16 esp-font-bold text-center">{{title}}</view>
             <view class="userinfo">
-                <text class="zan-c-blue zan-pull-left">发布人：{{name}}</text>
-                <text class="zan-c-blue zan-pull-right">发布时间：{{date}}</text>
+                <text class="zan-c-blue esp-pull-left">发布人：{{name}}</text>
+                <text class="zan-c-blue esp-pull-right">发布时间：{{date}}</text>
             </view>
         </view>
 
-        <view class="content zan-c-gray-darker zan-font-16">
+        <view class="content zan-c-gray-darker esp-font-16">
             {{content}}
         </view>
     </view>

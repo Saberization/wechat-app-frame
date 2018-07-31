@@ -10,21 +10,21 @@
   <view class="esp-panel">
     <view class="esp-cell">
       <view class="esp-cell-bd">
-        <view class="zan-pull-right">zan-pull-right: 往右靠</view>
+        <view class="esp-pull-right">esp-pull-right: 往右靠</view>
       </view>
     </view>
 
     <view class="esp-cell">
       <view class="esp-cell-bd">
-        <view class="zan-text-deleted">zan-text-deleted：被删除的效果</view>
+        <view class="esp-text-deleted">esp-text-deleted：被删除的效果</view>
       </view>
     </view>
 
     <view class="esp-cell">
       <view class="esp-cell-bd">
         <view>
-          <view class="zan-font-12">zan-font-12：字号12</view>
-          <view class="zan-font-12 zan-font-bold">zan-font-bold：再来个加粗</view>
+          <view class="esp-font-12">esp-font-12：字号12</view>
+          <view class="esp-font-12 esp-font-bold">esp-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
@@ -32,8 +32,8 @@
     <view class="esp-cell">
       <view class="esp-cell-bd">
         <view>
-          <view class="zan-font-16">zan-font-16：字号16</view>
-          <view class="zan-font-16 zan-font-bold">zan-font-bold：再来个加粗</view>
+          <view class="esp-font-16">esp-font-16：字号16</view>
+          <view class="esp-font-16 esp-font-bold">esp-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
@@ -55,15 +55,15 @@
 
     <view class="esp-cell">
       <view class="esp-cell-bd">
-        <view>zan-arrow：箭头</view>
-        <view class="zan-arrow"></view>
+        <view>esp-arrow：箭头</view>
+        <view class="esp-arrow"></view>
       </view>
     </view>
 
     <view class="esp-cell">
       <view class="esp-cell-bd">
-        <view class="zan-ellipsis" style="width: 300px;">
-          zan-ellipsis：单行点点点
+        <view class="esp-ellipsis" style="width: 300px;">
+          esp-ellipsis：单行点点点
           ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
         </view>
       </view>
@@ -71,8 +71,8 @@
 
     <view class="esp-cell esp-cell-last-child">
       <view class="esp-cell-bd">
-        <view class="zan-ellipsis--l2">
-          zan-ellipsis--l2：单行点点点
+        <view class="esp-ellipsis-l2">
+          esp-ellipsis-l2：单行点点点
           ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
         </view>
       </view>
