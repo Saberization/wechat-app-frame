@@ -78,7 +78,7 @@
   <view class="esp-actionsheet {{ espActionsheet.show ? '.esp-actionsheet-show' : '' }}">
     <view
       class="esp-actionsheet-mask"
-      catchtap="handleespActionsheetMaskClick"
+      @tap.stop="handleespActionsheetMaskClick"
       data-close-on-click-overlay="{{ espActionsheet.closeOnClickOverlay }}"
       data-component-id="{{ componentId }}"></view>
     <view class="esp-actionsheet-container">
@@ -88,7 +88,7 @@
         wx:for-index="index"
         wx:for-item="item"
         wx:key="{{ index }}-{{ item.name }}"
-        catchtap="handleespActionsheetBtnClick"
+        @tap.stop="handleespActionsheetBtnClick"
         data-component-id="{{ componentId }}"
         data-index="{{ index }}"
         data-type="{{ item.type }}"
@@ -108,7 +108,7 @@
       >
         <button
           class="esp-btn esp-actionsheet-btn"
-          catchtap="handleespActionsheetCancelBtnClick"
+          @tap.stop="handleespActionsheetCancelBtnClick"
           data-component-id="{{ componentId }}"
         >{{ espActionsheet.cancelText }}</button>
       </view>
@@ -200,8 +200,6 @@ export default class Actionsheet extends wepy.component {
       const { index, type } = dataset
       const action = this.espActionsheet.actions[index]
 
-      console.log(`item index ${index} clicked`)
-
       // 如果是分享按钮被点击, 不处理关闭
       if (type === 'share') {
         return
@@ -227,9 +225,7 @@ export default class Actionsheet extends wepy.component {
         action.loding = false
       }
       this.$apply()
-      resolve({
-        type
-      })
+      resolve(action)
     }
   }
   computed = {}

@@ -36,13 +36,6 @@ export default class Actionsheet extends wepy.page {
     espToptips
   }
   data = {}
-  events = {
-    espSelectChange(value, event) {
-      let { componentId } = event.source
-      this[`checked_${componentId}`] = value
-      this.$apply()
-    }
-  }
   methods = {
     toggleActionsheet() {
       this.$invoke('espActionsheet', 'showespActionsheet', {

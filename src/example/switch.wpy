@@ -6,7 +6,7 @@
   padding: 10px;
 }
 
-.zan-switch {
+.esp-switch {
   margin-right: 8px;
 }
 </style>
@@ -37,17 +37,17 @@
 
 <script>
 import wepy from 'wepy'
-import zanSwitch from '../components/switch'
+import espSwitch from '../components/switch'
 
 export default class Switch extends wepy.page {
   config = {
     navigationBarTitleText: 'Switch 开关'
   }
   components = {
-    syncSwitch: zanSwitch,
-    asyncSwitch: zanSwitch,
-    switch3: zanSwitch,
-    switch4: zanSwitch
+    syncSwitch: espSwitch,
+    asyncSwitch: espSwitch,
+    switch3: espSwitch,
+    switch4: espSwitch
   }
   data = {
     sync_checked: false,
