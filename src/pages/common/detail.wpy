@@ -25,12 +25,12 @@
         <view class="top">
             <view class="title esp-font-16 esp-font-bold text-center">{{title}}</view>
             <view class="userinfo">
-                <text class="zan-c-blue esp-pull-left">发布人：{{name}}</text>
-                <text class="zan-c-blue esp-pull-right">发布时间：{{date}}</text>
+                <text class="esp-c-blue esp-pull-left">发布人：{{name}}</text>
+                <text class="esp-c-blue esp-pull-right">发布时间：{{date}}</text>
             </view>
         </view>
 
-        <view class="content zan-c-gray-darker esp-font-16">
+        <view class="content esp-c-gray-darker esp-font-16">
             {{content}}
         </view>
     </view>

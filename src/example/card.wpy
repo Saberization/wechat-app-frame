@@ -25,15 +25,15 @@
           </view>
         </view>
 
-        <view class="esp-card-detail-row zan-c-gray-darker">
+        <view class="esp-card-detail-row esp-c-gray-darker">
           <view class="esp-card-right-col">x2</view>
           <view class="esp-card-left-col">
             3000克 50%
           </view>
         </view>
 
-        <view class="esp-card-detail-row zan-c-gray-darker">
-          <view class="esp-card-left-col zan-c-red">已发货</view>
+        <view class="esp-card-detail-row esp-c-gray-darker">
+          <view class="esp-card-left-col esp-c-red">已发货</view>
         </view>
       </view>
     </view>

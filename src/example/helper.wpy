@@ -42,13 +42,13 @@
       <view class="esp-cell-bd">
         <view class="">
           <view>字体颜色</view>
-          <view class="zan-c-red">zan-c-red: 红色</view>
-          <view class="zan-c-gray">zan-c-gray: 灰色</view>
-          <view class="zan-c-gray-dark">zan-c-gray-dark: 再灰一点点</view>
-          <view class="zan-c-gray-darker">zan-c-gray-darker: 更深的灰色</view>
-          <view class="zan-c-black">zan-c-black: 黑色</view>
-          <view class="zan-c-blue">zan-c-blue: 蓝色</view>
-          <view class="zan-c-green">zan-c-green: 绿色</view>
+          <view class="esp-c-red">esp-c-red: 红色</view>
+          <view class="esp-c-gray">esp-c-gray: 灰色</view>
+          <view class="esp-c-gray-dark">esp-c-gray-dark: 再灰一点点</view>
+          <view class="esp-c-gray-darker">esp-c-gray-darker: 更深的灰色</view>
+          <view class="esp-c-black">esp-c-black: 黑色</view>
+          <view class="esp-c-blue">esp-c-blue: 蓝色</view>
+          <view class="esp-c-green">esp-c-green: 绿色</view>
         </view>
       </view>
     </view>
