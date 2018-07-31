@@ -2,7 +2,7 @@
 @import '../espui/panel.wxss';
 @import '../espui/cell.wxss';
 
-.zan-capsule + .zan-capsule {
+.esp-capsule + .esp-capsule {
   margin-left: 10px;
 }
 </style>
@@ -12,7 +12,7 @@
 
     <view class="doc-title esp-hairline-bottom">CAPSULE</view>
 
-    <view class="zan-panel-title">基本用法</view>
+    <view class="esp-panel-title">基本用法</view>
     <view class="zan-panel">
       <view class="zan-cell zan-cell--last-child">
         <zanCapsule1 leftText="1折" rightText="限购一份" />
@@ -20,7 +20,7 @@
       </view>
     </view>
 
-    <view class="zan-panel-title">自定义颜色</view>
+    <view class="esp-panel-title">自定义颜色</view>
     <view class="zan-panel">
       <view class="zan-cell zan-cell--last-child">
         <zanCapsule3 leftText="3折" rightText="限购三份" color="#38f" />

@@ -11,7 +11,7 @@
   <view class="doc-title esp-hairline-bottom">Field</view>
 
   <!-- Field 基础用法 -->
-  <view class="zan-panel-title">基础用法</view>
+  <view class="esp-panel-title">基础用法</view>
   <view class="zan-panel">
     <zanField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="zanField1"></zanField1>
     <zanField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="zanField2"></zanField2>
@@ -25,7 +25,7 @@
   </view>
 
   <!-- 去除标题后的输入框样式 -->
-  <view class="zan-panel-title">无标题输入框</view>
+  <view class="esp-panel-title">无标题输入框</view>
   <view class="zan-panel">
     <zanField4 :options="notitle" :value="textareaValue" componentId="zanField4"></zanField4>
   </view>
@@ -37,13 +37,13 @@
   </view>
 
   <!-- 使用 Field 圆角样式 -->
-  <view class="zan-panel-title field__title--radius">圆角输入框</view>
+  <view class="esp-panel-title field__title--radius">圆角输入框</view>
   <zanField5 :options="radius_totalPrice" componentId="zanField5"></zanField5>
   <zanField6 :options="radius_excludePrice" componentId="zanField6"></zanField6>
   <zanField7 :options="radius_notitle" componentId="zanField7"></zanField7>
 
   <!-- form 中使用 Field -->
-  <view class="zan-panel-title">Form 表单中的field应用</view>
+  <view class="esp-panel-title">Form 表单中的field应用</view>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="zan-panel">
       <zanField8 :options="form_name" componentId="zanField8"></zanField8>
@@ -59,7 +59,7 @@
     </view>
   </form>
 
-  <view class="zan-panel-title">自定义显示内容</view>
+  <view class="esp-panel-title">自定义显示内容</view>
   <view class="zan-panel">
     <view class="zan-cell zan-field">
       <view class="zan-cell__hd zan-field__title">选择区域</view>
