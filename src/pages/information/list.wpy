@@ -1,14 +1,14 @@
 <style lang="css">
 @import '/espui/cell.wxss';
 
-.zan-cell:active {
+.esp-cell:active {
   background-color: #d1d1d1;
 }
 </style>
 
 <template>
     <panel-list>
-        <view class="zan-cell zan-cell--access" wx:for="{{list}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
+        <view class="esp-cell zan-cell--access" wx:for="{{list}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
             <view class="zan-cell__bd">
                 <view class="zan-cell__text">{{item.title}}</view>
                 <view class="zan-cell__desc">附加描述</view>

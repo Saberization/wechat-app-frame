@@ -13,7 +13,7 @@
             <field :options="item" :value="value" :componentId="item.name" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
         </repeat>
 
-        <view class="zan-cell zan-field">
+        <view class="esp-cell zan-field">
             <view class="zan-cell__hd zan-field__title">验证码</view>
             <input type="text" placeholder="请输入短信验证码" class="zan-field__input zan-cell__bd" />
             <view class="zan-cell__ft">
@@ -21,21 +21,21 @@
             </view>
         </view>
 
-        <view class="zan-cell">
+        <view class="esp-cell">
             <view class="zan-cell__bd">选择日期</view>
             <view class="zan-cell__ft">
                 <date-picker type="date" placeholder="请选择时间" success="chooseDate"></date-picker>
             </view>
         </view>
 
-        <view class="zan-cell">
+        <view class="esp-cell">
             <view class="zan-cell__bd">事项</view>
             <view class="zan-cell__ft">
                 <single-picker type='selector' placeholder="请选择事项" success="choosePicker"></single-picker>
             </view>
         </view>
 
-        <view class="zan-cell">
+        <view class="esp-cell">
             <view class="zan-cell__bd">类别</view>
             <view class="zan-cell__ft">
                 <multi-picker type="multiSelector" placeholder="请选择类别" :index="multiIndex" success="chooseMultiPicker"></multi-picker>

@@ -54,7 +54,7 @@
 }
 </style>
 <template>
-  <view class="zan-cell zan-field {{ options.error ? 'zan-field--error' : '' }} {{ options.mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
+  <view class="esp-cell zan-field {{ options.error ? 'zan-field--error' : '' }} {{ options.mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
     <view
       wx:if="{{ options.title }}"
       class="zan-cell__hd zan-field__title">{{ options.title }}</view>

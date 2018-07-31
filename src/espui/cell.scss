@@ -1,6 +1,6 @@
 @import "common";
 
-.zan-cell {
+.esp-cell {
   position: relative;
   padding: 12px 15px;
   display: flex;
@@ -9,7 +9,7 @@
   font-size: 14px;
 }
 
-.zan-cell::after {
+.esp-cell::after {
   @include hairline;
   border-bottom-width: 1px;
   left: 15px;

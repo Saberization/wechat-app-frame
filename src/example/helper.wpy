@@ -8,19 +8,19 @@
 <view class="container">
 
   <view class="esp-panel">
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view class="zan-pull-right">zan-pull-right: 往右靠</view>
       </view>
     </view>
 
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view class="zan-text-deleted">zan-text-deleted：被删除的效果</view>
       </view>
     </view>
 
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view>
           <view class="zan-font-12">zan-font-12：字号12</view>
@@ -29,7 +29,7 @@
       </view>
     </view>
 
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view>
           <view class="zan-font-16">zan-font-16：字号16</view>
@@ -38,7 +38,7 @@
       </view>
     </view>
 
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view class="">
           <view>字体颜色</view>
@@ -53,14 +53,14 @@
       </view>
     </view>
 
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view>zan-arrow：箭头</view>
         <view class="zan-arrow"></view>
       </view>
     </view>
 
-    <view class="zan-cell">
+    <view class="esp-cell">
       <view class="zan-cell__bd">
         <view class="zan-ellipsis" style="width: 300px;">
           zan-ellipsis：单行点点点
@@ -69,7 +69,7 @@
       </view>
     </view>
 
-    <view class="zan-cell zan-cell--last-child">
+    <view class="esp-cell zan-cell--last-child">
       <view class="zan-cell__bd">
         <view class="zan-ellipsis--l2">
           zan-ellipsis--l2：单行点点点

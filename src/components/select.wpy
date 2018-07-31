@@ -13,7 +13,7 @@
     data-component-id="{{ componentId }}"
   >
     <label wx:for="{{ items }}" wx:key="value">
-      <view class="zan-cell">
+      <view class="esp-cell">
         <radio class="zan-select__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
         <view
           class="zan-cell__bd"

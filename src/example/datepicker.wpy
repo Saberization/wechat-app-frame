@@ -10,7 +10,7 @@
 <template>
   <docPage title="DatePicker">
     <panel>
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">日期选择器</view>
         <view class="zan-cell__ft">
           <datePicker
@@ -23,7 +23,7 @@
         </view>
       </view>
 
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">时间选择器</view>
         <view class="zan-cell__ft">
           <timePicker

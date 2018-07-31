@@ -15,19 +15,19 @@
     <view class="doc-title esp-hairline-bottom">STEPS</view>
 
     <view class="esp-panel">
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">
           <zanSteps1 type="horizon" :steps="steps"></zanSteps1>
         </view>
       </view>
 
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">
           <zanSteps2 type="horizon" :steps="steps2"></zanSteps2>
         </view>
       </view>
 
-      <view class="zan-cell zan-cell--last-child">
+      <view class="esp-cell zan-cell--last-child">
         <view class="zan-cell__bd">
           <zanSteps3 type="horizon" :steps="steps3"></zanSteps3>
         </view>
@@ -36,19 +36,19 @@
 
     <view class="esp-panel-title">有描述的steps</view>
     <view class="esp-panel">
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">
           <zanSteps4 type="horizon" :hasDesc="_true" :steps="steps"></zanSteps4>
         </view>
       </view>
 
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">
           <zanSteps5 type="horizon" :hasDesc="_true" :steps="steps2"></zanSteps5>
         </view>
       </view>
 
-      <view class="zan-cell zan-cell--last-child">
+      <view class="esp-cell zan-cell--last-child">
         <view class="zan-cell__bd">
           <zanSteps6 type="horizon" :hasDesc="_true" :steps="steps3"></zanSteps6>
         </view>
@@ -57,13 +57,13 @@
 
     <view class="esp-panel-title">垂直方向的steps</view>
     <view class="esp-panel">
-      <view class="zan-cell zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">
           <zanSteps7 type="vertical" :hasDesc="_true" :steps="steps"></zanSteps7>
         </view>
       </view>
 
-      <view class="zan-cell zan-cell--last-child">
+      <view class="esp-cell zan-cell--last-child">
         <view class="zan-cell__bd">
           <zanSteps8 type="vertical" :steps="steps"></zanSteps8>
         </view>

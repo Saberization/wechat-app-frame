@@ -10,7 +10,7 @@
 <template>
   <docPage title="Picker">
     <panel>
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">单行列表</view>
         <view class="zan-cell__ft">
           <picker
@@ -23,7 +23,7 @@
         </view>
       </view>
 
-      <view class="zan-cell">
+      <view class="esp-cell">
         <view class="zan-cell__bd">多行列表</view>
         <view class="zan-cell__ft">
           <multiPicker
