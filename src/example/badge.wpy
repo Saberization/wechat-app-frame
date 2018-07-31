@@ -1,5 +1,5 @@
 <style lang="css">
-@import '../zanui/badge.wxss';
+@import '../espui/badge.wxss';
 
 .demo {
   padding: 40px 0;
@@ -20,7 +20,7 @@
 <template>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom zan-hairline--bottom">BADGE</view>
+    <view class="doc-title esp-hairline-bottom">BADGE</view>
 
     <view class="demo">
       <view class="demo__item">

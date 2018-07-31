@@ -9,35 +9,35 @@
   <view class="doc-title">ACTIONSHEET</view>
 
   <view class="esp-btns" style="margin-top: 30vh;">
-    <button class="esp-btn" bindtap="toggleActionsheet">
+    <button class="esp-btn" @tap="toggleActionsheet">
       Actionsheet
     </button>
   </view>
 
 </view>
 
-<zanActionsheet componentId="baseActionsheet"/>
-<zanToptips/>
+<espActionsheet componentId="baseActionsheet"/>
+<espToptips/>
 
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanActionsheet from '../components/actionsheet'
-import zanToptips from '../components/toptips'
+import espActionsheet from '../components/actionsheet'
+import espToptips from '../components/toptips'
 
 export default class Actionsheet extends wepy.page {
   config = {
     navigationBarTitleText: 'Actionsheet 行动按钮'
   }
   components = {
-    zanActionsheet,
-    zanToptips
+    espActionsheet,
+    espToptips
   }
   data = {}
   events = {
-    zanSelectChange(value, event) {
+    espSelectChange(value, event) {
       let { componentId } = event.source
       this[`checked_${componentId}`] = value
       this.$apply()
@@ -45,7 +45,7 @@ export default class Actionsheet extends wepy.page {
   }
   methods = {
     toggleActionsheet() {
-      this.$invoke('zanActionsheet', 'showZanActionsheet', {
+      this.$invoke('espActionsheet', 'showespActionsheet', {
         show: false,
         cancelText: '关闭 Action',
         closeOnClickOverlay: true,
@@ -79,10 +79,10 @@ export default class Actionsheet extends wepy.page {
         ]
       })
         .then(result => {
-          this.$invoke('zanToptips', 'showZanTopTips', { content: result.type, options: 1000 })
+          this.$invoke('espToptips', 'showespTopTips', { content: result.type, options: 1000 })
         })
         .catch(e => {
-          this.$invoke('zanToptips', 'showZanTopTips', { content: '行动取消', options: 1000 })
+          this.$invoke('espToptips', 'showespTopTips', { content: '行动取消', options: 1000 })
         })
     }
   }

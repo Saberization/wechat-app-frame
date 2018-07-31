@@ -1,5 +1,5 @@
 <style lang="scss">
-@import '../zanui/cell.scss';
+@import '../espui/cell.scss';
 
 .zan-field {
   padding: 7px 15px;

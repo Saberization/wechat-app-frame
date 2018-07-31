@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../zanui/panel.wxss';
-@import '../zanui/cell.wxss';
+@import '../espui/panel.wxss';
+@import '../espui/cell.wxss';
 .my-class {
   padding: 10px;
 }
@@ -12,7 +12,7 @@
 <template>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">STEPS</view>
+    <view class="doc-title esp-hairline-bottom">STEPS</view>
 
     <view class="zan-panel">
       <view class="zan-cell">

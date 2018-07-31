@@ -1,7 +1,7 @@
 <style lang='css'>
-@import '../zanui/panel.wxss';
-@import '../zanui/cell.wxss';
-@import '../zanui/tag.wxss';
+@import '../espui/panel.wxss';
+@import '../espui/cell.wxss';
+@import '../espui/tag.wxss';
 .zan-tag + .zan-tag {
   margin-left: 10px;
 }
@@ -10,7 +10,7 @@
 <template>
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom">Tag</view>
+  <view class="doc-title esp-hairline-bottom">Tag</view>
 
   <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">

@@ -6,21 +6,21 @@
 <block>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">TOPTIPS</view>
+    <view class="doc-title esp-hairline-bottom">TOPTIPS</view>
 
     <view class="esp-btns" style="margin-top: 30vh;">
-      <button class="zan-btn" bindtap="showTopTips">
+      <button class="esp-btn" bindtap="showTopTips">
         显示toptips
       </button>
     </view>
   </view>
-  <zanToptips/>
+  <espToptips/>
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanToptips from '../components/toptips'
+import espToptips from '../components/toptips'
 
 export default class Toptips extends wepy.page {
   config = {
@@ -28,12 +28,12 @@ export default class Toptips extends wepy.page {
   }
 
   components = {
-    zanToptips
+    espToptips
   }
   data = {}
   methods = {
     showTopTips() {
-      this.$invoke('zanToptips', 'showZanTopTips', { content: 'toptips的内容 Wepy', options: 1000 })
+      this.$invoke('espToptips', 'showespTopTips', { content: 'toptips的内容 Saber', options: 1000 })
     }
   }
   onLoad() {}

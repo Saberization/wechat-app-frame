@@ -1,13 +1,13 @@
 <style lang="css">
-@import '../zanui/panel.wxss';
-@import '../zanui/cell.wxss';
+@import '../espui/panel.wxss';
+@import '../espui/cell.wxss';
 
 </style>
 
 <template>
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom">NOTICEBAR</view>
+  <view class="doc-title esp-hairline-bottom">NOTICEBAR</view>
 
   <view class="zan-panel-title">滚动通告栏</view>
   <view class="zan-panel">

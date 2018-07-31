@@ -1,5 +1,5 @@
 <style lang="css">
-@import '/zanui/cell.wxss';
+@import '/espui/cell.wxss';
 
 .zan-cell:active {
   background-color: #d1d1d1;

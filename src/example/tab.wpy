@@ -5,7 +5,7 @@
 <template>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">TAB</view>
+    <view class="doc-title esp-hairline-bottom">TAB</view>
 
     <view style="margin: 20px 0">
       <zanTab1 :tab.sync="tab1" componentId="tab1"></zanTab1>

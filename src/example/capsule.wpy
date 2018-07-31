@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../zanui/panel.wxss';
-@import '../zanui/cell.wxss';
+@import '../espui/panel.wxss';
+@import '../espui/cell.wxss';
 
 .zan-capsule + .zan-capsule {
   margin-left: 10px;
@@ -10,7 +10,7 @@
 <template>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">CAPSULE</view>
+    <view class="doc-title esp-hairline-bottom">CAPSULE</view>
 
     <view class="zan-panel-title">基本用法</view>
     <view class="zan-panel">

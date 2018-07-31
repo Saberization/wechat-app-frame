@@ -1,6 +1,6 @@
 <style lang="css">
-  @import '/zanui/cell.wxss';
-  @import '/zanui/icon.wxss';
+  @import '/espui/cell.wxss';
+  @import '/espui/icon.wxss';
 
   .panel-example {
     display: block;
@@ -11,7 +11,7 @@
 <template>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">CELL</view>
+    <view class="doc-title esp-hairline-bottom">CELL</view>
 
     <panel class="panel-example">
       <view class="zan-cell">

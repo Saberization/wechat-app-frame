@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../zanui/panel.wxss';
-@import '../zanui/card.wxss';
+@import '../espui/panel.wxss';
+@import '../espui/card.wxss';
 
 .zan-panel {
   padding: 10px;
@@ -14,7 +14,7 @@
 <template>
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom">SWITCH</view>
+  <view class="doc-title esp-hairline-bottom">SWITCH</view>
 
   <view class="zan-panel-title">同步开关</view>
   <view class="zan-panel">

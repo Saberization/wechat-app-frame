@@ -6,10 +6,10 @@
 <block>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">TOAST</view>
+    <view class="doc-title esp-hairline-bottom">TOAST</view>
 
     <view class="esp-btns" style="margin-top: 30vh;">
-      <button class="zan-btn" @tap="showToast">
+      <button class="esp-btn" @tap="showToast">
         显示toast
       </button>
     </view>

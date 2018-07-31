@@ -5,7 +5,7 @@
 <template>
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom">LOADMORE</view>
+  <view class="doc-title esp-hairline-bottom">LOADMORE</view>
 
   <zanLoadmore1 :loading="_true" > </zanLoadmore1>
   <zanLoadmore2 :nodata="_true" nodata_str="暂无数据 Wepy"></zanLoadmore2>

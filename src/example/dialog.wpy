@@ -1,24 +1,24 @@
 <style lang="css">
-@import '../zanui/btn.wxss';
+@import '../espui/btn.wxss';
 </style>
 
 <template>
 <block>
   <view class="container">
 
-    <view class="doc-title zan-hairline--bottom">DIALOG</view>
+    <view class="doc-title esp-hairline-bottom">DIALOG</view>
 
     <view class="esp-btns" style="margin-top: 30vh;">
-      <button class="zan-btn" bindtap="toggleBaseDialog">
+      <button class="esp-btn" bindtap="toggleBaseDialog">
         基础 Dialog
       </button>
-      <button class="zan-btn" bindtap="toggleWithoutTitleDialog">
+      <button class="esp-btn" bindtap="toggleWithoutTitleDialog">
         Dialog - 无标题
       </button>
-      <button class="zan-btn" bindtap="toggleButtonDialog">
+      <button class="esp-btn" bindtap="toggleButtonDialog">
         Dialog - 自定义显示按钮
       </button>
-      <button class="zan-btn" bindtap="toggleVerticalDialog">
+      <button class="esp-btn" bindtap="toggleVerticalDialog">
         Dialog - 按钮纵向排布
       </button>
     </view>

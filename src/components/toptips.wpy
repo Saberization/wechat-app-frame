@@ -1,5 +1,5 @@
 <style lang="scss">
-.zan-toptips {
+.esp-toptips {
   display: block;
   position: fixed;
   transform: translateY(-100%);
@@ -15,7 +15,7 @@
 }
 </style>
 <template>
-  <view animation="{{animationData}}" class="zan-toptips"> {{ topTips.content }} </view>
+  <view animation="{{animationData}}" class="esp-toptips"> {{ topTips.content }} </view>
 </template>
 <script>
 import wepy from 'wepy'
@@ -27,8 +27,8 @@ export default class Toptips extends wepy.component {
     animationData: {}
   }
   methods = {
-    showZanTopTips({ content = '', options = {} }, event) {
-      console.log('showZanTopTips', content, options)
+    showespTopTips({ content = '', options = {} }, event) {
+      console.log('showespTopTips', content, options)
       let topTips = this.topTips || {}
       // 如果已经有一个计时器在了，就清理掉先
       if (topTips.timer) {
@@ -60,7 +60,7 @@ export default class Toptips extends wepy.component {
       const toggle = () => {
         wx
           .createSelectorQuery()
-          .select('.zan-toptips')
+          .select('.esp-toptips')
           .boundingClientRect(rect => {
             this.topTips.show ? animation.translateY().step() : animation.translateY(-rect.height).step()
             this.animationData = animation.export()

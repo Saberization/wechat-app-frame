@@ -1,5 +1,5 @@
 <style lang="scss">
-@import '../zanui/common';
+@import '../espui/common';
 
 /* 基础样式 */
 .zan-dialog--container {
@@ -122,7 +122,7 @@
         class="zan-dialog__footer {{ zanDialog.buttonsShowVertical ? 'zan-dialog__footer--vertical' : 'zan-dialog__footer--horizon' }}">
         <block wx:for="{{ zanDialog.buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
           <button
-            class="zan-dialog__button zan-btn"
+            class="zan-dialog__button esp-btn"
             data-type="{{ item.type }}"
             catchtap="handleZanDialogButtonClick"
             style="color: {{ item.color || '#333' }}">{{ item.text }}</button>

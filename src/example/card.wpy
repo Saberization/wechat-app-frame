@@ -1,13 +1,13 @@
 <style lang="css">
-@import '../zanui/panel.wxss';
-@import '../zanui/card.wxss';
-@import '../zanui/color.wxss';
+@import '../espui/panel.wxss';
+@import '../espui/card.wxss';
+@import '../espui/color.wxss';
 </style>
 
 <template>
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom">CARD</view>
+  <view class="doc-title esp-hairline-bottom">CARD</view>
 
   <view class="zan-panel">
     <view class="zan-card">

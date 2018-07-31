@@ -1,6 +1,6 @@
-<style lang="less">
-@import './zanui/helper.wxss';
-@import './zanui/color.wxss';
+<style lang="css">
+@import './espui/helper.wxss';
+@import './espui/color.wxss';
 
 .container {
   background: #f9f9f9;
@@ -80,7 +80,7 @@ export default class extends wepy.app {
     ],
     window: {
       navigationBarBackgroundColor: '#FAFAFA',
-      navigationBarTitleText: 'ZanUI-Wepy',
+      navigationBarTitleText: 'EspUI-Wepy',
       navigationBarTextStyle: 'black',
       backgroundTextStyle: 'dark',
       backgroundColor: '#f9f9f9'

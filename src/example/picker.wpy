@@ -1,5 +1,5 @@
 <style>
-@import '/zanui/cell.wxss';
+@import '/espui/cell.wxss';
 
 .panel-example {
   display: block;
