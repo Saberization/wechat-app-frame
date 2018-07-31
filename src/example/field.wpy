@@ -20,7 +20,7 @@
 
   <view class="esp-btns">
     <button
-      class="esp-btn esp-btn--primary"
+      class="esp-btn esp-btn-primary"
       bindtap="clearInput">清除输入</button>
   </view>
 
@@ -32,7 +32,7 @@
 
   <view class="esp-btns">
     <button
-      class="esp-btn esp-btn--primary"
+      class="esp-btn esp-btn-primary"
       bindtap="clearTextarea">清除输入</button>
   </view>
 
@@ -50,7 +50,7 @@
       <zanField9 :options="form_tel" componentId="zanField9"></zanField9>
       <view class="esp-btns">
         <button
-          class="esp-btn esp-btn--primary"
+          class="esp-btn esp-btn-primary"
           formType="submit">提交数据</button>
         <button
           class="esp-btn"
@@ -81,7 +81,7 @@
         placeholder="请输入短信验证码"
         class="zan-field__input esp-cell-bd"/>
       <view class="esp-cell-ft">
-        <button class="esp-btn esp-btn--mini esp-btn--primary">获取验证码</button>
+        <button class="esp-btn esp-btn-mini esp-btn-primary">获取验证码</button>
       </view>
     </view>
   </view>

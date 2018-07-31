@@ -33,7 +33,7 @@
 
       <view class="esp-btns">
         <button
-          class="esp-btn esp-btn--primary"
+          class="esp-btn esp-btn-primary"
           formType="submit">提交数据</button>
       </view>
     </form>
