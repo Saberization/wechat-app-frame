@@ -1,10 +1,10 @@
-.zan-col {
+.esp-col {
   float: left;
   box-sizing: border-box;
   width: 0;
 }
 
 @for $i from 1 to 24 {
-  .zan-col-#{$i} { width: $i * 100% / 24; }
-  .zan-col-offset-#{$i} { margin-left: $i * 100% / 24; }
+  .esp-col-#{$i} { width: $i * 100% / 24; }
+  .esp-col-offset-#{$i} { margin-left: $i * 100% / 24; }
 }
