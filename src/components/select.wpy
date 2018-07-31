@@ -16,10 +16,10 @@
       <view class="esp-cell">
         <radio class="zan-select__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
         <view
-          class="zan-cell__bd"
+          class="esp-cell-bd"
           style="{{ 'padding-left: ' + item.padding * 10 + 'px;' + ' color: ' + activeColor }}"
         >{{ item.name }}</view>
-        <view wx:if="{{ item.value === checkedValue }}" class="zan-cell__ft">
+        <view wx:if="{{ item.value === checkedValue }}" class="esp-cell-ft">
           <icon type="success_no_circle" color="{{ activeColor }}" size="14"></icon>
         </view>
       </view>

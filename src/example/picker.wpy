@@ -11,8 +11,8 @@
   <docPage title="Picker">
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__bd">单行列表</view>
-        <view class="zan-cell__ft">
+        <view class="esp-cell-bd">单行列表</view>
+        <view class="esp-cell-ft">
           <picker
             type="selector"
             index="0"
@@ -24,8 +24,8 @@
       </view>
 
       <view class="esp-cell">
-        <view class="zan-cell__bd">多行列表</view>
-        <view class="zan-cell__ft">
+        <view class="esp-cell-bd">多行列表</view>
+        <view class="esp-cell-ft">
           <multiPicker
             type="multiSelector"
             :index="multiIndex"

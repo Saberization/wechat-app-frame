@@ -11,8 +11,8 @@
   <docPage title="DatePicker">
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__bd">日期选择器</view>
-        <view class="zan-cell__ft">
+        <view class="esp-cell-bd">日期选择器</view>
+        <view class="esp-cell-ft">
           <datePicker
             type="date"
             placeholder="请选择日期"
@@ -24,8 +24,8 @@
       </view>
 
       <view class="esp-cell">
-        <view class="zan-cell__bd">时间选择器</view>
-        <view class="zan-cell__ft">
+        <view class="esp-cell-bd">时间选择器</view>
+        <view class="esp-cell-ft">
           <timePicker
             type="time"
             placeholder="请选择时间"

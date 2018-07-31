@@ -16,19 +16,19 @@
 
     <view class="esp-panel">
       <view class="esp-cell">
-        <view class="zan-cell__bd">
+        <view class="esp-cell-bd">
           <zanSteps1 type="horizon" :steps="steps"></zanSteps1>
         </view>
       </view>
 
       <view class="esp-cell">
-        <view class="zan-cell__bd">
+        <view class="esp-cell-bd">
           <zanSteps2 type="horizon" :steps="steps2"></zanSteps2>
         </view>
       </view>
 
-      <view class="esp-cell zan-cell--last-child">
-        <view class="zan-cell__bd">
+      <view class="esp-cell esp-cell-last-child">
+        <view class="esp-cell-bd">
           <zanSteps3 type="horizon" :steps="steps3"></zanSteps3>
         </view>
       </view>
@@ -37,19 +37,19 @@
     <view class="esp-panel-title">有描述的steps</view>
     <view class="esp-panel">
       <view class="esp-cell">
-        <view class="zan-cell__bd">
+        <view class="esp-cell-bd">
           <zanSteps4 type="horizon" :hasDesc="_true" :steps="steps"></zanSteps4>
         </view>
       </view>
 
       <view class="esp-cell">
-        <view class="zan-cell__bd">
+        <view class="esp-cell-bd">
           <zanSteps5 type="horizon" :hasDesc="_true" :steps="steps2"></zanSteps5>
         </view>
       </view>
 
-      <view class="esp-cell zan-cell--last-child">
-        <view class="zan-cell__bd">
+      <view class="esp-cell esp-cell-last-child">
+        <view class="esp-cell-bd">
           <zanSteps6 type="horizon" :hasDesc="_true" :steps="steps3"></zanSteps6>
         </view>
       </view>
@@ -58,13 +58,13 @@
     <view class="esp-panel-title">垂直方向的steps</view>
     <view class="esp-panel">
       <view class="esp-cell">
-        <view class="zan-cell__bd">
+        <view class="esp-cell-bd">
           <zanSteps7 type="vertical" :hasDesc="_true" :steps="steps"></zanSteps7>
         </view>
       </view>
 
-      <view class="esp-cell zan-cell--last-child">
-        <view class="zan-cell__bd">
+      <view class="esp-cell esp-cell-last-child">
+        <view class="esp-cell-bd">
           <zanSteps8 type="vertical" :steps="steps"></zanSteps8>
         </view>
       </view>
@@ -72,7 +72,7 @@
 
     <view class="esp-panel-title">可自定义class</view>
     <view class="esp-panel">
-      <view class="zan-cell__bd">
+      <view class="esp-cell-bd">
         <zanSteps9 type="vertical" :steps="steps" className='my-class'></zanSteps9>
       </view>
     </view>

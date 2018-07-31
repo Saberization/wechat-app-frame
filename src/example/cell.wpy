@@ -15,46 +15,46 @@
 
     <panel class="panel-example">
       <view class="esp-cell">
-        <view class="zan-cell__bd">单行列表</view>
+        <view class="esp-cell-bd">单行列表</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__bd">单行列表</view>
-        <view class="zan-cell__ft">详细信息</view>
+        <view class="esp-cell-bd">单行列表</view>
+        <view class="esp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__icon zan-icon zan-icon-checked" style="color:#38f;"></view>
-        <view class="zan-cell__bd">单行列表</view>
-        <view class="zan-cell__ft">详细信息</view>
+        <view class="esp-cell-icon zan-icon zan-icon-checked" style="color:#38f;"></view>
+        <view class="esp-cell-bd">单行列表</view>
+        <view class="esp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__bd">
-          <view class="zan-cell__text">单行列表</view>
-          <view class="zan-cell__desc">附加描述</view>
+        <view class="esp-cell-bd">
+          <view class="esp-cell-text">单行列表</view>
+          <view class="esp-cell-desc">附加描述</view>
         </view>
-        <view class="zan-cell__ft">详细信息</view>
+        <view class="esp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell zan-cell--access">
-        <view class="zan-cell__bd">单行列表</view>
-        <view class="zan-cell__ft"></view>
+        <view class="esp-cell-bd">单行列表</view>
+        <view class="esp-cell-ft"></view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell zan-cell--switch">
-        <view class="zan-cell__bd">开关</view>
-        <view class="zan-cell__ft">
+        <view class="esp-cell-bd">开关</view>
+        <view class="esp-cell-ft">
           <Switch :checked.sync="checked" componentId="Switch"> </Switch>
         </view>
       </view>
@@ -62,35 +62,35 @@
 
     <panel>
       <view class="esp-cell zan-cell--access">
-        <view class="zan-cell__bd">单行列表</view>
-        <view class="zan-cell__ft">详细信息(右侧带箭头)</view>
+        <view class="esp-cell-bd">单行列表</view>
+        <view class="esp-cell-ft">详细信息(右侧带箭头)</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__bd">多行列表</view>
+        <view class="esp-cell-bd">多行列表</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell">
-        <view class="zan-cell__bd">多行列表</view>
-        <view class="zan-cell__ft">详细信息</view>
+        <view class="esp-cell-bd">多行列表</view>
+        <view class="esp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell zan-cell--access">
-        <view class="zan-cell__bd">多行列表</view>
-        <view class="zan-cell__ft"></view>
+        <view class="esp-cell-bd">多行列表</view>
+        <view class="esp-cell-ft"></view>
       </view>
     </panel>
 
     <panel>
       <view class="esp-cell zan-cell--access">
-        <view class="zan-cell__bd">多行列表</view>
-        <view class="zan-cell__ft">详细信息</view>
+        <view class="esp-cell-bd">多行列表</view>
+        <view class="esp-cell-ft">详细信息</view>
       </view>
     </panel>
 

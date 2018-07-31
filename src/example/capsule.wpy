@@ -14,16 +14,16 @@
 
     <view class="esp-panel-title">基本用法</view>
     <view class="esp-panel">
-      <view class="esp-cell zan-cell--last-child">
-        <zanCapsule1 leftText="1折" rightText="限购一份" />
-        <zanCapsule2 leftText="2折" rightText="限购两份" type="danger" />
+      <view class="esp-cell esp-cell-last-child">
+        <espCapsule1 leftText="1折" rightText="限购一份" />
+        <espCapsule2 leftText="2折" rightText="限购两份" type="danger" />
       </view>
     </view>
 
     <view class="esp-panel-title">自定义颜色</view>
     <view class="esp-panel">
-      <view class="esp-cell zan-cell--last-child">
-        <zanCapsule3 leftText="3折" rightText="限购三份" color="#38f" />
+      <view class="esp-cell esp-cell-last-child">
+        <espCapsule3 leftText="3折" rightText="限购三份" color="#38f" />
       </view>
     </view>
 
@@ -32,16 +32,16 @@
 
 <script>
 import wepy from 'wepy'
-import zanCapsule from '../components/capsule'
+import espCapsule from '../components/capsule'
 
 export default class Capsule extends wepy.page {
   config = {
     navigationBarTitleText: 'Capsule 胶囊'
   }
   components = {
-    zanCapsule1: zanCapsule,
-    zanCapsule2: zanCapsule,
-    zanCapsule3: zanCapsule,
+    espCapsule1: espCapsule,
+    espCapsule2: espCapsule,
+    espCapsule3: espCapsule,
   }
   data = {}
   methods = {}

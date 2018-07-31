@@ -3,7 +3,7 @@
 @import '../espui/cell.wxss';
 @import '../espui/color.wxss';
 
-.zan-cell__bd {
+.esp-cell-bd {
   color: #333;
 }
 
@@ -19,8 +19,8 @@
 
     <view class="esp-panel">
       <view class="esp-cell zan-cell--access" wx:for="{{item.content}}" wx:key="_idx" wx:for-item="_item" @tap="openPage({{_item.path}})">
-        <view class="zan-cell__bd">{{_item.name}}</view>
-        <view class="zan-cell__ft"></view>
+        <view class="esp-cell-bd">{{_item.name}}</view>
+        <view class="esp-cell-ft"></view>
       </view>
     </view>
   </view>
