@@ -1,4 +1,4 @@
-.zan-card {
+.esp-card {
   margin-left: 0px;
   width: auto;
   padding: 5px 15px;
@@ -7,7 +7,7 @@
   font-size: 14px;
 }
 
-.zan-card__thumb {
+.esp-card-thumb {
   width: 90px;
   height: 90px;
   float: left;
@@ -18,7 +18,7 @@
   background-size: cover;
 }
 
-.zan-card__img {
+.esp-card-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,23 +30,23 @@
   max-height: 100%;
 }
 
-.zan-card__detail {
+.esp-card-detail {
   margin-left: 100px;
   width: auto;
   position: relative;
 }
 
-.zan-card__detail-row {
+.esp-card-detail-row {
   overflow: hidden;
   line-height: 20px;
   min-height: 20px;
   margin-bottom: 3px;
 }
 
-.zan-card__right-col {
+.esp-card-right-col {
   float: right;
 }
 
-.zan-card__left-col {
+.esp-card-left-col {
   margin-right: 80px;
 }
