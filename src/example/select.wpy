@@ -12,14 +12,14 @@
     <view class="esp-panel-title">基础用法</view>
     <view class="esp-panel">
       <view>
-        <zanSelect1 :items="items" :checkedValue.sync="checked_base" componentId="base" ></zanSelect1>
+        <espSelect1 :items="items" :checkedValue.sync="checked_base" componentId="base" ></espSelect1>
       </view>
     </view>
 
     <view class="esp-panel-title">自定义高亮颜色</view>
     <view class="esp-panel">
       <view>
-        <zanSelect2 :items="items" :checkedValue.sync="checked_color" :activeColor="activeColor" componentId="color" ></zanSelect2>
+        <espSelect2 :items="items" :checkedValue.sync="checked_color" :activeColor="activeColor" componentId="color" ></espSelect2>
       </view>
     </view>
 
@@ -27,7 +27,7 @@
     <form bindsubmit="formSubmit">
       <view class="esp-panel">
         <view>
-          <zanSelect3 :items="items" :checkedValue.sync="checked_form" name="formtest" componentId="form"></zanSelect3>
+          <espSelect3 :items="items" :checkedValue.sync="checked_form" name="formtest" componentId="form"></espSelect3>
         </view>
       </view>
 
@@ -38,24 +38,24 @@
       </view>
     </form>
   </view>
-  <zanToptips />
+  <espToptips />
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanSelect from '../components/select'
-import zanToptips from '../components/toptips'
+import espSelect from '../components/select'
+import espToptips from '../components/toptips'
 
 export default class Select extends wepy.page {
   config = {
     navigationBarTitleText: 'Select 选择'
   }
   components = {
-    zanSelect1: zanSelect,
-    zanSelect2: zanSelect,
-    zanSelect3: zanSelect,
-    zanToptips
+    espSelect1: espSelect,
+    espSelect2: espSelect,
+    espSelect3: espSelect,
+    espToptips
   }
   data = {
     items: [
@@ -78,7 +78,7 @@ export default class Select extends wepy.page {
     activeColor: '#4b0'
   }
   events = {
-    zanSelectChange(value, event) {
+    espSelectChange(value, event) {
       let { componentId } = event.source
       this[`checked_${componentId}`] = value
       this.$apply()
@@ -86,8 +86,8 @@ export default class Select extends wepy.page {
   }
   methods = {
     formSubmit(event) {
-      console.log('[zan:field:submit]', event.detail.value)
-      this.$invoke('zanToptips', 'showZanTopTips', { content: `选中的值为${event.detail.value.formtest}` })
+      console.log('[esp:field:submit]', event.detail.value)
+      this.$invoke('espToptips', 'showEspTopTips', { content: `选中的值为${event.detail.value.formtest}` })
     }
   }
   onLoad() {}

@@ -1,20 +1,20 @@
 <style lang="scss">
 @import '../espui/cell.scss';
-.zan-select__list .zan-select__radio {
+.esp-select-list .esp-select-radio {
   display: none;
 }
 </style>
 <template>
 <block>
   <radio-group
-    class="zan-select__list"
+    class="esp-select-list"
     name="{{ name || componentId || '' }}"
-    bindchange="handleZanSelectChange"
+    bindchange="handleEspSelectChange"
     data-component-id="{{ componentId }}"
   >
     <label wx:for="{{ items }}" wx:key="value">
       <view class="esp-cell">
-        <radio class="zan-select__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
+        <radio class="esp-select-radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
         <view
           class="esp-cell-bd"
           style="{{ 'padding-left: ' + item.padding * 10 + 'px;' + ' color: ' + activeColor }}"
@@ -46,10 +46,10 @@ export default class Select extends wepy.component {
   }
   data = {}
   methods = {
-    handleZanSelectChange(e) {
+    handleEspSelectChange(e) {
       let value = e.detail.value
-      console.info('[zan:Select:change]', value, e)
-      this.$emit('zanSelectChange', value)
+      console.info('[esp:Select:change]', value, e)
+      this.$emit('espSelectChange', value)
     }
   }
   computed = {}

@@ -110,7 +110,7 @@
   <view class="esp-popup {{direction ? 'popup-example-' + direction + ' esp-popup-' + direction : ''}} {{ showPopup ? 'esp-popup-show' : ''}}">
     <view class="esp-popup-mask" bindtap="togglePopup"></view>
     <view class="esp-popup-container {{direction ? '' : 'popup-example-center'}}">
-      <slot></slot>
+      <slot></slots>
     </view>
   </view>
 </template>
