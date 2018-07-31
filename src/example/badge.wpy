@@ -5,10 +5,10 @@
   padding: 40px 0;
   display: flex;
 }
-.demo__item {
+.demo-item {
   flex: 1;
 }
-.demo__icon {
+.demo-icon {
   margin: 0 auto;
   width: 48px;
   height: 48px;
@@ -23,19 +23,19 @@
     <view class="doc-title esp-hairline-bottom">BADGE</view>
 
     <view class="demo">
-      <view class="demo__item">
-        <view class="demo__icon zan-badge">
-          <view class="zan-badge__count">9</view>
+      <view class="demo-item">
+        <view class="demo-icon esp-badge">
+          <view class="esp-badge-count">9</view>
         </view>
       </view>
-      <view class="demo__item">
-        <view class="demo__icon zan-badge">
-          <view class="zan-badge__count">19</view>
+      <view class="demo-item">
+        <view class="demo-icon esp-badge">
+          <view class="esp-badge-count">19</view>
         </view>
       </view>
-      <view class="demo__item">
-        <view class="demo__icon zan-badge">
-          <view class="zan-badge__count">99+</view>
+      <view class="demo-item">
+        <view class="demo-icon esp-badge">
+          <view class="esp-badge-count">99+</view>
         </view>
       </view>
     </view>
