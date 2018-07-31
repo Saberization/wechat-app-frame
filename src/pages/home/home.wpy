@@ -17,7 +17,7 @@
   color: #999;
   font-size: 10px;
 }
-.zan-icon {
+.esp-icon {
   font-size: 24px;
   margin: 20px 20px 10px 20px;
 }
@@ -35,7 +35,7 @@
   <view class="container nav">
     <nav-panel class="panel-example" title="快捷导航">
       <view wx:for="{{ nav }}" wx:key="{{*this.name}}" class="icon-wrap" @tap="openNav({{item.url}})">
-        <view class="zan-icon zan-icon-{{ item.icon }}" style="color: #80848f"></view>
+        <view class="esp-icon esp-icon-{{ item.icon }}" style="color: #80848f"></view>
         <view class="icon-classname">{{item.name}}</view>
       </view>
     </nav-panel>

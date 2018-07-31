@@ -11,7 +11,7 @@
   color: #999;
   font-size: 10px;
 }
-.zan-icon {
+.esp-icon {
   font-size: 24px;
   margin: 20px;
 }
@@ -24,8 +24,8 @@
 
   <view class="esp-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
-      <view class="zan-icon zan-icon-{{ icon }}" style="color: #80848f"></view>
-      <view class="icon-classname">zan-icon-{{ icon }}</view>
+      <view class="esp-icon esp-icon-{{ icon }}" style="color: #80848f"></view>
+      <view class="icon-classname">esp-icon-{{ icon }}</view>
     </view>
   </view>
 </view>

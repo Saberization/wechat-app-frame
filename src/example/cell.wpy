@@ -28,7 +28,7 @@
 
     <panel>
       <view class="esp-cell">
-        <view class="esp-cell-icon zan-icon zan-icon-checked" style="color:#38f;"></view>
+        <view class="esp-cell-icon esp-icon esp-icon-checked" style="color:#38f;"></view>
         <view class="esp-cell-bd">单行列表</view>
         <view class="esp-cell-ft">详细信息</view>
       </view>
