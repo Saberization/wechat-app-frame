@@ -36,16 +36,16 @@
   text-align: right;
   color: #666;
 }
-.zan-cell__no-pading{
+.esp-cell-no-pading {
   padding: 0;
 }
-.zan-cell__no-pading .esp-cell-bd_padding {
+.esp-cell-no-pading .esp-cell-bd-padding {
   padding: 12px 0 12px 15px;
 }
-.zan-cell__no-pading .esp-cell-bd_padding .zan-form__input{
+.esp-cell-no-pading .esp-cell-bd-padding .esp-form-input {
   height: 26px;
 }
-.zan-cell__no-pading .esp-cell-ft_padding {
+.esp-cell-no-pading .esp-cell-ft-padding {
   padding: 12px 15px 12px 0;
 }
 
@@ -71,7 +71,7 @@
   border-style: solid;
   transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
-.zan-cell--switch {
+.esp-cell-switch {
   padding-top: 6px;
   padding-bottom: 6px;
 }

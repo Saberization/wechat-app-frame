@@ -52,7 +52,7 @@
     </panel>
 
     <panel>
-      <view class="esp-cell zan-cell--switch">
+      <view class="esp-cell esp-cell-switch">
         <view class="esp-cell-bd">开关</view>
         <view class="esp-cell-ft">
           <Switch :checked.sync="checked" componentId="Switch"> </Switch>
