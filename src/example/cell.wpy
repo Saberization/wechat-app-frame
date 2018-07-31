@@ -1,6 +1,6 @@
 <style lang="css">
-  @import '/espui/cell.wxss';
-  @import '/espui/icon.wxss';
+  @import '../espui/cell.wxss';
+  @import '../espui/icon.wxss';
 
   .panel-example {
     display: block;
@@ -45,7 +45,7 @@
     </panel>
 
     <panel>
-      <view class="esp-cell zan-cell--access">
+      <view class="esp-cell esp-cell-access">
         <view class="esp-cell-bd">单行列表</view>
         <view class="esp-cell-ft"></view>
       </view>
@@ -61,7 +61,7 @@
     </panel>
 
     <panel>
-      <view class="esp-cell zan-cell--access">
+      <view class="esp-cell esp-cell-access">
         <view class="esp-cell-bd">单行列表</view>
         <view class="esp-cell-ft">详细信息(右侧带箭头)</view>
       </view>
@@ -81,14 +81,14 @@
     </panel>
 
     <panel>
-      <view class="esp-cell zan-cell--access">
+      <view class="esp-cell esp-cell-access">
         <view class="esp-cell-bd">多行列表</view>
         <view class="esp-cell-ft"></view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell zan-cell--access">
+      <view class="esp-cell esp-cell-access">
         <view class="esp-cell-bd">多行列表</view>
         <view class="esp-cell-ft">详细信息</view>
       </view>

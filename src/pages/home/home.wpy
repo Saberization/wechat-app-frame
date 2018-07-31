@@ -41,7 +41,7 @@
     </nav-panel>
 
     <news-panel title="新闻">
-      <view class="esp-cell zan-cell--access" wx:for="{{news}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
+      <view class="esp-cell esp-cell-access" wx:for="{{news}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
         <view class="esp-cell-bd">{{item.title}}</view>
         <view class="esp-cell-ft">{{item.date}}</view>
       </view>

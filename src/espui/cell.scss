@@ -1,4 +1,4 @@
-@import "common";
+@import "./common";
 
 .esp-cell {
   position: relative;
@@ -54,11 +54,11 @@
   display: none;
 }
 
-.zan-cell--access .esp-cell-ft {
+.esp-cell-access .esp-cell-ft {
   padding-right: 13px;
 }
 
-.zan-cell--access .esp-cell-ft::after {
+.esp-cell-access .esp-cell-ft::after {
   position: absolute;
   top: 50%;
   right: 2px;
