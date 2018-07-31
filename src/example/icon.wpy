@@ -22,7 +22,7 @@
 
   <view class="doc-title esp-hairline-bottom">ICON</view>
 
-  <view class="zan-panel">
+  <view class="esp-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
       <view class="zan-icon zan-icon-{{ icon }}" style="color: #80848f"></view>
       <view class="icon-classname">zan-icon-{{ icon }}</view>

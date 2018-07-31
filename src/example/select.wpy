@@ -10,14 +10,14 @@
     <view class="doc-title esp-hairline-bottom">SELECT</view>
 
     <view class="esp-panel-title">基础用法</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view>
         <zanSelect1 :items="items" :checkedValue.sync="checked_base" componentId="base" ></zanSelect1>
       </view>
     </view>
 
     <view class="esp-panel-title">自定义高亮颜色</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view>
         <zanSelect2 :items="items" :checkedValue.sync="checked_color" :activeColor="activeColor" componentId="color" ></zanSelect2>
       </view>
@@ -25,7 +25,7 @@
 
     <view class="esp-panel-title">Form 表单中的select应用</view>
     <form bindsubmit="formSubmit">
-      <view class="zan-panel">
+      <view class="esp-panel">
         <view>
           <zanSelect3 :items="items" :checkedValue.sync="checked_form" name="formtest" componentId="form"></zanSelect3>
         </view>

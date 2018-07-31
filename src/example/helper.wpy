@@ -7,7 +7,7 @@
 <template>
 <view class="container">
 
-  <view class="zan-panel">
+  <view class="esp-panel">
     <view class="zan-cell">
       <view class="zan-cell__bd">
         <view class="zan-pull-right">zan-pull-right: 往右靠</view>

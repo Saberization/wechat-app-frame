@@ -9,7 +9,7 @@
     <view class="doc-title esp-hairline-bottom">BUTTON</view>
 
     <view class="esp-panel-title">普通按钮</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="esp-btns">
         <button class="esp-btn">取消订单</button>
         <button class="esp-btn esp-btn--primary">确认付款</button>
@@ -19,20 +19,20 @@
     </view>
 
     <view class="esp-panel-title">大号按钮，没有边框线及圆角</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <button class="esp-btn esp-btn--large esp-btn--primary">确认付款</button>
       <button class="esp-btn esp-btn--large esp-btn--warn">立即购买</button>
       <button class="esp-btn esp-btn--large esp-btn--danger">立即购买</button>
     </view>
 
     <view class="esp-panel-title">小号按钮</view>
-    <view class="zan-panel" style="padding: 15px;">
+    <view class="esp-panel" style="padding: 15px;">
       <button class="esp-btn esp-btn--small">取消订单</button>
       <button class="esp-btn esp-btn--small esp-btn--primary">确认付款</button>
     </view>
 
     <view class="esp-panel-title">迷你按钮</view>
-    <view class="zan-panel" style="padding: 15px;">
+    <view class="esp-panel" style="padding: 15px;">
       <button class="esp-btn esp-btn--mini esp-btn--plain">取消订单</button>
       <button class="esp-btn esp-btn--mini esp-btn--primary esp-btn--plain">确认付款</button>
       <button class="esp-btn esp-btn--mini esp-btn--warn esp-btn--plain">确认付款</button>
@@ -40,7 +40,7 @@
     </view>
 
     <view class="esp-panel-title">Loading</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="esp-btns">
         <button class="esp-btn esp-btn-loading">取消订单</button>
         <button class="esp-btn esp-btn-loading esp-btn--primary">确认付款</button>
@@ -50,7 +50,7 @@
     </view>
 
     <view class="esp-panel-title">Disabled</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="esp-btns">
         <button class="esp-btn esp-btn--disabled" disabled>取消订单</button>
         <button class="esp-btn esp-btn--disabled esp-btn--primary" disabled>确认付款</button>

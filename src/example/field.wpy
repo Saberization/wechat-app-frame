@@ -12,7 +12,7 @@
 
   <!-- Field 基础用法 -->
   <view class="esp-panel-title">基础用法</view>
-  <view class="zan-panel">
+  <view class="esp-panel">
     <zanField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="zanField1"></zanField1>
     <zanField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="zanField2"></zanField2>
     <zanField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="zanField3"></zanField3>
@@ -26,7 +26,7 @@
 
   <!-- 去除标题后的输入框样式 -->
   <view class="esp-panel-title">无标题输入框</view>
-  <view class="zan-panel">
+  <view class="esp-panel">
     <zanField4 :options="notitle" :value="textareaValue" componentId="zanField4"></zanField4>
   </view>
 
@@ -45,7 +45,7 @@
   <!-- form 中使用 Field -->
   <view class="esp-panel-title">Form 表单中的field应用</view>
   <form bindsubmit="formSubmit" bindreset="formReset">
-    <view class="zan-panel">
+    <view class="esp-panel">
       <zanField8 :options="form_name" componentId="zanField8"></zanField8>
       <zanField9 :options="form_tel" componentId="zanField9"></zanField9>
       <view class="esp-btns">
@@ -60,7 +60,7 @@
   </form>
 
   <view class="esp-panel-title">自定义显示内容</view>
-  <view class="zan-panel">
+  <view class="esp-panel">
     <view class="zan-cell zan-field">
       <view class="zan-cell__hd zan-field__title">选择区域</view>
       <picker

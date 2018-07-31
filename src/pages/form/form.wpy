@@ -8,7 +8,7 @@
 </style>
 
 <template>
-    <view class="zan-panel">
+    <view class="esp-panel">
         <repeat for="{{component_field}}" key="index" index="index" item="item">
             <field :options="item" :value="value" :componentId="item.name" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
         </repeat>

@@ -14,7 +14,7 @@
 
     <view class="doc-title esp-hairline-bottom">STEPS</view>
 
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="zan-cell">
         <view class="zan-cell__bd">
           <zanSteps1 type="horizon" :steps="steps"></zanSteps1>
@@ -35,7 +35,7 @@
     </view>
 
     <view class="esp-panel-title">有描述的steps</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="zan-cell">
         <view class="zan-cell__bd">
           <zanSteps4 type="horizon" :hasDesc="_true" :steps="steps"></zanSteps4>
@@ -56,7 +56,7 @@
     </view>
 
     <view class="esp-panel-title">垂直方向的steps</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="zan-cell zan-cell">
         <view class="zan-cell__bd">
           <zanSteps7 type="vertical" :hasDesc="_true" :steps="steps"></zanSteps7>
@@ -71,7 +71,7 @@
     </view>
 
     <view class="esp-panel-title">可自定义class</view>
-    <view class="zan-panel">
+    <view class="esp-panel">
       <view class="zan-cell__bd">
         <zanSteps9 type="vertical" :steps="steps" className='my-class'></zanSteps9>
       </view>

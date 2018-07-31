@@ -1,23 +1,23 @@
 <style>
-  .zan-panel {
+  .esp-panel {
     position: relative;
     overflow: hidden;
   }
 
-  .zan-panel__title {
+  .esp-panel-title {
     font-size: 14px;
     line-height: 1;
     color: #999;
     padding: 20px 15px 10px 15px;
   }
 
-  .zan-panel__content {
+  .esp-panel-content {
     position: relative;
     background: #fff;
     overflow: hidden;
   }
 
-  .zan-panel__content::after {
+  .esp-panel-content::after {
     content: '';
     position: absolute;
     top: 0;
@@ -35,16 +35,16 @@
     border-bottom-width: 1px;
   }
 
-  .zan-panel--without-border::after {
+  .esp-panel-without-border::after {
     border: 0 none;
   }
 </style>
 
 <template>
-  <view class="zan-panel">
-    <view wx:if="{{title}}" class="zan-panel__title">{{title}}</view>
+  <view class="esp-panel">
+    <view wx:if="{{title}}" class="esp-panel-title">{{title}}</view>
 
-    <view class="zan-panel__content {{ hideBorder ? 'zan-panel--without-border' : '' }}">
+    <view class="esp-panel-content {{ hideBorder ? 'esp-panel-without-border' : '' }}">
       <slot></slot>
     </view>
   </view>
