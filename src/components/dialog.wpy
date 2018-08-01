@@ -2,7 +2,7 @@
 @import '../espui/common';
 
 /* 基础样式 */
-.zan-dialog--container {
+.esp-dialog-container {
   position: fixed;
   top: 45%;
   left: 50%;
@@ -18,7 +18,7 @@
   opacity: 0;
 }
 
-.zan-dialog--mask {
+.esp-dialog-mask {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -30,12 +30,12 @@
 }
 
 /* 弹出层内容 */
-.zan-dialog__header {
+.esp-dialog-header {
   padding: 15px 0 0;
   text-align: center;
 }
 
-.zan-dialog__content {
+.esp-dialog-content {
   position: relative;
   padding: 15px 20px;
   line-height: 1.5;
@@ -48,16 +48,16 @@
 }
 
 /* 在有标题时，需要减弱内容的存在感 */
-.zan-dialog__content--title {
+.esp-dialog-content-title {
   color: #999;
   font-size: 14px;
 }
 
-.zan-dialog__footer {
+.esp-dialog-footer {
   overflow: hidden;
 }
 
-.zan-dialog__button {
+.esp-dialog-button {
   line-height: 50px;
   height: 50px;
   padding: 0 5px;
@@ -71,21 +71,21 @@
 }
 
 /* 展示时，样式重置 */
-.zan-dialog--show .zan-dialog--container {
+.esp-dialog-show .esp-dialog-container {
   opacity: 1;
   height: auto;
 }
 
-.zan-dialog--show .zan-dialog--mask {
+.esp-dialog-show .esp-dialog-mask {
   display: block;
 }
 
 /* 水平/垂直布局 */
-.zan-dialog__footer--horizon {
+.esp-dialog-footer-horizon {
   display: flex;
 }
 
-.zan-dialog__footer--horizon .zan-dialog__button {
+.esp-dialog-footer-horizon .esp-dialog-button {
   flex: 1;
 
   &::after {
@@ -97,7 +97,7 @@
   }
 }
 
-.zan-dialog__footer--vertical .zan-dialog__button {
+.esp-dialog-footer-vertical .esp-dialog-button {
   flex: 1;
 
   &::after {
@@ -110,21 +110,21 @@
 }
 </style>
 <template>
-  <view class="zan-dialog {{ zanDialog.show ? 'zan-dialog--show' : '' }}">
-    <view class="zan-dialog--mask"></view>
-    <view class="zan-dialog--container">
+  <view class="esp-dialog {{ espDialog.show ? 'esp-dialog-show' : '' }}">
+    <view class="esp-dialog-mask"></view>
+    <view class="esp-dialog-container">
       <view
-        wx:if="{{ zanDialog.title }}"
-        class="zan-dialog__header">{{ zanDialog.title }}</view>
+        wx:if="{{ espDialog.title }}"
+        class="esp-dialog-header">{{ espDialog.title }}</view>
       <view
-        class="zan-dialog__content {{ zanDialog.title ? 'zan-dialog__content--title' : '' }}">{{ zanDialog.content }}</view>
+        class="esp-dialog-content {{ espDialog.title ? 'esp-dialog-content-title' : '' }}">{{ espDialog.content }}</view>
       <view
-        class="zan-dialog__footer {{ zanDialog.buttonsShowVertical ? 'zan-dialog__footer--vertical' : 'zan-dialog__footer--horizon' }}">
-        <block wx:for="{{ zanDialog.buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
+        class="esp-dialog-footer {{ espDialog.buttonsShowVertical ? 'esp-dialog-footer-vertical' : 'esp-dialog-footer-horizon' }}">
+        <block wx:for="{{ espDialog.buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
           <button
-            class="zan-dialog__button esp-btn"
+            class="esp-dialog-button esp-btn"
             data-type="{{ item.type }}"
-            catchtap="handleZanDialogButtonClick"
+            catchtap="handleEspDialogButtonClick"
             style="color: {{ item.color || '#333' }}">{{ item.text }}</button>
         </block>
       </view>
@@ -137,11 +137,11 @@ import wepy from 'wepy'
 export default class Dialog extends wepy.component {
   props = {}
   data = {
-    zanDialog: {},
+    espDialog: {},
     animationData: {}
   }
   methods = {
-    showZanDialog(options = {}, e) {
+    showEspDialog(options = {}, e) {
       const {
         // 自定义 btn 列表
         // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
@@ -195,7 +195,7 @@ export default class Dialog extends wepy.component {
       }
 
       return new Promise((resolve, reject) => {
-        this.zanDialog = {
+        this.espDialog = {
           show: true,
           showCustomBtns,
           buttons,
@@ -216,20 +216,20 @@ export default class Dialog extends wepy.component {
       })
     },
 
-    handleZanDialogButtonClick(e) {
+    handleEspDialogButtonClick(e) {
       const _f = function() {}
       const { currentTarget = {} } = e
       const { dataset = {} } = currentTarget
 
       // 获取当次弹出框的信息
-      const zanDialogData = this.zanDialog || {}
-      const { resolve = _f, reject = _f } = zanDialogData
+      const espDialogData = this.espDialog || {}
+      const { resolve = _f, reject = _f } = espDialogData
 
-      // 重置 zanDialog 里的内容
-      this.zanDialog = Object.assign(this.zanDialog, { show: false })
+      // 重置 espDialog 里的内容
+      this.espDialog = Object.assign(this.espDialog, { show: false })
 
       // 自定义按钮，全部 resolve 形式返回，根据 type 区分点击按钮
-      if (zanDialogData.showCustomBtns) {
+      if (espDialogData.showCustomBtns) {
         resolve({
           type: dataset.type
         })

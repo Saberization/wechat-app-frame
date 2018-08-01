@@ -25,25 +25,25 @@
 
   </view>
 
-  <zanDialog/>
+  <espDialog/>
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanDialog from '../components/dialog'
+import espDialog from '../components/dialog'
 
 export default class Dialog extends wepy.page {
   config = {
     navigationBarTitleText: 'Dialog 提示框'
   }
   components = {
-    zanDialog
+    espDialog
   }
   data = {}
   methods = {
     toggleBaseDialog() {
-      this.$invoke('zanDialog', 'showZanDialog', {
+      this.$invoke('espDialog', 'showEspDialog', {
         title: '弹窗',
         content: '这是一个模态弹窗',
         showCancel: true
@@ -57,7 +57,7 @@ export default class Dialog extends wepy.page {
     },
 
     toggleWithoutTitleDialog() {
-      this.$invoke('zanDialog', 'showZanDialog', {
+      this.$invoke('espDialog', 'showEspDialog', {
         content: '这是一个模态弹窗'
       }).then(() => {
         console.log('=== dialog without title ===', 'type: confirm')
@@ -65,7 +65,7 @@ export default class Dialog extends wepy.page {
     },
 
     toggleButtonDialog() {
-      this.$invoke('zanDialog', 'showZanDialog', {
+      this.$invoke('espDialog', 'showEspDialog', {
         title: '弹窗',
         content: '这是一个模态弹窗',
         buttons: [
@@ -90,7 +90,7 @@ export default class Dialog extends wepy.page {
     },
 
     toggleVerticalDialog() {
-      this.$invoke('zanDialog', 'showZanDialog', {
+      this.$invoke('espDialog', 'showEspDialog', {
         title: '弹窗',
         content: '这是一个模态弹窗',
         buttonsShowVertical: true,
