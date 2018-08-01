@@ -8,29 +8,29 @@
     <view class="doc-title esp-hairline-bottom">TAB</view>
 
     <view style="margin: 20px 0">
-      <zanTab1 :tab.sync="tab1" componentId="tab1"></zanTab1>
+      <espTab1 :tab.sync="tab1" componentId="tab1" triggerChange="espTabChange"></espTab1>
     </view>
     <view style="margin: 20px 0">
-      <zanTab2 :tab.sync="tab2" componentId="tab2"></zanTab2>
+      <espTab2 :tab.sync="tab2" componentId="tab2" triggerChange="espTabChange"></espTab2>
     </view>
     <view style="margin: 20px 0">
-      <zanTab3 :tab.sync="tab3" componentId="tab3"></zanTab3>
+      <espTab3 :tab.sync="tab3" componentId="tab3" triggerChange="espTabChange"></espTab3>
     </view>
   </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanTab from '../components/tab'
+import espTab from '../components/tab'
 
 export default class Tab extends wepy.page {
   config = {
     navigationBarTitleText: 'Tab 标签'
   }
   components = {
-    zanTab1: zanTab,
-    zanTab2: zanTab,
-    zanTab3: zanTab
+    espTab1: espTab,
+    espTab2: espTab,
+    espTab3: espTab
   }
   data = {
     tab1: {
@@ -123,9 +123,10 @@ export default class Tab extends wepy.page {
     }
   }
   events = {
-    zanTabChange(selectedId, event) {
-      let { componentId } = event.source
-      this[componentId].selectedId = selectedId
+    espTabChange(result, event) {
+      let { componentId } = result
+      
+      this[componentId].selectedId = result.selectedId
       this.$apply()
     }
   }
