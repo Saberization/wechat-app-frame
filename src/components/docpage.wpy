@@ -36,7 +36,7 @@
 <template>
   <view class="doc-container">
     <view class="doc-title">{{ title }}</view>
-    <view class="doc-content {{ withoutPadding ? 'doc-content-without-pd' : '.doc-content-nopd' }}">
+    <view class="doc-content {{ withoutPadding ? 'doc-content-without-pd' : '' }}">
       <slot></slot>
     </view>
   </view>
