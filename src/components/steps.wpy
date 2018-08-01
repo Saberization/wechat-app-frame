@@ -1,30 +1,30 @@
 <style lang="scss">
-.zan-steps--steps.zan-steps--5 .zan-steps__step {
+.esp-steps-steps.esp-steps-5 .esp-steps-step {
   width: 25%;
 }
 
-.zan-steps--steps.zan-steps--4 .zan-steps__step {
+.esp-steps-steps.esp-steps-4 .esp-steps-step {
   width: 33%;
 }
 
-.zan-steps--steps.zan-steps--3 .zan-steps__step {
+.esp-steps-steps.esp-steps-3 .esp-steps-step {
   width: 50%;
 }
 
-.zan-steps--steps .zan-steps__step {
+.esp-steps-steps .esp-steps-step {
   position: relative;
   float: left;
   padding-bottom: 25px;
   color: #b1b1b1;
 }
 
-.zan-steps--steps .zan-steps__title {
+.esp-steps-steps .esp-steps-title {
   transform: translateX(-50%);
   font-size: 10px;
   text-align: center;
 }
 
-.zan-steps--steps .zan-steps__icons {
+.esp-steps-steps .esp-steps-icons {
   position: absolute;
   top: 30px;
   left: -10px;
@@ -33,7 +33,7 @@
   z-index: 10;
 }
 
-.zan-steps--steps .zan-steps__circle {
+.esp-steps-steps .esp-steps-circle {
   display: block;
   position: relative;
   width: 5px;
@@ -42,7 +42,7 @@
   border-radius: 50%;
 }
 
-.zan-steps--steps .zan-steps__line {
+.esp-steps-steps .esp-steps-line {
   position: absolute;
   left: 0px;
   top: 32px;
@@ -52,101 +52,101 @@
 }
 
 /* 已完成的steps */
-.zan-steps--steps .zan-steps__step--done {
+.esp-steps-steps .esp-steps-step-done {
   color: #333;
 }
 
-.zan-steps--steps .zan-steps__step--done .zan-steps__line {
+.esp-steps-steps .esp-steps-step-done .esp-steps-line {
   background-color: #06bf04;
 }
 
-.zan-steps--steps .zan-steps__step--done .zan-steps__circle {
+.esp-steps-steps .esp-steps-step-done .esp-steps-circle {
   width: 5px;
   height: 5px;
   background-color: #09bb07;
 }
 
 /* 正在进行中的steps */
-.zan-steps--steps .zan-steps__step--cur .zan-steps__icons {
+.esp-steps-steps .esp-steps-step-cur .esp-steps-icons {
   top: 25px;
   left: -14px;
 }
 
-.zan-steps--steps .zan-steps__step--cur .zan-steps__circle {
+.esp-steps-steps .esp-steps-step-cur .esp-steps-circle {
   width: 13px;
   height: 13px;
   background-image: url('https://b.yzcdn.cn/v2/image/wap/success_small@2x.png');
   background-size: 13px 13px;
 }
 
-.zan-steps--steps .zan-steps__step--cur .zan-steps__line {
+.esp-steps-steps .esp-steps-step-cur .esp-steps-line {
   background-color: #e5e5e5;
 }
 
 /* 各种不同位置的 */
-.zan-steps--steps .zan-steps__step--first-child .zan-steps__title {
+.esp-steps-steps .esp-steps-step-first-child .esp-steps-title {
   margin-left: 0;
   transform: none;
   text-align: left;
 }
 
-.zan-steps--steps .zan-steps__step--first-child .zan-steps__icons {
+.esp-steps-steps .esp-steps-step-first-child .esp-steps-icons {
   left: -7px;
 }
 
-.zan-steps--steps .zan-steps__step--last-child {
+.esp-steps-steps .esp-steps-step-last-child {
   position: absolute;
   right: 0;
   top: 0;
   text-align: right;
 }
 
-.zan-steps--steps .zan-steps__step--last-child .zan-steps__title {
+.esp-steps-steps .esp-steps-step-last-child .esp-steps-title {
   transform: none;
   text-align: right;
 }
 
-.zan-steps--steps .zan-steps__step--last-child .zan-steps__icons {
+.esp-steps-steps .esp-steps-step-last-child .esp-steps-icons {
   left: auto;
   right: -6px;
 }
 
-.zan-steps--steps .zan-steps__step--last-child .zan-steps__line {
+.esp-steps-steps .esp-steps-step-last-child .esp-steps-line {
   display: none;
 }
 
 /* 有描述的step */
-.zan-steps--steps .zan-steps__step--db-title {
+.esp-steps-steps .esp-steps-step-db-title {
   min-height: 29px;
 }
 
-.zan-steps--steps .zan-steps__step--db-title .zan-steps__line {
+.esp-steps-steps .esp-steps-step-db-title .esp-steps-line {
   top: 45px;
 }
 
-.zan-steps--steps .zan-steps__step--db-title .zan-steps__icons {
+.esp-steps-steps .esp-steps-step-db-title .esp-steps-icons {
   top: 43px;
 }
 
-.zan-steps--steps .zan-steps__step--db-title.zan-steps__step--cur .zan-steps__icons {
+.esp-steps-steps .esp-steps-step-db-title.esp-steps-step-cur .esp-steps-icons {
   top: 39px;
 }
 
-.zan-steps--vsteps {
+.esp-steps-vsteps {
   color: #999;
   font-size: 14px;
 }
 
-.zan-steps--vsteps .zan-steps__step {
+.esp-steps-vsteps .esp-steps-step {
   position: relative;
   padding: 15px 0;
 }
 
-.zan-steps--vsteps .zan-steps__step--done {
+.esp-steps-vsteps .esp-steps-step-done {
   color: #44bb00;
 }
 
-.zan-steps--vsteps .zan-steps__line {
+.esp-steps-vsteps .esp-steps-line {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -155,17 +155,17 @@
   background-color: #e5e5e5;
 }
 
-.zan-steps--vsteps .zan-steps__title {
+.esp-steps-vsteps .esp-steps-title {
   display: inline-block;
   line-height: 20px;
   padding-left: 27px;
 }
 
-.zan-steps--vsteps .zan-steps__title--desc {
+.esp-steps-vsteps .esp-steps-title-desc {
   padding-left: 3px;
 }
 
-.zan-steps--vsteps .zan-steps__icons {
+.esp-steps-vsteps .esp-steps-icons {
   position: absolute;
   left: 7px;
   top: 50%;
@@ -175,20 +175,20 @@
   background-color: #fff;
 }
 
-.zan-steps--vsteps .zan-steps__circle {
+.esp-steps-vsteps .esp-steps-circle {
   width: 5px;
   height: 5px;
   background-color: #cacaca;
   border-radius: 10px;
 }
 
-.zan-steps--vsteps .zan-steps__step--done .zan-steps__circle {
+.esp-steps-vsteps .esp-steps-step-done .esp-steps-circle {
   width: 5px;
   height: 5px;
   background-color: #09bb07;
 }
 
-.zan-steps--vsteps .zan-steps__step--cur .zan-steps__circle {
+.esp-steps-vsteps .esp-steps-step-cur .esp-steps-circle {
   width: 13px;
   height: 13px;
   background: transparent url('https://b.yzcdn.cn/v2/image/wap/success_small@2x.png');
@@ -196,12 +196,12 @@
   border-radius: 0;
 }
 
-.zan-steps--vsteps .zan-steps__icon--active {
+.esp-steps-vsteps .esp-steps-icon-active {
   width: 13px;
   height: 13px;
 }
 
-.zan-steps--vsteps .zan-steps__step--first-child .zan-steps__title::before {
+.esp-steps-vsteps .esp-steps-step-first-child .esp-steps-title::before {
   content: '';
   position: absolute;
   top: 0;
@@ -212,7 +212,7 @@
   z-index: 1;
 }
 
-.zan-steps--vsteps .zan-steps__step--last-child .zan-steps__title::after {
+.esp-steps-vsteps .esp-steps-step-last-child .esp-steps-title::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -223,22 +223,22 @@
   z-index: 1;
 }
 
-.zan-steps {
+.esp-steps {
   position: relative;
 }
 </style>
 <template>
-  <view class="zan-steps zan-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zan-steps--{{ steps.length }} {{ className }}">
+  <view class="esp-steps esp-steps-{{ type == 'vertical' ? 'vsteps' : 'steps' }} esp-steps-{{ steps.length }} {{ className }}">
     <view
       wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
-      class="zan-steps__step {{ hasDesc ? 'zan-steps__step--db-title' : '' }} {{ index == 0 ? 'zan-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'zan-steps__step--last-child' : '' }} {{ step.done ? 'zan-steps__step--done' : '' }} {{ step.current ? 'zan-steps__step--cur' : '' }}"
+      class="esp-steps-step {{ hasDesc ? 'esp-steps-step-db-title' : '' }} {{ index == 0 ? 'esp-steps-step-first-child' : '' }} {{ index == steps.length - 1 ? 'esp-steps-step-last-child' : '' }} {{ step.done ? 'esp-steps-step-done' : '' }} {{ step.current ? 'esp-steps-step-cur' : '' }}"
     >
-      <view class="zan-steps__title">{{ step.text }}</view>
-      <view wx:if="{{ hasDesc && step.desc }}" class="zan-steps__title zan-steps__title--desc">{{ step.desc }}</view>
-      <view class="zan-steps__icons">
-        <view class="zan-steps__circle"></view>
+      <view class="esp-steps-title">{{ step.text }}</view>
+      <view wx:if="{{ hasDesc && step.desc }}" class="esp-steps-title esp-steps-title-desc">{{ step.desc }}</view>
+      <view class="esp-steps-icons">
+        <view class="esp-steps-circle"></view>
       </view>
-      <view class="zan-steps__line"></view>
+      <view class="esp-steps-line"></view>
     </view>
   </view>
 </template>

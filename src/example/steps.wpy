@@ -4,7 +4,7 @@
 .my-class {
   padding: 10px;
 }
-.my-class .zan-steps__step--done {
+.my-class .esp-steps-step-done {
   color: #f44;
 }
 </style>
@@ -17,19 +17,19 @@
     <view class="esp-panel">
       <view class="esp-cell">
         <view class="esp-cell-bd">
-          <zanSteps1 type="horizon" :steps="steps"></zanSteps1>
+          <espSteps1 type="horizon" :steps="steps"></espSteps1>
         </view>
       </view>
 
       <view class="esp-cell">
         <view class="esp-cell-bd">
-          <zanSteps2 type="horizon" :steps="steps2"></zanSteps2>
+          <espSteps2 type="horizon" :steps="steps2"></espSteps2>
         </view>
       </view>
 
       <view class="esp-cell esp-cell-last-child">
         <view class="esp-cell-bd">
-          <zanSteps3 type="horizon" :steps="steps3"></zanSteps3>
+          <espSteps3 type="horizon" :steps="steps3"></espSteps3>
         </view>
       </view>
     </view>
@@ -38,19 +38,19 @@
     <view class="esp-panel">
       <view class="esp-cell">
         <view class="esp-cell-bd">
-          <zanSteps4 type="horizon" :hasDesc="_true" :steps="steps"></zanSteps4>
+          <espSteps4 type="horizon" :hasDesc="_true" :steps="steps"></espSteps4>
         </view>
       </view>
 
       <view class="esp-cell">
         <view class="esp-cell-bd">
-          <zanSteps5 type="horizon" :hasDesc="_true" :steps="steps2"></zanSteps5>
+          <espSteps5 type="horizon" :hasDesc="_true" :steps="steps2"></espSteps5>
         </view>
       </view>
 
       <view class="esp-cell esp-cell-last-child">
         <view class="esp-cell-bd">
-          <zanSteps6 type="horizon" :hasDesc="_true" :steps="steps3"></zanSteps6>
+          <espSteps6 type="horizon" :hasDesc="_true" :steps="steps3"></espSteps6>
         </view>
       </view>
     </view>
@@ -59,13 +59,13 @@
     <view class="esp-panel">
       <view class="esp-cell">
         <view class="esp-cell-bd">
-          <zanSteps7 type="vertical" :hasDesc="_true" :steps="steps"></zanSteps7>
+          <espSteps7 type="vertical" :hasDesc="_true" :steps="steps"></espSteps7>
         </view>
       </view>
 
       <view class="esp-cell esp-cell-last-child">
         <view class="esp-cell-bd">
-          <zanSteps8 type="vertical" :steps="steps"></zanSteps8>
+          <espSteps8 type="vertical" :steps="steps"></espSteps8>
         </view>
       </view>
     </view>
@@ -73,7 +73,7 @@
     <view class="esp-panel-title">可自定义class</view>
     <view class="esp-panel">
       <view class="esp-cell-bd">
-        <zanSteps9 type="vertical" :steps="steps" className='my-class'></zanSteps9>
+        <espSteps9 type="vertical" :steps="steps" className='my-class'></espSteps9>
       </view>
     </view>
 
@@ -82,22 +82,22 @@
 
 <script>
 import wepy from 'wepy'
-import zanSteps from '../components/steps'
+import espSteps from '../components/steps'
 
 export default class Steps extends wepy.page {
   config = {
     navigationBarTitleText: 'Steps 步骤条'
   }
   components = {
-    zanSteps1: zanSteps,
-    zanSteps2: zanSteps,
-    zanSteps3: zanSteps,
-    zanSteps4: zanSteps,
-    zanSteps5: zanSteps,
-    zanSteps6: zanSteps,
-    zanSteps7: zanSteps,
-    zanSteps8: zanSteps,
-    zanSteps9: zanSteps
+    espSteps1: espSteps,
+    espSteps2: espSteps,
+    espSteps3: espSteps,
+    espSteps4: espSteps,
+    espSteps5: espSteps,
+    espSteps6: espSteps,
+    espSteps7: espSteps,
+    espSteps8: espSteps,
+    espSteps9: espSteps
   }
   data = {
     _true: true,
