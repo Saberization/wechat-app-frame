@@ -1,12 +1,12 @@
 <style lang="scss">
 @import '../espui/cell.scss';
 
-.zan-field {
+.esp-field {
   padding: 7px 15px;
   color: #333;
 }
 
-.zan-field--wrapped {
+.esp-field-wrapped {
   margin: 0 15px;
   background-color: #fff;
 
@@ -17,26 +17,26 @@
   }
 }
 
-.zan-field--wrapped + .zan-field--wrapped {
+.esp-field-wrapped + .esp-field-wrapped {
   margin-top: 10px;
 }
 
-.zan-field--error {
+.esp-field-error {
   color: #f40;
 }
 
 /* 圆角输入框时，将边框也置红 */
-.zan-field--wrapped.zan-field--error::after {
+.esp-field-wrapped.esp-field-error::after {
   border-color: #f40;
 }
 
-.zan-field__title {
+.esp-field-title {
   color: #333;
   min-width: 65px;
   padding-right: 10px;
 }
 
-.zan-field__input {
+.esp-field-input {
   flex: 1;
   line-height: 1.6;
   padding: 4px 0;
@@ -45,30 +45,30 @@
   font-size: 14px;
 }
 
-.zan-field__placeholder {
+.esp-field-placeholder {
   font-size: 14px;
 }
 
-.zan-field__input--right {
+.esp-field-input-right {
   text-align: right;
 }
 </style>
 <template>
-  <view class="esp-cell zan-field {{ options.error ? 'zan-field--error' : '' }} {{ options.mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
+  <view class="esp-cell esp-field {{ options.error ? 'esp-field-error' : '' }} {{ options.mode === 'wrapped' ? 'esp-field-wrapped' : '' }}">
     <view
       wx:if="{{ options.title }}"
-      class="zan-cell__hd zan-field__title">{{ options.title }}</view>
+      class="esp-cell-hd esp-field-title">{{ options.title }}</view>
     <textarea
       wx:if="{{ options.type === 'textarea' }}"
       auto-height
       name="{{ options.name || componentId || '' }}"
       value="{{ options.value }}"
       placeholder="{{ options.placeholder }}"
-      class="zan-field__input esp-cell-bd {{ options.right ? 'zan-field__input--right' : '' }}"
-      placeholder-class="zan-field__placeholder"
-      bindinput="handleZanFieldChange"
-      bindfocus="handleZanFieldFocus"
-      bindblur="handleZanFieldBlur"
+      class="esp-field-input esp-cell-bd {{ options.right ? 'esp-field-input-right' : '' }}"
+      placeholder-class="esp-field-placeholder"
+      bindinput="handleEspFieldChange"
+      bindfocus="handleEspFieldFocus"
+      bindblur="handleEspFieldBlur"
       data-component-id="{{ componentId || '' }}"></textarea>
     <input
       wx:else
@@ -76,8 +76,8 @@
       name="{{ options.name || componentId || '' }}"
       value="{{ options.value }}"
       placeholder="{{ options.placeholder }}"
-      class="zan-field__input esp-cell-bd {{ options.right ? 'zan-field__input--right' : '' }}"
-      placeholder-class="zan-field__placeholder"
+      class="esp-field-input esp-cell-bd {{ options.right ? 'esp-field-input-right' : '' }}"
+      placeholder-class="esp-field-placeholder"
       bindinput="handleChange"
       bindfocus="handleFocus"
       bindblur="handleBlur"

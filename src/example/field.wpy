@@ -13,9 +13,9 @@
   <!-- Field 基础用法 -->
   <view class="esp-panel-title">基础用法</view>
   <view class="esp-panel">
-    <zanField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="zanField1"></zanField1>
-    <zanField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="zanField2"></zanField2>
-    <zanField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="zanField3"></zanField3>
+    <espField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="espField1"></espField1>
+    <espField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="espField2"></espField2>
+    <espField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="espField3"></espField3>
   </view>
 
   <view class="esp-btns">
@@ -27,7 +27,7 @@
   <!-- 去除标题后的输入框样式 -->
   <view class="esp-panel-title">无标题输入框</view>
   <view class="esp-panel">
-    <zanField4 :options="notitle" :value="textareaValue" componentId="zanField4"></zanField4>
+    <espField4 :options="notitle" :value="textareaValue" componentId="espField4"></espField4>
   </view>
 
   <view class="esp-btns">
@@ -38,16 +38,16 @@
 
   <!-- 使用 Field 圆角样式 -->
   <view class="esp-panel-title field__title--radius">圆角输入框</view>
-  <zanField5 :options="radius_totalPrice" componentId="zanField5"></zanField5>
-  <zanField6 :options="radius_excludePrice" componentId="zanField6"></zanField6>
-  <zanField7 :options="radius_notitle" componentId="zanField7"></zanField7>
+  <espField5 :options="radius_totalPrice" componentId="espField5"></espField5>
+  <espField6 :options="radius_excludePrice" componentId="espField6"></espField6>
+  <espField7 :options="radius_notitle" componentId="espField7"></espField7>
 
   <!-- form 中使用 Field -->
   <view class="esp-panel-title">Form 表单中的field应用</view>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="esp-panel">
-      <zanField8 :options="form_name" componentId="zanField8"></zanField8>
-      <zanField9 :options="form_tel" componentId="zanField9"></zanField9>
+      <espField8 :options="form_name" componentId="espField8"></espField8>
+      <espField9 :options="form_tel" componentId="espField9"></espField9>
       <view class="esp-btns">
         <button
           class="esp-btn esp-btn-primary"
@@ -61,11 +61,11 @@
 
   <view class="esp-panel-title">自定义显示内容</view>
   <view class="esp-panel">
-    <view class="esp-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">选择区域</view>
+    <view class="esp-cell esp-field">
+      <view class="esp-cell-hd esp-field-title">选择区域</view>
       <picker
         mode="selector"
-        class="zan-field__input esp-cell-bd"
+        class="esp-field-input esp-cell-bd"
         range="{{ area }}"
         value="{{ areaIndex }}"
         bindchange="onAreaChange"
@@ -74,12 +74,12 @@
       </picker>
     </view>
 
-    <view class="esp-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">验证码</view>
+    <view class="esp-cell esp-field">
+      <view class="esp-cell-hd esp-field-title">验证码</view>
       <input
         type="text"
         placeholder="请输入短信验证码"
-        class="zan-field__input esp-cell-bd"/>
+        class="esp-field-input esp-cell-bd"/>
       <view class="esp-cell-ft">
         <button class="esp-btn esp-btn-mini esp-btn-primary">获取验证码</button>
       </view>
@@ -90,22 +90,22 @@
 
 <script>
 import wepy from 'wepy'
-import zanField from '../components/field'
+import espField from '../components/field'
 
 export default class field extends wepy.page {
   config = {
     navigationBarTitleText: 'Field 输入框'
   }
   components = {
-    zanField1: zanField,
-    zanField2: zanField,
-    zanField3: zanField,
-    zanField4: zanField,
-    zanField5: zanField,
-    zanField6: zanField,
-    zanField7: zanField,
-    zanField8: zanField,
-    zanField9: zanField,
+    espField1: espField,
+    espField2: espField,
+    espField3: espField,
+    espField4: espField,
+    espField5: espField,
+    espField6: espField,
+    espField7: espField,
+    espField8: espField,
+    espField9: espField,
   }
   data = {
     // 基础类型输入框配置
@@ -210,21 +210,21 @@ export default class field extends wepy.page {
     },
 
     clearInput() {
-      this.$invoke('zanField1', 'clear')
-      this.$invoke('zanField2', 'clear')
-      this.$invoke('zanField3', 'clear')
+      this.$invoke('espField1', 'clear')
+      this.$invoke('espField2', 'clear')
+      this.$invoke('espField3', 'clear')
     },
 
     clearTextarea() {
-      this.$invoke('zanField4', 'clear')
+      this.$invoke('espField4', 'clear')
     },
 
     formSubmit(event) {
-      console.log('[zan:field:submit]', event.detail.value)
+      console.log('[esp:field:submit]', event.detail.value)
     },
 
     formReset(event) {
-      console.log('[zan:field:reset]', event)
+      console.log('[esp:field:reset]', event)
     }
   }
   events = {

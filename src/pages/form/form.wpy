@@ -13,9 +13,9 @@
             <field :options="item" :value="value" :componentId="item.name" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
         </repeat>
 
-        <view class="esp-cell zan-field">
-            <view class="zan-cell__hd zan-field__title">验证码</view>
-            <input type="text" placeholder="请输入短信验证码" class="zan-field__input esp-cell-bd" />
+        <view class="esp-cell esp-field">
+            <view class="esp-cell-hd esp-field-title">验证码</view>
+            <input type="text" placeholder="请输入短信验证码" class="esp-field-input esp-cell-bd" />
             <view class="esp-cell-ft">
                 <button class="esp-btn esp-btn-mini esp-btn-primary">获取验证码</button>
             </view>
