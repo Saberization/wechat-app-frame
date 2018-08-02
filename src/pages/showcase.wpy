@@ -26,7 +26,7 @@ export default class Example extends wepy.page {
 
   events = {
     success: (path) => {
-      console.log(path);
+      this.$navigate(path);
     }
   };
 
