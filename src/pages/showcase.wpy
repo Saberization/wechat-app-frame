@@ -1,5 +1,5 @@
 <template>
-  <docpage title="组件使用实例">
+  <docpage title="组件使用实例" :withoutPadding="withoutPadding">
     <dashboard></dashboard>
   </docpage>
 </template>
@@ -19,6 +19,10 @@ export default class Example extends wepy.page {
     docpage,
     dashboard
   }
+
+  data = {
+    withoutPadding: true
+  };
 
   onLoad() {}
 }

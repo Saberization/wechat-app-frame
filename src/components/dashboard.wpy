@@ -37,7 +37,7 @@ export default class Dashboard extends wepy.component {
 
   methods = {
     openPage(path) {
-      wx.navigateTo({
+      this.$navigate({
         url: path
       });
     }
