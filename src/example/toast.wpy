@@ -15,25 +15,25 @@
     </view>
   </view>
 
-  <zanToast></zanToast>
+  <espToast></espToast>
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import zanToast from '../components/toast'
+import espToast from '../components/toast'
 
 export default class Toast extends wepy.page {
   config = {
     navigationBarTitleText: 'Toast 轻提示'
   }
   components = {
-    zanToast
+    espToast
   }
   data = {}
   methods = {
     showToast() {
-      this.$invoke('zanToast', 'showZanToast', { title: 'Toast的内容 Wepy', timeout: 2000 })
+      this.$invoke('espToast', 'showEspToast', { title: 'Toast的内容', timeout: 2000 })
     }
   }
   onLoad() {}

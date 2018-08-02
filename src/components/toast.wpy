@@ -1,5 +1,5 @@
 <style lang="less">
-.zan-toast {
+.esp-toast {
   position: fixed;
   top: 35%;
   left: 20%;
@@ -18,8 +18,8 @@
 }
 </style>
 <template>
-  <view class="zan-toast" wx:if="{{ zanToast.show }}" @tap="clearZanToast">
-    {{ zanToast.title }}</view>
+  <view class="esp-toast" wx:if="{{ espToast.show }}" @tap="clearEspToast">
+    {{ espToast.title }}</view>
 </template>
 <script>
 import wepy from 'wepy'
@@ -27,32 +27,32 @@ import wepy from 'wepy'
 export default class Toast extends wepy.component {
   props = {}
   data = {
-    zanToast: {}
+    espToast: {}
   }
   methods = {
-    showZanToast({title, timeout}) {
-      var zanToast = this.zanToast || {}
-      clearTimeout(zanToast.timer)
+    showEspToast({title, timeout}) {
+      var espToast = this.espToast || {}
+      clearTimeout(espToast.timer)
 
       // 弹层设置~
-      this.zanToast = {
+      this.espToast = {
         show: true,
         title
       }
       this.$apply()
 
       var timer = setTimeout(() => {
-        this.methods.clearZanToast.call(this)
+        this.methods.clearEspToast.call(this)
       }, timeout || 3000)
 
-      this.zanToast.timer = timer
+      this.espToast.timer = timer
       this.$apply()
     },
-    clearZanToast() {
-      var zanToast = this.zanToast || {}
-      clearTimeout(zanToast.timer)
+    clearEspToast() {
+      var espToast = this.espToast || {}
+      clearTimeout(espToast.timer)
 
-      this.zanToast.show = false
+      this.espToast.show = false
       this.$apply()
     }
   }
