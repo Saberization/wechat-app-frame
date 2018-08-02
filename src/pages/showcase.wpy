@@ -1,6 +1,6 @@
 <template>
   <docpage title="组件使用实例" :withoutPadding="withoutPadding">
-    <dashboard></dashboard>
+    <dashboard triggerTap="success"></dashboard>
   </docpage>
 </template>
 
@@ -22,6 +22,12 @@ export default class Example extends wepy.page {
 
   data = {
     withoutPadding: true
+  };
+
+  events = {
+    success: (path) => {
+      console.log(path);
+    }
   };
 
   onLoad() {}

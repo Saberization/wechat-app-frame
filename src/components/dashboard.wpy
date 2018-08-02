@@ -31,15 +31,19 @@ import wepy from 'wepy';
 import listdata from '../config.js';
 
 export default class Dashboard extends wepy.component {
+  props = {
+    triggerTap: String
+  };
+
   data = {
     listdata
   };
 
   methods = {
     openPage(path) {
-      this.$navigate({
-        url: path
-      });
+      if (this.triggerTap) {
+        this.$emit(this.triggerTap, path);
+      }
     }
   };
 }
