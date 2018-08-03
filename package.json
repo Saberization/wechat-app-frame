@@ -1,6 +1,6 @@
 {
-  "name": "wechat-app-frame",
-  "version": "0.0.2",
+  "name": "esp-frame",
+  "version": "1.0.0",
   "description": "微信小程序开发框架",
   "main": "dist/app.js",
   "scripts": {
