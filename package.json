@@ -1,5 +1,5 @@
 {
-  "name": "esp-frame",
+  "name": "epoint.wechat.miniappframe",
   "version": "1.0.0",
   "description": "微信小程序开发框架",
   "main": "dist/app.js",

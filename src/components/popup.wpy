@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="css">
 .esp-popup {
   visibility: hidden;
 }
@@ -106,32 +106,47 @@
   right: 0;
 }
 </style>
+
 <template>
-  <view class="esp-popup {{direction ? 'popup-example-' + direction + ' esp-popup-' + direction : ''}} {{ showPopup ? 'esp-popup-show' : ''}}">
-    <view class="esp-popup-mask" bindtap="togglePopup"></view>
-    <view class="esp-popup-container {{direction ? '' : 'popup-example-center'}}">
-      <slot></slots>
+    <view class="esp-popup {{direction ? 'popup-example-' + direction + ' esp-popup-' + direction : ''}} {{ showPopup ? 'esp-popup-show' : ''}}">
+        <view wx:if="{{overlay}}" class="{{showOverlay ? 'esp-popup-mask' : ''}}" @tap="togglePopup"></view>
+        <view class="esp-popup-container {{direction ? '' : 'popup-example-center'}}">
+            <slot></slot>
+        </view>
     </view>
-  </view>
 </template>
+
 <script>
-import wepy from 'wepy'
+import wepy from 'wepy';
 
 export default class Popup extends wepy.component {
   props = {
+    // 内容从哪个方向出，可选 center top bottom left right
     direction: {
       type: String,
       default: ''
+    },
+    // 是否有遮罩
+    overlay: {
+      type: Boolean,
+      default: true
+    },
+    // 遮罩是否会显示
+    showOverlay: {
+      type: Boolean,
+      default: true
     }
-  }
+  };
+
   data = {
     showPopup: false
-  }
+  };
+
   methods = {
     togglePopup() {
-      this.showPopup = !this.showPopup
-      this.$apply()
+      this.showPopup = !this.showPopup;
+      this.$apply();
     }
-  }
+  };
 }
 </script>

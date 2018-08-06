@@ -1,5 +1,4 @@
 <style lang="css">
-@import '../assets/picker';
 </style>
 
 <template>

@@ -46,8 +46,8 @@ import 'wepy-async-function';
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/home/home',
       'pages/showcase',
+      'pages/home/home',
       'pages/information/list',
       'pages/form/form',
       'pages/common/detail',
