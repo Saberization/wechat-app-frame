@@ -27,4 +27,43 @@ wepy build --watch
 
 ## 预览
 
-打开[微信官方小程序开发工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，
+打开[微信官方小程序开发工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，选择小程序项目
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01cz9rrnj30ik0qcabe.jpg)
+
+点击右下角的 `➕`
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01e6vowej30ys0qcq4n.jpg)
+
+项目目录选择 `wechat.miniapp.frame -> dist` 目录
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01ihph6jj30qi09uac9.jpg)
+
+填写完毕后点确定
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01k7enivj30mu0qcwgf.jpg)
+
+进入开发工具后，点击 `设置` -> `项目设置`
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01m3bgyvj30u80fowi0.jpg)
+
+将如下几个去掉勾选
+
+- ES6 转 ES5
+- 上传代码时样式自动补全
+- 上传代码时自动压缩
+
+__注意：__ 如果接口不是 `https` 协议的话，需要将 `不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书` 选项打钩。
+
+如图：
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01pkom8jj30k40cyq42.jpg)
+
+进行好以上操作步骤，可以看到我们的首页已经出来了，接下来就可以进行开发了。
+
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01qgybo1j313w13u44w.jpg)
+
+## 附录
+
+- [微信小程序官方api文档](https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html)
+- [wepy官方文档](https://tencent.github.io/wepy/document.html#/)
