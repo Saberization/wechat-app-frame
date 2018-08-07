@@ -8,11 +8,13 @@
 
 #### 安装（更新） wepy 命令行工具。
 
+> 不要用 cnpm 安装
+
 ```
 npm install wepy-cli -g
 ```
 
-如果安装很慢，或者安装失败，点击这里[npm install wepy-cli -g 安装的很慢怎么办](https://github.com/Saberization/wechat-app-frame/issues)
+如果安装很慢，或者安装失败，点击这里[wepy-cli安装的很慢怎么办](https://github.com/Saberization/wechat-app-frame/issues/1)
 
 #### 安装依赖
 
