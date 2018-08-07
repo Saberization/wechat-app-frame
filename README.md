@@ -1,4 +1,4 @@
-# epoint.wechat.miniappframe 小程序开发框架
+# wechat.mp.frame 小程序开发框架
 
 ## 入门指南
 
@@ -11,6 +11,8 @@
 ```
 npm install wepy-cli -g
 ```
+
+如果安装很慢，或者安装失败，点击这里[npm install wepy-cli -g 安装的很慢怎么办](https://github.com/Saberization/wechat-app-frame/issues)
 
 #### 安装依赖
 
@@ -29,19 +31,19 @@ wepy build --watch
 
 打开[微信官方小程序开发工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，选择小程序项目
 
-![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01cz9rrnj30ik0qcabe.jpg)
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu17l4tbnkj30os0wkadx.jpg)
 
 点击右下角的 `➕`
 
-![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01e6vowej30ys0qcq4n.jpg)
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu17nl456ij31500wkdkc.jpg)
 
-项目目录选择 `wechat.miniapp.frame -> dist` 目录
+项目目录选择 `wechat.mp.frame -> dist` 目录
 
-![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01ihph6jj30qi09uac9.jpg)
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu17p0f8d7j31d00ugdrs.jpg)
 
 填写完毕后点确定
 
-![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01k7enivj30mu0qcwgf.jpg)
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu17pykpg4j30t20wktd5.jpg)
 
 进入开发工具后，点击 `设置` -> `项目设置`
 
@@ -61,7 +63,7 @@ __注意：__ 如果接口不是 `https` 协议的话，需要将 `不校验合�
 
 进行好以上操作步骤，可以看到我们的首页已经出来了，接下来就可以进行开发了。
 
-![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu01qgybo1j313w13u44w.jpg)
+![](https://ws1.sinaimg.cn/large/006d7zD3gy1fu17qyjkdbj31r41a8n95.jpg)
 
 ## 附录
 
