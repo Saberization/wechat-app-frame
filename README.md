@@ -1,5 +1,11 @@
 # wechat.mp.frame 小程序开发框架
 
+![build](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![coverage](	https://img.shields.io/coveralls/github/jekyll/jekyll.svg)
+![npm](https://img.shields.io/badge/npm-6.1.0-blue.svg)
+![wepy](https://img.shields.io/badge/wepy-1.7.3-blue.svg)
+![license](https://img.shields.io/badge/license-MIT-green.svg)
+
 ## 入门指南
 
 入门的前提是你已经安装了 `node` 环境，如果已经安装的话可以接着往下看，如果没有安装的话，可以看下 [Node.js安装及环境配置之Windows篇](https://www.jianshu.com/p/03a76b2e7e00)，根据文章安装配置一下。
