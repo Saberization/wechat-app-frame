@@ -1,6 +1,6 @@
 {
   "name": "wechat.miniapp.frame",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "微信小程序开发框架",
   "main": "dist/app.js",
   "scripts": {
