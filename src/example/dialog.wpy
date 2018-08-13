@@ -6,44 +6,44 @@
 <block>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">DIALOG</view>
+    <view class="doc-title emp-hairline-bottom">DIALOG</view>
 
-    <view class="esp-btns" style="margin-top: 30vh;">
-      <button class="esp-btn" @tap="toggleBaseDialog">
+    <view class="emp-btns" style="margin-top: 30vh;">
+      <button class="emp-btn" @tap="toggleBaseDialog">
         基础 Dialog
       </button>
-      <button class="esp-btn" @tap="toggleWithoutTitleDialog">
+      <button class="emp-btn" @tap="toggleWithoutTitleDialog">
         Dialog - 无标题
       </button>
-      <button class="esp-btn" @tap="toggleButtonDialog">
+      <button class="emp-btn" @tap="toggleButtonDialog">
         Dialog - 自定义显示按钮
       </button>
-      <button class="esp-btn" @tap="toggleVerticalDialog">
+      <button class="emp-btn" @tap="toggleVerticalDialog">
         Dialog - 按钮纵向排布
       </button>
     </view>
 
   </view>
 
-  <espDialog/>
+  <empDialog/>
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import espDialog from '../components/dialog'
+import empDialog from '../components/dialog'
 
 export default class Dialog extends wepy.page {
   config = {
     navigationBarTitleText: 'Dialog 提示框'
   }
   components = {
-    espDialog
+    empDialog
   }
   data = {}
   methods = {
     toggleBaseDialog() {
-      this.$invoke('espDialog', 'showEspDialog', {
+      this.$invoke('empDialog', 'showEmpDialog', {
         title: '弹窗',
         content: '这是一个模态弹窗',
         showCancel: true
@@ -57,7 +57,7 @@ export default class Dialog extends wepy.page {
     },
 
     toggleWithoutTitleDialog() {
-      this.$invoke('espDialog', 'showEspDialog', {
+      this.$invoke('empDialog', 'showEmpDialog', {
         content: '这是一个模态弹窗'
       }).then(() => {
         console.log('=== dialog without title ===', 'type: confirm')
@@ -65,7 +65,7 @@ export default class Dialog extends wepy.page {
     },
 
     toggleButtonDialog() {
-      this.$invoke('espDialog', 'showEspDialog', {
+      this.$invoke('empDialog', 'showEmpDialog', {
         title: '弹窗',
         content: '这是一个模态弹窗',
         buttons: [
@@ -90,7 +90,7 @@ export default class Dialog extends wepy.page {
     },
 
     toggleVerticalDialog() {
-      this.$invoke('espDialog', 'showEspDialog', {
+      this.$invoke('empDialog', 'showEmpDialog', {
         title: '弹窗',
         content: '这是一个模态弹窗',
         buttonsShowVertical: true,
