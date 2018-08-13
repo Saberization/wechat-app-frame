@@ -1,30 +1,30 @@
 <style lang="scss">
-.esp-steps-steps.esp-steps-5 .esp-steps-step {
+.emp-steps-steps.emp-steps-5 .emp-steps-step {
   width: 25%;
 }
 
-.esp-steps-steps.esp-steps-4 .esp-steps-step {
+.emp-steps-steps.emp-steps-4 .emp-steps-step {
   width: 33%;
 }
 
-.esp-steps-steps.esp-steps-3 .esp-steps-step {
+.emp-steps-steps.emp-steps-3 .emp-steps-step {
   width: 50%;
 }
 
-.esp-steps-steps .esp-steps-step {
+.emp-steps-steps .emp-steps-step {
   position: relative;
   float: left;
   padding-bottom: 25px;
   color: #b1b1b1;
 }
 
-.esp-steps-steps .esp-steps-title {
+.emp-steps-steps .emp-steps-title {
   transform: translateX(-50%);
   font-size: 10px;
   text-align: center;
 }
 
-.esp-steps-steps .esp-steps-icons {
+.emp-steps-steps .emp-steps-icons {
   position: absolute;
   top: 30px;
   left: -10px;
@@ -33,7 +33,7 @@
   z-index: 10;
 }
 
-.esp-steps-steps .esp-steps-circle {
+.emp-steps-steps .emp-steps-circle {
   display: block;
   position: relative;
   width: 5px;
@@ -42,7 +42,7 @@
   border-radius: 50%;
 }
 
-.esp-steps-steps .esp-steps-line {
+.emp-steps-steps .emp-steps-line {
   position: absolute;
   left: 0px;
   top: 32px;
@@ -52,101 +52,101 @@
 }
 
 /* 已完成的steps */
-.esp-steps-steps .esp-steps-step-done {
+.emp-steps-steps .emp-steps-step-done {
   color: #333;
 }
 
-.esp-steps-steps .esp-steps-step-done .esp-steps-line {
+.emp-steps-steps .emp-steps-step-done .emp-steps-line {
   background-color: #06bf04;
 }
 
-.esp-steps-steps .esp-steps-step-done .esp-steps-circle {
+.emp-steps-steps .emp-steps-step-done .emp-steps-circle {
   width: 5px;
   height: 5px;
   background-color: #09bb07;
 }
 
 /* 正在进行中的steps */
-.esp-steps-steps .esp-steps-step-cur .esp-steps-icons {
+.emp-steps-steps .emp-steps-step-cur .emp-steps-icons {
   top: 25px;
   left: -14px;
 }
 
-.esp-steps-steps .esp-steps-step-cur .esp-steps-circle {
+.emp-steps-steps .emp-steps-step-cur .emp-steps-circle {
   width: 13px;
   height: 13px;
   background-image: url('https://b.yzcdn.cn/v2/image/wap/success_small@2x.png');
   background-size: 13px 13px;
 }
 
-.esp-steps-steps .esp-steps-step-cur .esp-steps-line {
+.emp-steps-steps .emp-steps-step-cur .emp-steps-line {
   background-color: #e5e5e5;
 }
 
 /* 各种不同位置的 */
-.esp-steps-steps .esp-steps-step-first-child .esp-steps-title {
+.emp-steps-steps .emp-steps-step-first-child .emp-steps-title {
   margin-left: 0;
   transform: none;
   text-align: left;
 }
 
-.esp-steps-steps .esp-steps-step-first-child .esp-steps-icons {
+.emp-steps-steps .emp-steps-step-first-child .emp-steps-icons {
   left: -7px;
 }
 
-.esp-steps-steps .esp-steps-step-last-child {
+.emp-steps-steps .emp-steps-step-last-child {
   position: absolute;
   right: 0;
   top: 0;
   text-align: right;
 }
 
-.esp-steps-steps .esp-steps-step-last-child .esp-steps-title {
+.emp-steps-steps .emp-steps-step-last-child .emp-steps-title {
   transform: none;
   text-align: right;
 }
 
-.esp-steps-steps .esp-steps-step-last-child .esp-steps-icons {
+.emp-steps-steps .emp-steps-step-last-child .emp-steps-icons {
   left: auto;
   right: -6px;
 }
 
-.esp-steps-steps .esp-steps-step-last-child .esp-steps-line {
+.emp-steps-steps .emp-steps-step-last-child .emp-steps-line {
   display: none;
 }
 
 /* 有描述的step */
-.esp-steps-steps .esp-steps-step-db-title {
+.emp-steps-steps .emp-steps-step-db-title {
   min-height: 29px;
 }
 
-.esp-steps-steps .esp-steps-step-db-title .esp-steps-line {
+.emp-steps-steps .emp-steps-step-db-title .emp-steps-line {
   top: 45px;
 }
 
-.esp-steps-steps .esp-steps-step-db-title .esp-steps-icons {
+.emp-steps-steps .emp-steps-step-db-title .emp-steps-icons {
   top: 43px;
 }
 
-.esp-steps-steps .esp-steps-step-db-title.esp-steps-step-cur .esp-steps-icons {
+.emp-steps-steps .emp-steps-step-db-title.emp-steps-step-cur .emp-steps-icons {
   top: 39px;
 }
 
-.esp-steps-vsteps {
+.emp-steps-vsteps {
   color: #999;
   font-size: 14px;
 }
 
-.esp-steps-vsteps .esp-steps-step {
+.emp-steps-vsteps .emp-steps-step {
   position: relative;
   padding: 15px 0;
 }
 
-.esp-steps-vsteps .esp-steps-step-done {
+.emp-steps-vsteps .emp-steps-step-done {
   color: #44bb00;
 }
 
-.esp-steps-vsteps .esp-steps-line {
+.emp-steps-vsteps .emp-steps-line {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -155,17 +155,17 @@
   background-color: #e5e5e5;
 }
 
-.esp-steps-vsteps .esp-steps-title {
+.emp-steps-vsteps .emp-steps-title {
   display: inline-block;
   line-height: 20px;
   padding-left: 27px;
 }
 
-.esp-steps-vsteps .esp-steps-title-desc {
+.emp-steps-vsteps .emp-steps-title-desc {
   padding-left: 3px;
 }
 
-.esp-steps-vsteps .esp-steps-icons {
+.emp-steps-vsteps .emp-steps-icons {
   position: absolute;
   left: 7px;
   top: 50%;
@@ -175,20 +175,20 @@
   background-color: #fff;
 }
 
-.esp-steps-vsteps .esp-steps-circle {
+.emp-steps-vsteps .emp-steps-circle {
   width: 5px;
   height: 5px;
   background-color: #cacaca;
   border-radius: 10px;
 }
 
-.esp-steps-vsteps .esp-steps-step-done .esp-steps-circle {
+.emp-steps-vsteps .emp-steps-step-done .emp-steps-circle {
   width: 5px;
   height: 5px;
   background-color: #09bb07;
 }
 
-.esp-steps-vsteps .esp-steps-step-cur .esp-steps-circle {
+.emp-steps-vsteps .emp-steps-step-cur .emp-steps-circle {
   width: 13px;
   height: 13px;
   background: transparent url('https://b.yzcdn.cn/v2/image/wap/success_small@2x.png');
@@ -196,12 +196,12 @@
   border-radius: 0;
 }
 
-.esp-steps-vsteps .esp-steps-icon-active {
+.emp-steps-vsteps .emp-steps-icon-active {
   width: 13px;
   height: 13px;
 }
 
-.esp-steps-vsteps .esp-steps-step-first-child .esp-steps-title::before {
+.emp-steps-vsteps .emp-steps-step-first-child .emp-steps-title::before {
   content: '';
   position: absolute;
   top: 0;
@@ -212,7 +212,7 @@
   z-index: 1;
 }
 
-.esp-steps-vsteps .esp-steps-step-last-child .esp-steps-title::after {
+.emp-steps-vsteps .emp-steps-step-last-child .emp-steps-title::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -223,22 +223,22 @@
   z-index: 1;
 }
 
-.esp-steps {
+.emp-steps {
   position: relative;
 }
 </style>
 <template>
-  <view class="esp-steps esp-steps-{{ type == 'vertical' ? 'vsteps' : 'steps' }} esp-steps-{{ steps.length }} {{ className }}">
+  <view class="emp-steps emp-steps-{{ type == 'vertical' ? 'vsteps' : 'steps' }} emp-steps-{{ steps.length }} {{ className }}">
     <view
       wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
-      class="esp-steps-step {{ hasDesc ? 'esp-steps-step-db-title' : '' }} {{ index == 0 ? 'esp-steps-step-first-child' : '' }} {{ index == steps.length - 1 ? 'esp-steps-step-last-child' : '' }} {{ step.done ? 'esp-steps-step-done' : '' }} {{ step.current ? 'esp-steps-step-cur' : '' }}"
+      class="emp-steps-step {{ hasDesc ? 'emp-steps-step-db-title' : '' }} {{ index == 0 ? 'emp-steps-step-first-child' : '' }} {{ index == steps.length - 1 ? 'emp-steps-step-last-child' : '' }} {{ step.done ? 'emp-steps-step-done' : '' }} {{ step.current ? 'emp-steps-step-cur' : '' }}"
     >
-      <view class="esp-steps-title">{{ step.text }}</view>
-      <view wx:if="{{ hasDesc && step.desc }}" class="esp-steps-title esp-steps-title-desc">{{ step.desc }}</view>
-      <view class="esp-steps-icons">
-        <view class="esp-steps-circle"></view>
+      <view class="emp-steps-title">{{ step.text }}</view>
+      <view wx:if="{{ hasDesc && step.desc }}" class="emp-steps-title emp-steps-title-desc">{{ step.desc }}</view>
+      <view class="emp-steps-icons">
+        <view class="emp-steps-circle"></view>
       </view>
-      <view class="esp-steps-line"></view>
+      <view class="emp-steps-line"></view>
     </view>
   </view>
 </template>
