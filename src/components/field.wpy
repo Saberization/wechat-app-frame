@@ -1,12 +1,12 @@
 <style lang="scss">
 @import '../empui/cell.scss';
 
-.esp-field {
+.emp-field {
   padding: 7px 15px;
   color: #333;
 }
 
-.esp-field-wrapped {
+.emp-field-wrapped {
   margin: 0 15px;
   background-color: #fff;
 
@@ -17,26 +17,26 @@
   }
 }
 
-.esp-field-wrapped + .esp-field-wrapped {
+.emp-field-wrapped + .emp-field-wrapped {
   margin-top: 10px;
 }
 
-.esp-field-error {
+.emp-field-error {
   color: #f40;
 }
 
 /* 圆角输入框时，将边框也置红 */
-.esp-field-wrapped.esp-field-error::after {
+.emp-field-wrapped.emp-field-error::after {
   border-color: #f40;
 }
 
-.esp-field-title {
+.emp-field-title {
   color: #333;
   min-width: 65px;
   padding-right: 10px;
 }
 
-.esp-field-input {
+.emp-field-input {
   flex: 1;
   line-height: 1.6;
   padding: 4px 0;
@@ -45,30 +45,30 @@
   font-size: 14px;
 }
 
-.esp-field-placeholder {
+.emp-field-placeholder {
   font-size: 14px;
 }
 
-.esp-field-input-right {
+.emp-field-input-right {
   text-align: right;
 }
 </style>
 <template>
-  <view class="esp-cell esp-field {{ options.error ? 'esp-field-error' : '' }} {{ options.mode === 'wrapped' ? 'esp-field-wrapped' : '' }}">
+  <view class="emp-cell emp-field {{ options.error ? 'emp-field-error' : '' }} {{ options.mode === 'wrapped' ? 'emp-field-wrapped' : '' }}">
     <view
       wx:if="{{ options.title }}"
-      class="esp-cell-hd esp-field-title">{{ options.title }}</view>
+      class="emp-cell-hd emp-field-title">{{ options.title }}</view>
     <textarea
       wx:if="{{ options.type === 'textarea' }}"
       auto-height
       name="{{ options.name || componentId || '' }}"
       value="{{ options.value }}"
       placeholder="{{ options.placeholder }}"
-      class="esp-field-input esp-cell-bd {{ options.right ? 'esp-field-input-right' : '' }}"
-      placeholder-class="esp-field-placeholder"
-      bindinput="handleEspFieldChange"
-      bindfocus="handleEspFieldFocus"
-      bindblur="handleEspFieldBlur"
+      class="emp-field-input emp-cell-bd {{ options.right ? 'emp-field-input-right' : '' }}"
+      placeholder-class="emp-field-placeholder"
+      bindinput="handleEmpFieldChange"
+      bindfocus="handleEmpFieldFocus"
+      bindblur="handleEmpFieldBlur"
       data-component-id="{{ componentId || '' }}"></textarea>
     <input
       wx:else
@@ -76,8 +76,8 @@
       name="{{ options.name || componentId || '' }}"
       value="{{ options.value }}"
       placeholder="{{ options.placeholder }}"
-      class="esp-field-input esp-cell-bd {{ options.right ? 'esp-field-input-right' : '' }}"
-      placeholder-class="esp-field-placeholder"
+      class="emp-field-input emp-cell-bd {{ options.right ? 'emp-field-input-right' : '' }}"
+      placeholder-class="emp-field-placeholder"
       bindinput="handleChange"
       bindfocus="handleFocus"
       bindblur="handleBlur"
