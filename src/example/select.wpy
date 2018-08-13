@@ -7,55 +7,55 @@
 <block>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">SELECT</view>
+    <view class="doc-title emp-hairline-bottom">SELECT</view>
 
-    <view class="esp-panel-title">基础用法</view>
-    <view class="esp-panel">
+    <view class="emp-panel-title">基础用法</view>
+    <view class="emp-panel">
       <view>
-        <espSelect1 :items="items" :checkedValue.sync="checked_base" componentId="base" ></espSelect1>
+        <empSelect1 :items="items" :checkedValue.sync="checked_base" componentId="base" ></empSelect1>
       </view>
     </view>
 
-    <view class="esp-panel-title">自定义高亮颜色</view>
-    <view class="esp-panel">
+    <view class="emp-panel-title">自定义高亮颜色</view>
+    <view class="emp-panel">
       <view>
-        <espSelect2 :items="items" :checkedValue.sync="checked_color" :activeColor="activeColor" componentId="color" ></espSelect2>
+        <empSelect2 :items="items" :checkedValue.sync="checked_color" :activeColor="activeColor" componentId="color" ></empSelect2>
       </view>
     </view>
 
-    <view class="esp-panel-title">Form 表单中的select应用</view>
+    <view class="emp-panel-title">Form 表单中的select应用</view>
     <form bindsubmit="formSubmit">
-      <view class="esp-panel">
+      <view class="emp-panel">
         <view>
-          <espSelect3 :items="items" :checkedValue.sync="checked_form" name="formtest" componentId="form"></espSelect3>
+          <empSelect3 :items="items" :checkedValue.sync="checked_form" name="formtest" componentId="form"></empSelect3>
         </view>
       </view>
 
-      <view class="esp-btns">
+      <view class="emp-btns">
         <button
-          class="esp-btn esp-btn-primary"
+          class="emp-btn emp-btn-primary"
           formType="submit">提交数据</button>
       </view>
     </form>
   </view>
-  <espToptips />
+  <empToptips />
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import espSelect from '../components/select'
-import espToptips from '../components/toptips'
+import empSelect from '../components/select'
+import empToptips from '../components/toptips'
 
 export default class Select extends wepy.page {
   config = {
     navigationBarTitleText: 'Select 选择'
   }
   components = {
-    espSelect1: espSelect,
-    espSelect2: espSelect,
-    espSelect3: espSelect,
-    espToptips
+    empSelect1: empSelect,
+    empSelect2: empSelect,
+    empSelect3: empSelect,
+    empToptips
   }
   data = {
     items: [
@@ -78,7 +78,7 @@ export default class Select extends wepy.page {
     activeColor: '#4b0'
   }
   events = {
-    espSelectChange(value, event) {
+    empSelectChange(value, event) {
       let { componentId } = event.source
       this[`checked_${componentId}`] = value
       this.$apply()
@@ -86,8 +86,8 @@ export default class Select extends wepy.page {
   }
   methods = {
     formSubmit(event) {
-      console.log('[esp:field:submit]', event.detail.value)
-      this.$invoke('espToptips', 'showEspTopTips', { content: `选中的值为${event.detail.value.formtest}` })
+      console.log('[emp:field:submit]', event.detail.value)
+      this.$invoke('empToptips', 'showEmpTopTips', { content: `选中的值为${event.detail.value.formtest}` })
     }
   }
   onLoad() {}

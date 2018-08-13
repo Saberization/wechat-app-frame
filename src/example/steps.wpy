@@ -4,7 +4,7 @@
 .my-class {
   padding: 10px;
 }
-.my-class .esp-steps-step-done {
+.my-class .emp-steps-step-done {
   color: #f44;
 }
 </style>
@@ -12,68 +12,68 @@
 <template>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">STEPS</view>
+    <view class="doc-title emp-hairline-bottom">STEPS</view>
 
-    <view class="esp-panel">
-      <view class="esp-cell">
-        <view class="esp-cell-bd">
-          <espSteps1 type="horizon" :steps="steps"></espSteps1>
+    <view class="emp-panel">
+      <view class="emp-cell">
+        <view class="emp-cell-bd">
+          <empSteps1 type="horizon" :steps="steps"></empSteps1>
         </view>
       </view>
 
-      <view class="esp-cell">
-        <view class="esp-cell-bd">
-          <espSteps2 type="horizon" :steps="steps2"></espSteps2>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">
+          <empSteps2 type="horizon" :steps="steps2"></empSteps2>
         </view>
       </view>
 
-      <view class="esp-cell esp-cell-last-child">
-        <view class="esp-cell-bd">
-          <espSteps3 type="horizon" :steps="steps3"></espSteps3>
-        </view>
-      </view>
-    </view>
-
-    <view class="esp-panel-title">有描述的steps</view>
-    <view class="esp-panel">
-      <view class="esp-cell">
-        <view class="esp-cell-bd">
-          <espSteps4 type="horizon" :hasDesc="_true" :steps="steps"></espSteps4>
-        </view>
-      </view>
-
-      <view class="esp-cell">
-        <view class="esp-cell-bd">
-          <espSteps5 type="horizon" :hasDesc="_true" :steps="steps2"></espSteps5>
-        </view>
-      </view>
-
-      <view class="esp-cell esp-cell-last-child">
-        <view class="esp-cell-bd">
-          <espSteps6 type="horizon" :hasDesc="_true" :steps="steps3"></espSteps6>
+      <view class="emp-cell emp-cell-last-child">
+        <view class="emp-cell-bd">
+          <empSteps3 type="horizon" :steps="steps3"></empSteps3>
         </view>
       </view>
     </view>
 
-    <view class="esp-panel-title">垂直方向的steps</view>
-    <view class="esp-panel">
-      <view class="esp-cell">
-        <view class="esp-cell-bd">
-          <espSteps7 type="vertical" :hasDesc="_true" :steps="steps"></espSteps7>
+    <view class="emp-panel-title">有描述的steps</view>
+    <view class="emp-panel">
+      <view class="emp-cell">
+        <view class="emp-cell-bd">
+          <empSteps4 type="horizon" :hasDesc="_true" :steps="steps"></empSteps4>
         </view>
       </view>
 
-      <view class="esp-cell esp-cell-last-child">
-        <view class="esp-cell-bd">
-          <espSteps8 type="vertical" :steps="steps"></espSteps8>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">
+          <empSteps5 type="horizon" :hasDesc="_true" :steps="steps2"></empSteps5>
+        </view>
+      </view>
+
+      <view class="emp-cell emp-cell-last-child">
+        <view class="emp-cell-bd">
+          <empSteps6 type="horizon" :hasDesc="_true" :steps="steps3"></empSteps6>
         </view>
       </view>
     </view>
 
-    <view class="esp-panel-title">可自定义class</view>
-    <view class="esp-panel">
-      <view class="esp-cell-bd">
-        <espSteps9 type="vertical" :steps="steps" className='my-class'></espSteps9>
+    <view class="emp-panel-title">垂直方向的steps</view>
+    <view class="emp-panel">
+      <view class="emp-cell">
+        <view class="emp-cell-bd">
+          <empSteps7 type="vertical" :hasDesc="_true" :steps="steps"></empSteps7>
+        </view>
+      </view>
+
+      <view class="emp-cell emp-cell-last-child">
+        <view class="emp-cell-bd">
+          <empSteps8 type="vertical" :steps="steps"></empSteps8>
+        </view>
+      </view>
+    </view>
+
+    <view class="emp-panel-title">可自定义class</view>
+    <view class="emp-panel">
+      <view class="emp-cell-bd">
+        <empSteps9 type="vertical" :steps="steps" className='my-class'></empSteps9>
       </view>
     </view>
 
@@ -82,22 +82,22 @@
 
 <script>
 import wepy from 'wepy'
-import espSteps from '../components/steps'
+import empSteps from '../components/steps'
 
 export default class Steps extends wepy.page {
   config = {
     navigationBarTitleText: 'Steps 步骤条'
   }
   components = {
-    espSteps1: espSteps,
-    espSteps2: espSteps,
-    espSteps3: espSteps,
-    espSteps4: espSteps,
-    espSteps5: espSteps,
-    espSteps6: espSteps,
-    espSteps7: espSteps,
-    espSteps8: espSteps,
-    espSteps9: espSteps
+    empSteps1: empSteps,
+    empSteps2: empSteps,
+    empSteps3: empSteps,
+    empSteps4: empSteps,
+    empSteps5: empSteps,
+    empSteps6: empSteps,
+    empSteps7: empSteps,
+    empSteps8: empSteps,
+    empSteps9: empSteps
   }
   data = {
     _true: true,

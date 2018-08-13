@@ -1,9 +1,9 @@
 <style lang="scss">
-.esp-panel {
+.emp-panel {
   padding: 10px;
 }
 
-.esp-switch {
+.emp-switch {
   margin-right: 8px;
 }
 </style>
