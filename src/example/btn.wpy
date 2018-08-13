@@ -6,56 +6,56 @@
 <template>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">BUTTON</view>
+    <view class="doc-title emp-hairline-bottom">BUTTON</view>
 
-    <view class="esp-panel-title">普通按钮</view>
-    <view class="esp-panel">
-      <view class="esp-btns">
-        <button class="esp-btn">取消订单</button>
-        <button class="esp-btn esp-btn-primary">确认付款</button>
-        <button class="esp-btn esp-btn-danger">确认付款</button>
-        <button class="esp-btn esp-btn-warn">确认付款</button>
+    <view class="emp-panel-title">普通按钮</view>
+    <view class="emp-panel">
+      <view class="emp-btns">
+        <button class="emp-btn">取消订单</button>
+        <button class="emp-btn emp-btn-primary">确认付款</button>
+        <button class="emp-btn emp-btn-danger">确认付款</button>
+        <button class="emp-btn emp-btn-warn">确认付款</button>
       </view>
     </view>
 
-    <view class="esp-panel-title">大号按钮，没有边框线及圆角</view>
-    <view class="esp-panel">
-      <button class="esp-btn esp-btn-large esp-btn-primary">确认付款</button>
-      <button class="esp-btn esp-btn-large esp-btn-warn">立即购买</button>
-      <button class="esp-btn esp-btn-large esp-btn-danger">立即购买</button>
+    <view class="emp-panel-title">大号按钮，没有边框线及圆角</view>
+    <view class="emp-panel">
+      <button class="emp-btn emp-btn-large emp-btn-primary">确认付款</button>
+      <button class="emp-btn emp-btn-large emp-btn-warn">立即购买</button>
+      <button class="emp-btn emp-btn-large emp-btn-danger">立即购买</button>
     </view>
 
-    <view class="esp-panel-title">小号按钮</view>
-    <view class="esp-panel" style="padding: 15px;">
-      <button class="esp-btn esp-btn-small">取消订单</button>
-      <button class="esp-btn esp-btn-small esp-btn-primary">确认付款</button>
+    <view class="emp-panel-title">小号按钮</view>
+    <view class="emp-panel" style="padding: 15px;">
+      <button class="emp-btn emp-btn-small">取消订单</button>
+      <button class="emp-btn emp-btn-small emp-btn-primary">确认付款</button>
     </view>
 
-    <view class="esp-panel-title">迷你按钮</view>
-    <view class="esp-panel" style="padding: 15px;">
-      <button class="esp-btn esp-btn-mini esp-btn-plain">取消订单</button>
-      <button class="esp-btn esp-btn-mini esp-btn-primary esp-btn-plain">确认付款</button>
-      <button class="esp-btn esp-btn-mini esp-btn-warn esp-btn-plain">确认付款</button>
-      <button class="esp-btn esp-btn-mini esp-btn-danger esp-btn-plain">确认付款</button>
+    <view class="emp-panel-title">迷你按钮</view>
+    <view class="emp-panel" style="padding: 15px;">
+      <button class="emp-btn emp-btn-mini emp-btn-plain">取消订单</button>
+      <button class="emp-btn emp-btn-mini emp-btn-primary emp-btn-plain">确认付款</button>
+      <button class="emp-btn emp-btn-mini emp-btn-warn emp-btn-plain">确认付款</button>
+      <button class="emp-btn emp-btn-mini emp-btn-danger emp-btn-plain">确认付款</button>
     </view>
 
-    <view class="esp-panel-title">Loading</view>
-    <view class="esp-panel">
-      <view class="esp-btns">
-        <button class="esp-btn esp-btn-loading">取消订单</button>
-        <button class="esp-btn esp-btn-loading esp-btn-primary">确认付款</button>
-        <button class="esp-btn esp-btn-loading esp-btn-danger">确认付款</button>
-        <button class="esp-btn esp-btn-loading esp-btn-warn">确认付款</button>
+    <view class="emp-panel-title">Loading</view>
+    <view class="emp-panel">
+      <view class="emp-btns">
+        <button class="emp-btn emp-btn-loading">取消订单</button>
+        <button class="emp-btn emp-btn-loading emp-btn-primary">确认付款</button>
+        <button class="emp-btn emp-btn-loading emp-btn-danger">确认付款</button>
+        <button class="emp-btn emp-btn-loading emp-btn-warn">确认付款</button>
       </view>
     </view>
 
-    <view class="esp-panel-title">Disabled</view>
-    <view class="esp-panel">
-      <view class="esp-btns">
-        <button class="esp-btn esp-btn-disabled" disabled>取消订单</button>
-        <button class="esp-btn esp-btn-disabled esp-btn-primary" disabled>确认付款</button>
-        <button class="esp-btn esp-btn-disabled esp-btn-danger" disabled>确认付款</button>
-        <button class="esp-btn esp-btn-disabled esp-btn-warn" disabled>确认付款</button>
+    <view class="emp-panel-title">Disabled</view>
+    <view class="emp-panel">
+      <view class="emp-btns">
+        <button class="emp-btn emp-btn-disabled" disabled>取消订单</button>
+        <button class="emp-btn emp-btn-disabled emp-btn-primary" disabled>确认付款</button>
+        <button class="emp-btn emp-btn-disabled emp-btn-danger" disabled>确认付款</button>
+        <button class="emp-btn emp-btn-disabled emp-btn-warn" disabled>确认付款</button>
       </view>
     </view>
 

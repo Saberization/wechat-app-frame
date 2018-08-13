@@ -20,22 +20,22 @@
 <template>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">BADGE</view>
+    <view class="doc-title emp-hairline-bottom">BADGE</view>
 
     <view class="demo">
       <view class="demo-item">
-        <view class="demo-icon esp-badge">
-          <view class="esp-badge-count">9</view>
+        <view class="demo-icon emp-badge">
+          <view class="emp-badge-count">9</view>
         </view>
       </view>
       <view class="demo-item">
-        <view class="demo-icon esp-badge">
-          <view class="esp-badge-count">19</view>
+        <view class="demo-icon emp-badge">
+          <view class="emp-badge-count">19</view>
         </view>
       </view>
       <view class="demo-item">
-        <view class="demo-icon esp-badge">
-          <view class="esp-badge-count">99+</view>
+        <view class="demo-icon emp-badge">
+          <view class="emp-badge-count">99+</view>
         </view>
       </view>
     </view>
