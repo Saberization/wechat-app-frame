@@ -2,11 +2,11 @@
 @import '../empui/btn.scss';
 @import '../empui/common';
 
-.esp-actionsheet {
+.emp-actionsheet {
   background-color: #f8f8f8;
 }
 
-.esp-actionsheet-mask {
+.emp-actionsheet-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
   display: none;
 }
 
-.esp-actionsheet-container {
+.emp-actionsheet-container {
   position: fixed;
   left: 0;
   right: 0;
@@ -31,7 +31,7 @@
   visibility: hidden;
 }
 
-.esp-actionsheet-btn.esp-btn {
+.emp-actionsheet-btn.emp-btn {
   height: 50px;
   line-height: 50px;
   margin-bottom: 0;
@@ -42,75 +42,75 @@
   }
 }
 
-.esp-actionsheet-btn.esp-btn:last-child {
+.emp-actionsheet-btn.emp-btn:last-child {
   &::after {
     border-bottom-width: 0;
   }
 }
 
-.esp-actionsheet-subname {
+.emp-actionsheet-subname {
   margin-left: 2px;
   font-size: 12px;
   color: $gray-darker;
 }
 
-.esp-actionsheet-footer {
+.emp-actionsheet-footer {
   margin-top: 10px;
 }
 
 /* btn-loading 状态 */
-.esp-actionsheet-btn.esp-btn-loading .esp-actionsheet-subname {
+.emp-actionsheet-btn.emp-btn-loading .emp-actionsheet-subname {
   color: transparent;
 }
 
-/* esp-actionsheet 展示出来的样式 */
-.esp-actionsheet-show .esp-actionsheet-container {
+/* emp-actionsheet 展示出来的样式 */
+.emp-actionsheet-show .emp-actionsheet-container {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   visibility: visible;
 }
-.esp-actionsheet-show .esp-actionsheet-mask {
+.emp-actionsheet-show .emp-actionsheet-mask {
   display: block;
 }
 </style>
 
 <template>
-  <view class="esp-actionsheet {{ espActionsheet.show ? '.esp-actionsheet-show' : '' }}">
+  <view class="emp-actionsheet {{ empActionsheet.show ? '.emp-actionsheet-show' : '' }}">
     <view
-      class="esp-actionsheet-mask"
-      @tap.stop="handleespActionsheetMaskClick"
-      data-close-on-click-overlay="{{ espActionsheet.closeOnClickOverlay }}"
+      class="emp-actionsheet-mask"
+      @tap.stop="handleempActionsheetMaskClick"
+      data-close-on-click-overlay="{{ empActionsheet.closeOnClickOverlay }}"
       data-component-id="{{ componentId }}"></view>
-    <view class="esp-actionsheet-container">
+    <view class="emp-actionsheet-container">
       <!-- 实际按钮显示 -->
       <button
-        wx:for="{{ espActionsheet.actions }}"
+        wx:for="{{ empActionsheet.actions }}"
         wx:for-index="index"
         wx:for-item="item"
         wx:key="{{ index }}-{{ item.name }}"
-        @tap.stop="handleespActionsheetBtnClick"
+        @tap.stop="handleempActionsheetBtnClick"
         data-component-id="{{ componentId }}"
         data-index="{{ index }}"
         data-type="{{ item.type }}"
         open-type="{{ item.openType }}"
-        class="esp-btn esp-actionsheet-btn {{ item.loading ? 'esp-btn-loading' : '' }} {{ item.className }}"
+        class="emp-btn emp-actionsheet-btn {{ item.loading ? 'emp-btn-loading' : '' }} {{ item.className }}"
       >
         <text>{{ item.name }}</text>
         <text
           wx:if="{{ item.subname }}"
-          class="esp-actionsheet-subname">{{ item.subname }}</text>
+          class="emp-actionsheet-subname">{{ item.subname }}</text>
       </button>
 
       <!-- 关闭按钮 -->
       <view
-        wx:if="{{ espActionsheet.cancelText }}"
-        class="esp-actionsheet-footer"
+        wx:if="{{ empActionsheet.cancelText }}"
+        class="emp-actionsheet-footer"
       >
         <button
-          class="esp-btn esp-actionsheet-btn"
-          @tap.stop="handleespActionsheetCancelBtnClick"
+          class="emp-btn emp-actionsheet-btn"
+          @tap.stop="handleempActionsheetCancelBtnClick"
           data-component-id="{{ componentId }}"
-        >{{ espActionsheet.cancelText }}</button>
+        >{{ empActionsheet.cancelText }}</button>
       </view>
     </view>
   </view>
@@ -124,10 +124,10 @@ export default class Actionsheet extends wepy.component {
     componentId: String
   }
   data = {
-    espActionsheet: {}
+    empActionsheet: {}
   }
   methods = {
-    showespActionsheet(options = {}, e) {
+    showempActionsheet(options = {}, e) {
       const {
         cancelText = '关闭 Action',
         closeOnClickOverlay = true,
@@ -154,7 +154,7 @@ export default class Actionsheet extends wepy.component {
         ]
       } = options
       return new Promise((resolve, reject) => {
-        this.espActionsheet = {
+        this.empActionsheet = {
           show: true,
           cancelText,
           closeOnClickOverlay,
@@ -167,17 +167,17 @@ export default class Actionsheet extends wepy.component {
       })
     },
     resolveCancelClick() {
-      const espActionsheetData = this.espActionsheet || {}
-      const { reject } = espActionsheetData
+      const empActionsheetData = this.empActionsheet || {}
+      const { reject } = empActionsheetData
 
-      console.info('[esp:actionsheet:cancel]')
-      this.espActionsheet.show = false
+      console.info('[emp:actionsheet:cancel]')
+      this.empActionsheet.show = false
       this.$apply()
       reject({
         type: 'cancel'
       })
     },
-    handleespActionsheetMaskClick({ currentTarget = {} }) {
+    handleempActionsheetMaskClick({ currentTarget = {} }) {
       const dataset = currentTarget.dataset || {}
       const { closeOnClickOverlay } = dataset
 
@@ -189,16 +189,16 @@ export default class Actionsheet extends wepy.component {
       this.methods.resolveCancelClick.call(this)
     },
 
-    handleespActionsheetCancelBtnClick(e) {
+    handleempActionsheetCancelBtnClick(e) {
       this.methods.resolveCancelClick.call(this)
     },
 
-    handleespActionsheetBtnClick({ currentTarget = {} }) {
-      const espActionsheetData = this.espActionsheet || {}
-      const { resolve } = espActionsheetData
+    handleempActionsheetBtnClick({ currentTarget = {} }) {
+      const empActionsheetData = this.empActionsheet || {}
+      const { resolve } = empActionsheetData
       const dataset = currentTarget.dataset || {}
       const { index, type } = dataset
-      const action = this.espActionsheet.actions[index]
+      const action = this.empActionsheet.actions[index]
 
       // 如果是分享按钮被点击, 不处理关闭
       if (type === 'share') {
@@ -212,7 +212,7 @@ export default class Actionsheet extends wepy.component {
         action
           .asyncJob()
           .then(e => {
-            this.espActionsheet.show = false
+            this.empActionsheet.show = false
             action.loding = false
             this.$apply()
           })
@@ -221,7 +221,7 @@ export default class Actionsheet extends wepy.component {
             this.$apply()
           })
       } else {
-        this.espActionsheet.show = false
+        this.empActionsheet.show = false
         action.loding = false
       }
       this.$apply()

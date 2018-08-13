@@ -1,53 +1,53 @@
 <style lang="scss">
-.esp-capsule {
+.emp-capsule {
   display: inline-block;
   font-size: 12px;
   vertical-align: middle;
   line-height: 19px;
   transform: scale(0.83);
 }
-.esp-capsule-left,
-.esp-capsule-right {
+.emp-capsule-left,
+.emp-capsule-right {
   display: inline-block;
   line-height: 17px;
   height: 19px;
   vertical-align: middle;
   box-sizing: border-box;
 }
-.esp-capsule-left {
+.emp-capsule-left {
   padding: 0 2px;
   color: #fff;
   background: #999;
   border-radius: 2px 0 0 2px;
   border: 1rpx solid #999;
 }
-.esp-capsule-right {
+.emp-capsule-right {
   padding: 0 5px;
   color: #999;
   border-radius: 0 2px 2px 0;
   border: 1rpx solid #999;
 }
 
-.esp-capsule-danger .esp-capsule-left {
+.emp-capsule-danger .emp-capsule-left {
   color: #fff;
   background: #f24544;
   border-color: #f24544;
 }
 
-.esp-capsule-danger .esp-capsule-right {
+.emp-capsule-danger .emp-capsule-right {
   color: #f24544;
   border-color: #f24544;
 }
 </style>
 <template name="capsule">
-  <view class="esp-capsule esp-capsule-{{type}}">
+  <view class="emp-capsule emp-capsule-{{type}}">
     <block wx:if="{{color}}">
-      <view class="esp-capsule-left" style="background: {{ color }}; border-color: {{ color }}">{{ leftText }}</view>
-      <view class="esp-capsule-right" style="color: {{ color }}; border-color: {{ color }}">{{ rightText }}</view>
+      <view class="emp-capsule-left" style="background: {{ color }}; border-color: {{ color }}">{{ leftText }}</view>
+      <view class="emp-capsule-right" style="color: {{ color }}; border-color: {{ color }}">{{ rightText }}</view>
     </block>
     <block wx:else>
-      <view class="esp-capsule-left">{{ leftText }}</view>
-      <view class="esp-capsule-right">{{ rightText }}</view>
+      <view class="emp-capsule-left">{{ leftText }}</view>
+      <view class="emp-capsule-right">{{ rightText }}</view>
     </block>
   </view>
 </template>
