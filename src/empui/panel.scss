@@ -1,6 +1,6 @@
 @import "common";
 
-.esp-panel {
+.emp-panel {
   position: relative;
   background: #fff;
   margin-top: 10px;
@@ -13,7 +13,7 @@
   }
 }
 
-.esp-panel-title {
+.emp-panel-title {
   font-size: 14px;
   line-height: 1;
   color: #999;
@@ -21,11 +21,11 @@
 }
 
 
-.esp-panel-without-margin-top {
+.emp-panel-without-margin-top {
   margin-top: 0;
 }
 
-.esp-panel-without-border {
+.emp-panel-without-border {
   &::after {
     border: 0 none;
   }

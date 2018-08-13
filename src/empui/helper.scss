@@ -1,59 +1,59 @@
 @import "common";
 
-.esp-pull-left {
+.emp-pull-left {
   float: left;
 }
 
-.esp-pull-right {
+.emp-pull-right {
   float: right;
 }
 
-.esp-center {
+.emp-center {
   text-align: center;
 }
 
-.esp-right {
+.emp-right {
   text-align: right;
 }
 
-.esp-text-deleted {
+.emp-text-deleted {
   text-decoration: line-through;
 }
-.esp-font-8 {
+.emp-font-8 {
   font-size: 8px;
 }
-.esp-font-10 {
+.emp-font-10 {
   font-size: 10px;
 }
-.esp-font-12 {
+.emp-font-12 {
   font-size: 12px;
 }
-.esp-font-14 {
+.emp-font-14 {
   font-size: 14px;
 }
-.esp-font-16 {
+.emp-font-16 {
   font-size: 16px;
 }
-.esp-font-18 {
+.emp-font-18 {
   font-size: 18px;
 }
-.esp-font-20 {
+.emp-font-20 {
   font-size: 20px;
 }
-.esp-font-22 {
+.emp-font-22 {
   font-size: 22px;
 }
-.esp-font-24 {
+.emp-font-24 {
   font-size: 22px;
 }
-.esp-font-30 {
+.emp-font-30 {
   font-size: 30px;
 }
-.esp-font-bold {
+.emp-font-bold {
   font-weight: bold;
 }
 
-.esp-arrow {
+.emp-arrow {
   position: absolute;
   right: 15px;
   top: 50%;
@@ -66,14 +66,14 @@
   transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
 
-.esp-ellipsis {
+.emp-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
 }
 
-.esp-ellipsis-l2 {
+.emp-ellipsis-l2 {
   max-height: 40px;
   line-height: 20px;
   overflow: hidden;
@@ -83,7 +83,7 @@
   -webkit-box-orient: vertical;
 }
 
-.esp-ellipsis-l3 {
+.emp-ellipsis-l3 {
   max-height: 60px;
   line-height: 20px;
   overflow: hidden;
@@ -93,17 +93,17 @@
   -webkit-box-orient: vertical;
 }
 
-.esp-clearfix {
+.emp-clearfix {
   zoom: 1;
 }
-.esp-clearfix::after {
+.emp-clearfix::after {
   content: '';
   display: table;
   clear: both;
 }
 
 /* 超细边框 */
-.esp-hairline {
+.emp-hairline {
   &,
   &-top,
   &-left,

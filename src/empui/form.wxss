@@ -18,11 +18,11 @@
   align-self: flex-start;
 }
 
-.esp-form-input, .zan-form__textarea {
+.emp-form-input, .zan-form__textarea {
   min-height: 26px;
 }
 
-.esp-form-input input {
+.emp-form-input input {
   min-height: 26px;
 }
 
