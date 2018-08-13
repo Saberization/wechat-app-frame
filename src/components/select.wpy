@@ -1,25 +1,25 @@
 <style lang="scss">
 @import '../empui/cell.scss';
-.esp-select-list .esp-select-radio {
+.emp-select-list .emp-select-radio {
   display: none;
 }
 </style>
 <template>
 <block>
   <radio-group
-    class="esp-select-list"
+    class="emp-select-list"
     name="{{ name || componentId || '' }}"
-    bindchange="handleEspSelectChange"
+    bindchange="handleEmpSelectChange"
     data-component-id="{{ componentId }}"
   >
     <label wx:for="{{ items }}" wx:key="value">
-      <view class="esp-cell">
-        <radio class="esp-select-radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
+      <view class="emp-cell">
+        <radio class="emp-select-radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
         <view
-          class="esp-cell-bd"
+          class="emp-cell-bd"
           style="{{ 'padding-left: ' + item.padding * 10 + 'px;' + ' color: ' + activeColor }}"
         >{{ item.name }}</view>
-        <view wx:if="{{ item.value === checkedValue }}" class="esp-cell-ft">
+        <view wx:if="{{ item.value === checkedValue }}" class="emp-cell-ft">
           <icon type="success_no_circle" color="{{ activeColor }}" size="14"></icon>
         </view>
       </view>
@@ -46,10 +46,10 @@ export default class Select extends wepy.component {
   }
   data = {}
   methods = {
-    handleEspSelectChange(e) {
+    handleEmpSelectChange(e) {
       let value = e.detail.value
-      console.info('[esp:Select:change]', value, e)
-      this.$emit('espSelectChange', value)
+      console.info('[emp:Select:change]', value, e)
+      this.$emit('empSelectChange', value)
     }
   }
   computed = {}

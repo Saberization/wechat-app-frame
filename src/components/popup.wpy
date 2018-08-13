@@ -1,11 +1,11 @@
 <style lang="css">
-.esp-popup {
+.emp-popup {
   visibility: hidden;
 }
-.esp-popup-show {
+.emp-popup-show {
   visibility: visible;
 }
-.esp-popup-mask {
+.emp-popup-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   background: rgba(0, 0, 0, 0.7);
   display: none;
 }
-.esp-popup-container {
+.emp-popup-container {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -26,52 +26,52 @@
   z-index: 11;
   opacity: 0;
 }
-.esp-popup-show .esp-popup-container {
+.emp-popup-show .emp-popup-container {
   opacity: 1;
 }
-.esp-popup-show .esp-popup-mask {
+.emp-popup-show .emp-popup-mask {
   display: block;
 }
 
 /* 左侧popup */
-.esp-popup-left .esp-popup-container {
+.emp-popup-left .emp-popup-container {
   left: 0;
   top: auto;
   transform: translate3d(-100%, 0, 0);
 }
-.esp-popup-show.esp-popup-left .esp-popup-container {
+.emp-popup-show.emp-popup-left .emp-popup-container {
   transform: translate3d(0, 0, 0);
 }
 
 /* 右侧popup */
-.esp-popup-right .esp-popup-container {
+.emp-popup-right .emp-popup-container {
   right: 0;
   top: auto;
   left: auto;
   transform: translate3d(100%, 0, 0);
 }
-.esp-popup-show.esp-popup-right .esp-popup-container {
+.emp-popup-show.emp-popup-right .emp-popup-container {
   transform: translate3d(0, 0, 0);
 }
 
 /* 底部popup */
-.esp-popup-bottom .esp-popup-container {
+.emp-popup-bottom .emp-popup-container {
   top: auto;
   left: auto;
   bottom: 0;
   transform: translate3d(0, 100%, 0);
 }
-.esp-popup-show.esp-popup-bottom .esp-popup-container {
+.emp-popup-show.emp-popup-bottom .emp-popup-container {
   transform: translate3d(0, 0, 0);
 }
 
 /* 顶部popup */
-.esp-popup-top .esp-popup-container {
+.emp-popup-top .emp-popup-container {
   top: 0;
   left: auto;
   transform: translate3d(0, -100%, 0);
 }
-.esp-popup-show.esp-popup-top .esp-popup-container {
+.emp-popup-show.emp-popup-top .emp-popup-container {
   transform: translate3d(0, 0, 0);
 }
 
@@ -79,17 +79,17 @@
   border-radius: 4px;
 }
 
-.popup-example-right .esp-popup-container {
+.popup-example-right .emp-popup-container {
   top: 0;
   bottom: 0;
 }
 
-.popup-example-left .esp-popup-container {
+.popup-example-left .emp-popup-container {
   top: 0;
   bottom: 0;
 }
 
-.popup-example-top .esp-popup-container {
+.popup-example-top .emp-popup-container {
   left: 0;
   right: 0;
   padding: 15px;
@@ -97,20 +97,20 @@
   color: #fff;
   font-size: 16px;
 }
-.popup-example-top .esp-popup-mask {
+.popup-example-top .emp-popup-mask {
   opacity: 0;
 }
 
-.popup-example-bottom .esp-popup-container {
+.popup-example-bottom .emp-popup-container {
   left: 0;
   right: 0;
 }
 </style>
 
 <template>
-    <view class="esp-popup {{direction ? 'popup-example-' + direction + ' esp-popup-' + direction : ''}} {{ showPopup ? 'esp-popup-show' : ''}}">
-        <view wx:if="{{overlay}}" class="{{showOverlay ? 'esp-popup-mask' : ''}}" @tap="togglePopup"></view>
-        <view class="esp-popup-container {{direction ? '' : 'popup-example-center'}}">
+    <view class="emp-popup {{direction ? 'popup-example-' + direction + ' emp-popup-' + direction : ''}} {{ showPopup ? 'emp-popup-show' : ''}}">
+        <view wx:if="{{overlay}}" class="{{showOverlay ? 'emp-popup-mask' : ''}}" @tap="togglePopup"></view>
+        <view class="emp-popup-container {{direction ? '' : 'popup-example-center'}}">
             <slot></slot>
         </view>
     </view>
