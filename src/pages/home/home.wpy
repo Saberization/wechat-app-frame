@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../../espui/icon.wxss';
-@import '../../espui/cell.wxss';
+@import '../../empui/icon.wxss';
+@import '../../empui/cell.wxss';
 
 .container {
   background-color: #fff;

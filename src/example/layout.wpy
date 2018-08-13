@@ -1,7 +1,7 @@
 <style lang='css'>
-@import '../espui/panel.wxss';
-@import '../espui/col.wxss';
-@import '../espui/row.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/col.wxss';
+@import '../empui/row.wxss';
 
 .esp-col {
   line-height: 30px;

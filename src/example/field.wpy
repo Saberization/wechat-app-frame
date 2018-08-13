@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../espui/panel.wxss';
-@import '../espui/btn.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/btn.wxss';
 .field__title--radius {
   padding-bottom: 10px;
 }

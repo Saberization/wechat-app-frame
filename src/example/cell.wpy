@@ -1,6 +1,6 @@
 <style lang="css">
-  @import '../espui/cell.wxss';
-  @import '../espui/icon.wxss';
+  @import '../empui/cell.wxss';
+  @import '../empui/icon.wxss';
 
   .panel-example {
     display: block;

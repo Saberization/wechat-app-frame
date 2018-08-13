@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../espui/panel.wxss';
-@import '../espui/card.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/card.wxss';
 
 .esp-panel {
   padding: 10px;

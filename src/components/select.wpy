@@ -1,5 +1,5 @@
 <style lang="scss">
-@import '../espui/cell.scss';
+@import '../empui/cell.scss';
 .esp-select-list .esp-select-radio {
   display: none;
 }

@@ -1,7 +1,7 @@
 <style lang="css">
-@import '../espui/panel.wxss';
-@import '../espui/cell.wxss';
-@import '../espui/color.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/cell.wxss';
+@import '../empui/color.wxss';
 </style>
 
 <template>

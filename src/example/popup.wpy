@@ -1,5 +1,5 @@
 <style lang="css">
-@import '../espui/btn.wxss';
+@import '../empui/btn.wxss';
 </style>
 
 <template>

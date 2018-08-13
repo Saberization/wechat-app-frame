@@ -1,6 +1,6 @@
 <style lang="scss">
-@import '../espui/btn.scss';
-@import '../espui/common';
+@import '../empui/btn.scss';
+@import '../empui/common';
 
 .esp-actionsheet {
   background-color: #f8f8f8;

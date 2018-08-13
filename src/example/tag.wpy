@@ -1,7 +1,7 @@
 <style lang='css'>
-@import '../espui/panel.wxss';
-@import '../espui/cell.wxss';
-@import '../espui/tag.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/cell.wxss';
+@import '../empui/tag.wxss';
 .zan-tag + .zan-tag {
   margin-left: 10px;
 }

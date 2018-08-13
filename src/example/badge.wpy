@@ -1,5 +1,5 @@
 <style lang="css">
-@import '../espui/badge.wxss';
+@import '../empui/badge.wxss';
 
 .demo {
   padding: 40px 0;

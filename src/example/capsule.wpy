@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../espui/panel.wxss';
-@import '../espui/cell.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/cell.wxss';
 
 .esp-capsule + .esp-capsule {
   margin-left: 10px;

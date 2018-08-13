@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../../espui/panel.wxss';
-@import '../../espui/btn.wxss';
+@import '../../empui/panel.wxss';
+@import '../../empui/btn.wxss';
 
 .mt10 {
     margin-top: 10px;

@@ -1,6 +1,6 @@
 <style lang="css">
-@import '../espui/panel.wxss';
-@import '../espui/cell.wxss';
+@import '../empui/panel.wxss';
+@import '../empui/cell.wxss';
 .my-class {
   padding: 10px;
 }

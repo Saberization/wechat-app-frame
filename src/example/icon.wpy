@@ -1,5 +1,5 @@
 <style lang="css">
-@import '../espui/icon.wxss';
+@import '../empui/icon.wxss';
 
 .icon-wrap {
   width: 33.33333%;

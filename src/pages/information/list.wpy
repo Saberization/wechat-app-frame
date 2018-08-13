@@ -1,5 +1,5 @@
 <style lang="css">
-@import '/espui/cell.wxss';
+@import '/empui/cell.wxss';
 
 .esp-cell:active {
   background-color: #d1d1d1;
