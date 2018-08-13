@@ -1,4 +1,4 @@
-.esp-card {
+.emp-card {
   margin-left: 0px;
   width: auto;
   padding: 5px 15px;
@@ -7,7 +7,7 @@
   font-size: 14px;
 }
 
-.esp-card-thumb {
+.emp-card-thumb {
   width: 90px;
   height: 90px;
   float: left;
@@ -18,7 +18,7 @@
   background-size: cover;
 }
 
-.esp-card-img {
+.emp-card-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,23 +30,23 @@
   max-height: 100%;
 }
 
-.esp-card-detail {
+.emp-card-detail {
   margin-left: 100px;
   width: auto;
   position: relative;
 }
 
-.esp-card-detail-row {
+.emp-card-detail-row {
   overflow: hidden;
   line-height: 20px;
   min-height: 20px;
   margin-bottom: 3px;
 }
 
-.esp-card-right-col {
+.emp-card-right-col {
   float: right;
 }
 
-.esp-card-left-col {
+.emp-card-left-col {
   margin-right: 80px;
 }

@@ -1,10 +1,10 @@
-.esp-col {
+.emp-col {
   float: left;
   box-sizing: border-box;
   width: 0;
 }
 
 @for $i from 1 to 24 {
-  .esp-col-#{$i} { width: $i * 100% / 24; }
-  .esp-col-offset-#{$i} { margin-left: $i * 100% / 24; }
+  .emp-col-#{$i} { width: $i * 100% / 24; }
+  .emp-col-offset-#{$i} { margin-left: $i * 100% / 24; }
 }

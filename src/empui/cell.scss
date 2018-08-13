@@ -1,6 +1,6 @@
 @import "./common";
 
-.esp-cell {
+.emp-cell {
   position: relative;
   padding: 12px 15px;
   display: flex;
@@ -9,56 +9,56 @@
   font-size: 14px;
 }
 
-.esp-cell::after {
+.emp-cell::after {
   @include hairline;
   border-bottom-width: 1px;
   left: 15px;
   right: 0;
 }
 
-.esp-cell-icon {
+.emp-cell-icon {
   margin-right: 5px;
 }
-.esp-cell-bd {
+.emp-cell-bd {
   flex: 1;
 }
-.esp-cell-text {
+.emp-cell-text {
   line-height: 24px;
   font-size: 14px;
 }
-.esp-cell-desc {
+.emp-cell-desc {
   line-height: 1.2;
   font-size: 12px;
   color: #666;
 }
-.esp-cell-ft {
+.emp-cell-ft {
   position: relative;
   text-align: right;
   color: #666;
 }
-.esp-cell-no-pading {
+.emp-cell-no-pading {
   padding: 0;
 }
-.esp-cell-no-pading .esp-cell-bd-padding {
+.emp-cell-no-pading .emp-cell-bd-padding {
   padding: 12px 0 12px 15px;
 }
-.esp-cell-no-pading .esp-cell-bd-padding .esp-form-input {
+.emp-cell-no-pading .emp-cell-bd-padding .emp-form-input {
   height: 26px;
 }
-.esp-cell-no-pading .esp-cell-ft-padding {
+.emp-cell-no-pading .emp-cell-ft-padding {
   padding: 12px 15px 12px 0;
 }
 
-.esp-cell-last-child::after,
-.esp-cell:last-child::after {
+.emp-cell-last-child::after,
+.emp-cell:last-child::after {
   display: none;
 }
 
-.esp-cell-access .esp-cell-ft {
+.emp-cell-access .emp-cell-ft {
   padding-right: 13px;
 }
 
-.esp-cell-access .esp-cell-ft::after {
+.emp-cell-access .emp-cell-ft::after {
   position: absolute;
   top: 50%;
   right: 2px;
@@ -71,7 +71,7 @@
   border-style: solid;
   transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
-.esp-cell-switch {
+.emp-cell-switch {
   padding-top: 6px;
   padding-bottom: 6px;
 }
