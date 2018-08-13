@@ -5,32 +5,32 @@
 <template>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">TAB</view>
+    <view class="doc-title emp-hairline-bottom">TAB</view>
 
     <view style="margin: 20px 0">
-      <espTab1 :tab.sync="tab1" componentId="tab1" triggerChange="espTabChange"></espTab1>
+      <empTab1 :tab.sync="tab1" componentId="tab1" triggerChange="empTabChange"></empTab1>
     </view>
     <view style="margin: 20px 0">
-      <espTab2 :tab.sync="tab2" componentId="tab2" triggerChange="espTabChange"></espTab2>
+      <empTab2 :tab.sync="tab2" componentId="tab2" triggerChange="empTabChange"></empTab2>
     </view>
     <view style="margin: 20px 0">
-      <espTab3 :tab.sync="tab3" componentId="tab3" triggerChange="espTabChange"></espTab3>
+      <empTab3 :tab.sync="tab3" componentId="tab3" triggerChange="empTabChange"></empTab3>
     </view>
   </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import espTab from '../components/tab'
+import empTab from '../components/tab'
 
 export default class Tab extends wepy.page {
   config = {
     navigationBarTitleText: 'Tab 标签'
   }
   components = {
-    espTab1: espTab,
-    espTab2: espTab,
-    espTab3: espTab
+    empTab1: empTab,
+    empTab2: empTab,
+    empTab3: empTab
   }
   data = {
     tab1: {
@@ -123,7 +123,7 @@ export default class Tab extends wepy.page {
     }
   }
   events = {
-    espTabChange(result, event) {
+    empTabChange(result, event) {
       let { componentId } = result
       
       this[componentId].selectedId = result.selectedId
