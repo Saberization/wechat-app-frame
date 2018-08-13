@@ -7,72 +7,72 @@
 <template>
 <view class="container">
 
-  <view class="esp-panel">
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
-        <view class="esp-pull-right">esp-pull-right: 往右靠</view>
+  <view class="emp-panel">
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
+        <view class="emp-pull-right">emp-pull-right: 往右靠</view>
       </view>
     </view>
 
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
-        <view class="esp-text-deleted">esp-text-deleted：被删除的效果</view>
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
+        <view class="emp-text-deleted">emp-text-deleted：被删除的效果</view>
       </view>
     </view>
 
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
         <view>
-          <view class="esp-font-12">esp-font-12：字号12</view>
-          <view class="esp-font-12 esp-font-bold">esp-font-bold：再来个加粗</view>
+          <view class="emp-font-12">emp-font-12：字号12</view>
+          <view class="emp-font-12 emp-font-bold">emp-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
 
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
         <view>
-          <view class="esp-font-16">esp-font-16：字号16</view>
-          <view class="esp-font-16 esp-font-bold">esp-font-bold：再来个加粗</view>
+          <view class="emp-font-16">emp-font-16：字号16</view>
+          <view class="emp-font-16 emp-font-bold">emp-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
 
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
         <view class="">
           <view>字体颜色</view>
-          <view class="esp-c-red">esp-c-red: 红色</view>
-          <view class="esp-c-gray">esp-c-gray: 灰色</view>
-          <view class="esp-c-gray-dark">esp-c-gray-dark: 再灰一点点</view>
-          <view class="esp-c-gray-darker">esp-c-gray-darker: 更深的灰色</view>
-          <view class="esp-c-black">esp-c-black: 黑色</view>
-          <view class="esp-c-blue">esp-c-blue: 蓝色</view>
-          <view class="esp-c-green">esp-c-green: 绿色</view>
+          <view class="emp-c-red">emp-c-red: 红色</view>
+          <view class="emp-c-gray">emp-c-gray: 灰色</view>
+          <view class="emp-c-gray-dark">emp-c-gray-dark: 再灰一点点</view>
+          <view class="emp-c-gray-darker">emp-c-gray-darker: 更深的灰色</view>
+          <view class="emp-c-black">emp-c-black: 黑色</view>
+          <view class="emp-c-blue">emp-c-blue: 蓝色</view>
+          <view class="emp-c-green">emp-c-green: 绿色</view>
         </view>
       </view>
     </view>
 
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
-        <view>esp-arrow：箭头</view>
-        <view class="esp-arrow"></view>
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
+        <view>emp-arrow：箭头</view>
+        <view class="emp-arrow"></view>
       </view>
     </view>
 
-    <view class="esp-cell">
-      <view class="esp-cell-bd">
-        <view class="esp-ellipsis" style="width: 300px;">
-          esp-ellipsis：单行点点点
+    <view class="emp-cell">
+      <view class="emp-cell-bd">
+        <view class="emp-ellipsis" style="width: 300px;">
+          emp-ellipsis：单行点点点
           ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
         </view>
       </view>
     </view>
 
-    <view class="esp-cell esp-cell-last-child">
-      <view class="esp-cell-bd">
-        <view class="esp-ellipsis-l2">
-          esp-ellipsis-l2：单行点点点
+    <view class="emp-cell emp-cell-last-child">
+      <view class="emp-cell-bd">
+        <view class="emp-ellipsis-l2">
+          emp-ellipsis-l2：单行点点点
           ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
         </view>
       </view>

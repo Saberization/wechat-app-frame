@@ -11,7 +11,7 @@
   color: #999;
   font-size: 10px;
 }
-.esp-icon {
+.emp-icon {
   font-size: 24px;
   margin: 20px;
 }
@@ -20,12 +20,12 @@
 <template>
 <view class="container">
 
-  <view class="doc-title esp-hairline-bottom">ICON</view>
+  <view class="doc-title emp-hairline-bottom">ICON</view>
 
-  <view class="esp-panel">
+  <view class="emp-panel">
     <view wx:for="{{ icons }}" wx:key="icon" wx:for-item="icon" class="icon-wrap">
-      <view class="esp-icon esp-icon-{{ icon }}" style="color: #80848f"></view>
-      <view class="icon-classname">esp-icon-{{ icon }}</view>
+      <view class="emp-icon emp-icon-{{ icon }}" style="color: #80848f"></view>
+      <view class="icon-classname">emp-icon-{{ icon }}</view>
     </view>
   </view>
 </view>

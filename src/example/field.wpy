@@ -8,64 +8,64 @@
 
 <template>
 <view class="container">
-  <view class="doc-title esp-hairline-bottom">Field</view>
+  <view class="doc-title emp-hairline-bottom">Field</view>
 
   <!-- Field 基础用法 -->
-  <view class="esp-panel-title">基础用法</view>
-  <view class="esp-panel">
-    <espField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="espField1"></espField1>
-    <espField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="espField2"></espField2>
-    <espField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="espField3"></espField3>
+  <view class="emp-panel-title">基础用法</view>
+  <view class="emp-panel">
+    <empField1 :options="base_name" :value="value" triggerChange="handleChange" componentId="empField1"></empField1>
+    <empField2 :options="base_tel" :value="value" triggerFocus="handleFocus" componentId="empField2"></empField2>
+    <empField3 :options="base_address" :value="value" triggerBlur="handleFocus" componentId="empField3"></empField3>
   </view>
 
-  <view class="esp-btns">
+  <view class="emp-btns">
     <button
-      class="esp-btn esp-btn-primary"
+      class="emp-btn emp-btn-primary"
       bindtap="clearInput">清除输入</button>
   </view>
 
   <!-- 去除标题后的输入框样式 -->
-  <view class="esp-panel-title">无标题输入框</view>
-  <view class="esp-panel">
-    <espField4 :options="notitle" :value="textareaValue" componentId="espField4"></espField4>
+  <view class="emp-panel-title">无标题输入框</view>
+  <view class="emp-panel">
+    <empField4 :options="notitle" :value="textareaValue" componentId="empField4"></empField4>
   </view>
 
-  <view class="esp-btns">
+  <view class="emp-btns">
     <button
-      class="esp-btn esp-btn-primary"
+      class="emp-btn emp-btn-primary"
       bindtap="clearTextarea">清除输入</button>
   </view>
 
   <!-- 使用 Field 圆角样式 -->
-  <view class="esp-panel-title field__title--radius">圆角输入框</view>
-  <espField5 :options="radius_totalPrice" componentId="espField5"></espField5>
-  <espField6 :options="radius_excludePrice" componentId="espField6"></espField6>
-  <espField7 :options="radius_notitle" componentId="espField7"></espField7>
+  <view class="emp-panel-title field__title--radius">圆角输入框</view>
+  <empField5 :options="radius_totalPrice" componentId="empField5"></empField5>
+  <empField6 :options="radius_excludePrice" componentId="empField6"></empField6>
+  <empField7 :options="radius_notitle" componentId="empField7"></empField7>
 
   <!-- form 中使用 Field -->
-  <view class="esp-panel-title">Form 表单中的field应用</view>
+  <view class="emp-panel-title">Form 表单中的field应用</view>
   <form bindsubmit="formSubmit" bindreset="formReset">
-    <view class="esp-panel">
-      <espField8 :options="form_name" componentId="espField8"></espField8>
-      <espField9 :options="form_tel" componentId="espField9"></espField9>
-      <view class="esp-btns">
+    <view class="emp-panel">
+      <empField8 :options="form_name" componentId="empField8"></empField8>
+      <empField9 :options="form_tel" componentId="empField9"></empField9>
+      <view class="emp-btns">
         <button
-          class="esp-btn esp-btn-primary"
+          class="emp-btn emp-btn-primary"
           formType="submit">提交数据</button>
         <button
-          class="esp-btn"
+          class="emp-btn"
           formType="reset">重置数据</button>
       </view>
     </view>
   </form>
 
-  <view class="esp-panel-title">自定义显示内容</view>
-  <view class="esp-panel">
-    <view class="esp-cell esp-field">
-      <view class="esp-cell-hd esp-field-title">选择区域</view>
+  <view class="emp-panel-title">自定义显示内容</view>
+  <view class="emp-panel">
+    <view class="emp-cell emp-field">
+      <view class="emp-cell-hd emp-field-title">选择区域</view>
       <picker
         mode="selector"
-        class="esp-field-input esp-cell-bd"
+        class="emp-field-input emp-cell-bd"
         range="{{ area }}"
         value="{{ areaIndex }}"
         bindchange="onAreaChange"
@@ -74,14 +74,14 @@
       </picker>
     </view>
 
-    <view class="esp-cell esp-field">
-      <view class="esp-cell-hd esp-field-title">验证码</view>
+    <view class="emp-cell emp-field">
+      <view class="emp-cell-hd emp-field-title">验证码</view>
       <input
         type="text"
         placeholder="请输入短信验证码"
-        class="esp-field-input esp-cell-bd"/>
-      <view class="esp-cell-ft">
-        <button class="esp-btn esp-btn-mini esp-btn-primary">获取验证码</button>
+        class="emp-field-input emp-cell-bd"/>
+      <view class="emp-cell-ft">
+        <button class="emp-btn emp-btn-mini emp-btn-primary">获取验证码</button>
       </view>
     </view>
   </view>
@@ -90,22 +90,22 @@
 
 <script>
 import wepy from 'wepy'
-import espField from '../components/field'
+import empField from '../components/field'
 
 export default class field extends wepy.page {
   config = {
     navigationBarTitleText: 'Field 输入框'
   }
   components = {
-    espField1: espField,
-    espField2: espField,
-    espField3: espField,
-    espField4: espField,
-    espField5: espField,
-    espField6: espField,
-    espField7: espField,
-    espField8: espField,
-    espField9: espField,
+    empField1: empField,
+    empField2: empField,
+    empField3: empField,
+    empField4: empField,
+    empField5: empField,
+    empField6: empField,
+    empField7: empField,
+    empField8: empField,
+    empField9: empField,
   }
   data = {
     // 基础类型输入框配置
@@ -210,21 +210,21 @@ export default class field extends wepy.page {
     },
 
     clearInput() {
-      this.$invoke('espField1', 'clear')
-      this.$invoke('espField2', 'clear')
-      this.$invoke('espField3', 'clear')
+      this.$invoke('empField1', 'clear')
+      this.$invoke('empField2', 'clear')
+      this.$invoke('empField3', 'clear')
     },
 
     clearTextarea() {
-      this.$invoke('espField4', 'clear')
+      this.$invoke('empField4', 'clear')
     },
 
     formSubmit(event) {
-      console.log('[esp:field:submit]', event.detail.value)
+      console.log('[emp:field:submit]', event.detail.value)
     },
 
     formReset(event) {
-      console.log('[esp:field:reset]', event)
+      console.log('[emp:field:reset]', event)
     }
   }
   events = {

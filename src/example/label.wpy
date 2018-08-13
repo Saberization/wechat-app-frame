@@ -4,24 +4,24 @@
 
 <template>
   <docPage title="LABEL">
-    <view class="esp-panel">
-      <view class="esp-cell esp-cell-last-child">
-        <view class="esp-label">蓝色</view>
-        <view class="esp-label esp-label-primary">红色</view>
-        <view class="esp-label esp-label-disabled">黑色</view>
+    <view class="emp-panel">
+      <view class="emp-cell emp-cell-last-child">
+        <view class="emp-label">蓝色</view>
+        <view class="emp-label emp-label-primary">红色</view>
+        <view class="emp-label emp-label-disabled">黑色</view>
       </view>
     </view>
-    <view class="esp-panel">
-      <view class="esp-cell esp-cell-last-child">
-        <view class="esp-label esp-label-primary esp-label-small">会员折扣</view>
-        <view class="esp-label esp-label-primary esp-label-small">返现</view>
+    <view class="emp-panel">
+      <view class="emp-cell emp-cell-last-child">
+        <view class="emp-label emp-label-primary emp-label-small">会员折扣</view>
+        <view class="emp-label emp-label-primary emp-label-small">返现</view>
       </view>
     </view>
 
-    <view class="esp-panel">
-      <view class="esp-cell esp-cell-last-child">
-        <view class="esp-label esp-label-primary esp-label-small esp-label-plain">会员折扣</view>
-        <view class="esp-label esp-label-primary esp-label-small esp-label-plain">返现</view>
+    <view class="emp-panel">
+      <view class="emp-cell emp-cell-last-child">
+        <view class="emp-label emp-label-primary emp-label-small emp-label-plain">会员折扣</view>
+        <view class="emp-label emp-label-primary emp-label-small emp-label-plain">返现</view>
       </view>
     </view>
   </docPage>
