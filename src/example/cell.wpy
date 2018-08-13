@@ -11,86 +11,86 @@
 <template>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">CELL</view>
+    <view class="doc-title emp-hairline-bottom">CELL</view>
 
     <panel class="panel-example">
-      <view class="esp-cell">
-        <view class="esp-cell-bd">单行列表</view>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">单行列表</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell">
-        <view class="esp-cell-bd">单行列表</view>
-        <view class="esp-cell-ft">详细信息</view>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">单行列表</view>
+        <view class="emp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell">
-        <view class="esp-cell-icon esp-icon esp-icon-checked" style="color:#38f;"></view>
-        <view class="esp-cell-bd">单行列表</view>
-        <view class="esp-cell-ft">详细信息</view>
+      <view class="emp-cell">
+        <view class="emp-cell-icon emp-icon emp-icon-checked" style="color:#38f;"></view>
+        <view class="emp-cell-bd">单行列表</view>
+        <view class="emp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell">
-        <view class="esp-cell-bd">
-          <view class="esp-cell-text">单行列表</view>
-          <view class="esp-cell-desc">附加描述</view>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">
+          <view class="emp-cell-text">单行列表</view>
+          <view class="emp-cell-desc">附加描述</view>
         </view>
-        <view class="esp-cell-ft">详细信息</view>
+        <view class="emp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell esp-cell-access">
-        <view class="esp-cell-bd">单行列表</view>
-        <view class="esp-cell-ft"></view>
+      <view class="emp-cell emp-cell-access">
+        <view class="emp-cell-bd">单行列表</view>
+        <view class="emp-cell-ft"></view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell esp-cell-switch">
-        <view class="esp-cell-bd">开关</view>
-        <view class="esp-cell-ft">
+      <view class="emp-cell emp-cell-switch">
+        <view class="emp-cell-bd">开关</view>
+        <view class="emp-cell-ft">
           <Switch :checked.sync="checked" componentId="Switch"> </Switch>
         </view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell esp-cell-access">
-        <view class="esp-cell-bd">单行列表</view>
-        <view class="esp-cell-ft">详细信息(右侧带箭头)</view>
+      <view class="emp-cell emp-cell-access">
+        <view class="emp-cell-bd">单行列表</view>
+        <view class="emp-cell-ft">详细信息(右侧带箭头)</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell">
-        <view class="esp-cell-bd">多行列表</view>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">多行列表</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell">
-        <view class="esp-cell-bd">多行列表</view>
-        <view class="esp-cell-ft">详细信息</view>
+      <view class="emp-cell">
+        <view class="emp-cell-bd">多行列表</view>
+        <view class="emp-cell-ft">详细信息</view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell esp-cell-access">
-        <view class="esp-cell-bd">多行列表</view>
-        <view class="esp-cell-ft"></view>
+      <view class="emp-cell emp-cell-access">
+        <view class="emp-cell-bd">多行列表</view>
+        <view class="emp-cell-ft"></view>
       </view>
     </panel>
 
     <panel>
-      <view class="esp-cell esp-cell-access">
-        <view class="esp-cell-bd">多行列表</view>
-        <view class="esp-cell-ft">详细信息</view>
+      <view class="emp-cell emp-cell-access">
+        <view class="emp-cell-bd">多行列表</view>
+        <view class="emp-cell-ft">详细信息</view>
       </view>
     </panel>
 
