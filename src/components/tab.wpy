@@ -1,20 +1,20 @@
 <style lang="scss">
-.esp-tab {
+.emp-tab {
   height: 45px;
 }
-.esp-tab-bd {
+.emp-tab-bd {
   width: 750rpx;
   display: flex;
   flex-direction: row;
   border-bottom: 1rpx solid #e5e5e5;
   background: #fff;
 }
-.esp-tab-bd-fixed {
+.emp-tab-bd-fixed {
   position: fixed;
   top: 0;
   z-index: 2;
 }
-.esp-tab-item {
+.emp-tab-item {
   flex: 1;
   display: inline-block;
   padding: 0 10px;
@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-.esp-tab-title {
+.emp-tab-title {
   display: inline-block;
   max-width: 100%;
   height: 44px;
@@ -37,32 +37,32 @@
   color: #666;
 }
 
-.esp-tab-item-selected .esp-tab-title {
+.emp-tab-item-selected .emp-tab-title {
   color: #f44;
   border-bottom: 2px solid #f44;
 }
 
-.esp-tab-bd-scroll {
+.emp-tab-bd-scroll {
   display: block;
   white-space: nowrap;
 }
-.esp-tab-bd-scroll .esp-tab-item {
+.emp-tab-bd-scroll .emp-tab-item {
   min-width: 80px;
 }
 </style>
 <template>
-  <view class="esp-tab">
+  <view class="emp-tab">
     <block wx:if="{{tab.scroll}}">
-      <scroll-view class="esp-tab-bd esp-tab-bd-scroll {{ fixed ? 'esp-tab-bd-fixed' : '' }}" scroll-x="true" style="height: {{ tab.height ? tab.height + 'px' : 'auto' }}">
-        <view wx:for="{{tab.list}}" wx:key="id" class="esp-tab-item {{tab.selectedId == item.id ? 'esp-tab-item-selected' : ''}}" data-component-id="{{componentId}}" data-item-id="{{item.id}}" @tap="handleEspTabChange">
-          <view class="esp-tab-title">{{item.title}}</view>
+      <scroll-view class="emp-tab-bd emp-tab-bd-scroll {{ fixed ? 'emp-tab-bd-fixed' : '' }}" scroll-x="true" style="height: {{ tab.height ? tab.height + 'px' : 'auto' }}">
+        <view wx:for="{{tab.list}}" wx:key="id" class="emp-tab-item {{tab.selectedId == item.id ? 'emp-tab-item-selected' : ''}}" data-component-id="{{componentId}}" data-item-id="{{item.id}}" @tap="handleEmpTabChange">
+          <view class="emp-tab-title">{{item.title}}</view>
         </view>
       </scroll-view>
     </block>
     <block wx:else>
-      <view class="esp-tab-bd {{fixed ? 'esp-tab-bd-fixed' : ''}}">
-        <view wx:for="{{tab.list}}" wx:key="id" class="esp-tab-item {{tab.selectedId == item.id ? 'esp-tab-item-selected' : ''}}" data-component-id="{{componentId}}" data-item-id="{{item.id}}" @tap="handleEspTabChange">
-          <view class="esp-tab-title">{{item.title}}</view>
+      <view class="emp-tab-bd {{fixed ? 'emp-tab-bd-fixed' : ''}}">
+        <view wx:for="{{tab.list}}" wx:key="id" class="emp-tab-item {{tab.selectedId == item.id ? 'emp-tab-item-selected' : ''}}" data-component-id="{{componentId}}" data-item-id="{{item.id}}" @tap="handleEmpTabChange">
+          <view class="emp-tab-title">{{item.title}}</view>
         </view>
       </view>
     </block>
@@ -79,7 +79,7 @@ export default class Tab extends wepy.component {
   }
   data = {}
   methods = {
-    handleEspTabChange(e) {
+    handleEmpTabChange(e) {
       if (this.triggerChange) {
         let { componentId, itemId: selectedId } = e.currentTarget.dataset
 
