@@ -3,7 +3,7 @@
 @import '../empui/cell.wxss';
 @import '../empui/color.wxss';
 
-.esp-cell-bd {
+.emp-cell-bd {
   color: #333;
 }
 
@@ -15,12 +15,12 @@
 
 <template>
   <view wx:for="{{listdata}}" wx:key="idx">
-    <view class="esp-c-gray-darker esp-font-14 dashboard-title">{{item.title}}</view>
+    <view class="emp-c-gray-darker emp-font-14 dashboard-title">{{item.title}}</view>
 
-    <view class="esp-panel">
-      <view class="esp-cell esp-cell-access" wx:for="{{item.content}}" wx:key="_idx" wx:for-item="_item" @tap="openPage({{_item.path}})">
-        <view class="esp-cell-bd">{{_item.name}}</view>
-        <view class="esp-cell-ft"></view>
+    <view class="emp-panel">
+      <view class="emp-cell emp-cell-access" wx:for="{{item.content}}" wx:key="_idx" wx:for-item="_item" @tap="openPage({{_item.path}})">
+        <view class="emp-cell-bd">{{_item.name}}</view>
+        <view class="emp-cell-ft"></view>
       </view>
     </view>
   </view>

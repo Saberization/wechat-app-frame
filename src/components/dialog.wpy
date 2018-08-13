@@ -2,7 +2,7 @@
 @import '../empui/common';
 
 /* 基础样式 */
-.esp-dialog-container {
+.emp-dialog-container {
   position: fixed;
   top: 45%;
   left: 50%;
@@ -18,7 +18,7 @@
   opacity: 0;
 }
 
-.esp-dialog-mask {
+.emp-dialog-mask {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -30,12 +30,12 @@
 }
 
 /* 弹出层内容 */
-.esp-dialog-header {
+.emp-dialog-header {
   padding: 15px 0 0;
   text-align: center;
 }
 
-.esp-dialog-content {
+.emp-dialog-content {
   position: relative;
   padding: 15px 20px;
   line-height: 1.5;
@@ -48,16 +48,16 @@
 }
 
 /* 在有标题时，需要减弱内容的存在感 */
-.esp-dialog-content-title {
+.emp-dialog-content-title {
   color: #999;
   font-size: 14px;
 }
 
-.esp-dialog-footer {
+.emp-dialog-footer {
   overflow: hidden;
 }
 
-.esp-dialog-button {
+.emp-dialog-button {
   line-height: 50px;
   height: 50px;
   padding: 0 5px;
@@ -71,21 +71,21 @@
 }
 
 /* 展示时，样式重置 */
-.esp-dialog-show .esp-dialog-container {
+.emp-dialog-show .emp-dialog-container {
   opacity: 1;
   height: auto;
 }
 
-.esp-dialog-show .esp-dialog-mask {
+.emp-dialog-show .emp-dialog-mask {
   display: block;
 }
 
 /* 水平/垂直布局 */
-.esp-dialog-footer-horizon {
+.emp-dialog-footer-horizon {
   display: flex;
 }
 
-.esp-dialog-footer-horizon .esp-dialog-button {
+.emp-dialog-footer-horizon .emp-dialog-button {
   flex: 1;
 
   &::after {
@@ -97,7 +97,7 @@
   }
 }
 
-.esp-dialog-footer-vertical .esp-dialog-button {
+.emp-dialog-footer-vertical .emp-dialog-button {
   flex: 1;
 
   &::after {
@@ -110,21 +110,21 @@
 }
 </style>
 <template>
-  <view class="esp-dialog {{ espDialog.show ? 'esp-dialog-show' : '' }}">
-    <view class="esp-dialog-mask"></view>
-    <view class="esp-dialog-container">
+  <view class="emp-dialog {{ empDialog.show ? 'emp-dialog-show' : '' }}">
+    <view class="emp-dialog-mask"></view>
+    <view class="emp-dialog-container">
       <view
-        wx:if="{{ espDialog.title }}"
-        class="esp-dialog-header">{{ espDialog.title }}</view>
+        wx:if="{{ empDialog.title }}"
+        class="emp-dialog-header">{{ empDialog.title }}</view>
       <view
-        class="esp-dialog-content {{ espDialog.title ? 'esp-dialog-content-title' : '' }}">{{ espDialog.content }}</view>
+        class="emp-dialog-content {{ empDialog.title ? 'emp-dialog-content-title' : '' }}">{{ empDialog.content }}</view>
       <view
-        class="esp-dialog-footer {{ espDialog.buttonsShowVertical ? 'esp-dialog-footer-vertical' : 'esp-dialog-footer-horizon' }}">
-        <block wx:for="{{ espDialog.buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
+        class="emp-dialog-footer {{ empDialog.buttonsShowVertical ? 'emp-dialog-footer-vertical' : 'emp-dialog-footer-horizon' }}">
+        <block wx:for="{{ empDialog.buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
           <button
-            class="esp-dialog-button esp-btn"
+            class="emp-dialog-button emp-btn"
             data-type="{{ item.type }}"
-            catchtap="handleEspDialogButtonClick"
+            catchtap="handleEmpDialogButtonClick"
             style="color: {{ item.color || '#333' }}">{{ item.text }}</button>
         </block>
       </view>
@@ -137,11 +137,11 @@ import wepy from 'wepy'
 export default class Dialog extends wepy.component {
   props = {}
   data = {
-    espDialog: {},
+    empDialog: {},
     animationData: {}
   }
   methods = {
-    showEspDialog(options = {}, e) {
+    showEmpDialog(options = {}, e) {
       const {
         // 自定义 btn 列表
         // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
@@ -195,7 +195,7 @@ export default class Dialog extends wepy.component {
       }
 
       return new Promise((resolve, reject) => {
-        this.espDialog = {
+        this.empDialog = {
           show: true,
           showCustomBtns,
           buttons,
@@ -216,20 +216,20 @@ export default class Dialog extends wepy.component {
       })
     },
 
-    handleEspDialogButtonClick(e) {
+    handleEmpDialogButtonClick(e) {
       const _f = function() {}
       const { currentTarget = {} } = e
       const { dataset = {} } = currentTarget
 
       // 获取当次弹出框的信息
-      const espDialogData = this.espDialog || {}
-      const { resolve = _f, reject = _f } = espDialogData
+      const empDialogData = this.empDialog || {}
+      const { resolve = _f, reject = _f } = empDialogData
 
-      // 重置 espDialog 里的内容
-      this.espDialog = Object.assign(this.espDialog, { show: false })
+      // 重置 empDialog 里的内容
+      this.empDialog = Object.assign(this.empDialog, { show: false })
 
       // 自定义按钮，全部 resolve 形式返回，根据 type 区分点击按钮
-      if (espDialogData.showCustomBtns) {
+      if (empDialogData.showCustomBtns) {
         resolve({
           type: dataset.type
         })
