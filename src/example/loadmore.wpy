@@ -5,26 +5,26 @@
 <template>
 <view class="container">
 
-  <view class="doc-title esp-hairline-bottom">LOADMORE</view>
+  <view class="doc-title emp-hairline-bottom">LOADMORE</view>
 
-  <espLoadmore1 :loading="_true" > </espLoadmore1>
-  <espLoadmore2 :nodata="_true" nodata_str="暂无数据 Esp"></espLoadmore2>
-  <espLoadmore3 :nomore="_true" ></espLoadmore3>
+  <empLoadmore1 :loading="_true" > </empLoadmore1>
+  <empLoadmore2 :nodata="_true" nodata_str="暂无数据 Emp"></empLoadmore2>
+  <empLoadmore3 :nomore="_true" ></empLoadmore3>
 </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import espLoadmore from '../components/loadmore'
+import empLoadmore from '../components/loadmore'
 
 export default class Loadmore extends wepy.page {
   config = {
     navigationBarTitleText: 'Loadmore 加载'
   }
   components = {
-    espLoadmore1: espLoadmore,
-    espLoadmore2: espLoadmore,
-    espLoadmore3: espLoadmore
+    empLoadmore1: empLoadmore,
+    empLoadmore2: empLoadmore,
+    empLoadmore3: empLoadmore
   }
   data = {
     _true: true,

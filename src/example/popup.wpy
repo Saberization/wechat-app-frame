@@ -5,101 +5,101 @@
 <template>
 <view class="container">
 
-  <view class="doc-title esp-hairline-bottom">POPUP</view>
+  <view class="doc-title emp-hairline-bottom">POPUP</view>
 
-  <view class="esp-btns" style="margin-top: 30vh;">
-    <button class="esp-btn" @tap="togglePopup">
+  <view class="emp-btns" style="margin-top: 30vh;">
+    <button class="emp-btn" @tap="togglePopup">
       弹出popup
     </button>
-    <button class="esp-btn" @tap="toggleTopPopup">
+    <button class="emp-btn" @tap="toggleTopPopup">
       从顶部弹出popup
     </button>
-    <button class="esp-btn" @tap="toggleBottomPopup">
+    <button class="emp-btn" @tap="toggleBottomPopup">
       从底部弹出popup
     </button>
-    <button class="esp-btn" @tap="toggleLeftPopup">
+    <button class="emp-btn" @tap="toggleLeftPopup">
       从左边弹出popup
     </button>
-    <button class="esp-btn" @tap="toggleRightPopup">
+    <button class="emp-btn" @tap="toggleRightPopup">
       从右边弹出popup
     </button>
   </view>
 
-  <espPopup1>
-    <view class="esp-btns">
-      <button class="esp-btn" @tap="togglePopup">
+  <empPopup1>
+    <view class="emp-btns">
+      <button class="emp-btn" @tap="togglePopup">
         关闭 popup
       </button>
     </view>
-  </espPopup1>
+  </empPopup1>
 
-  <espPopup2 direction="left">
-    <view class="esp-btns">
-      <button class="esp-btn" @tap="toggleLeftPopup">
+  <empPopup2 direction="left">
+    <view class="emp-btns">
+      <button class="emp-btn" @tap="toggleLeftPopup">
         关闭 popup
       </button>
     </view>
-  </espPopup2>
+  </empPopup2>
 
 
-  <espPopup3 direction="right">
-    <view class="esp-btns">
-      <button class="esp-btn" @tap="toggleRightPopup">
+  <empPopup3 direction="right">
+    <view class="emp-btns">
+      <button class="emp-btn" @tap="toggleRightPopup">
         关闭 popup
       </button>
     </view>
-  </espPopup3>
+  </empPopup3>
 
-  <espPopup4 direction="top">
+  <empPopup4 direction="top">
     内容
-  </espPopup4>
+  </empPopup4>
 
-  <espPopup5 direction="bottom">
-    <view class="esp-btns">
-      <button class="esp-btn" @tap="toggleBottomPopup">
+  <empPopup5 direction="bottom">
+    <view class="emp-btns">
+      <button class="emp-btn" @tap="toggleBottomPopup">
         关闭 popup
       </button>
     </view>
-  </espPopup5>
+  </empPopup5>
 
 </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import espPopup from '../components/popup'
+import empPopup from '../components/popup'
 
 export default class Popup extends wepy.page {
   config = {
     navigationBarTitleText: 'Popup 弹出层'
   }
   components = {
-    espPopup1: espPopup,
-    espPopup2: espPopup,
-    espPopup3: espPopup,
-    espPopup4: espPopup,
-    espPopup5: espPopup
+    empPopup1: empPopup,
+    empPopup2: empPopup,
+    empPopup3: empPopup,
+    empPopup4: empPopup,
+    empPopup5: empPopup
   }
   data = {}
   methods = {
     togglePopup() {
-      this.$invoke('espPopup1', 'togglePopup');
+      this.$invoke('empPopup1', 'togglePopup');
     },
 
     toggleLeftPopup() {
-      this.$invoke('espPopup2', 'togglePopup')
+      this.$invoke('empPopup2', 'togglePopup')
     },
 
     toggleRightPopup() {
-      this.$invoke('espPopup3', 'togglePopup')
+      this.$invoke('empPopup3', 'togglePopup')
     },
 
     toggleTopPopup() {
-      this.$invoke('espPopup4', 'togglePopup')
+      this.$invoke('empPopup4', 'togglePopup')
     },
 
     toggleBottomPopup() {
-      this.$invoke('espPopup5', 'togglePopup')
+      this.$invoke('empPopup5', 'togglePopup')
     }
   }
   onLoad() {}

@@ -3,7 +3,7 @@
 @import '../empui/col.wxss';
 @import '../empui/row.wxss';
 
-.esp-col {
+.emp-col {
   line-height: 30px;
   text-align: center;
   background-color: #39a9ed;
@@ -11,40 +11,40 @@
   color: #fff;
 }
 
-.esp-col:nth-child(even) {
+.emp-col:nth-child(even) {
   background-color: #66c6f2;
 }
 </style>
 <template>
 <view class="container">
 
-  <view class="doc-title esp-hairline-bottom">LAYOUT</view>
+  <view class="doc-title emp-hairline-bottom">LAYOUT</view>
 
-  <view class="esp-panel-title">基础用法</view>
-  <view class="doc-description">Layout 组件提供了24列栅格，添加 esp-col-x 可以设置元素所占宽度</view>
-  <view class="esp-panel">
-    <view class="esp-row">
-      <view class="esp-col esp-col-8">
+  <view class="emp-panel-title">基础用法</view>
+  <view class="doc-description">Layout 组件提供了24列栅格，添加 emp-col-x 可以设置元素所占宽度</view>
+  <view class="emp-panel">
+    <view class="emp-row">
+      <view class="emp-col emp-col-8">
         span: 8
       </view>
-      <view class="esp-col esp-col-8">
+      <view class="emp-col emp-col-8">
         span: 8
       </view>
-      <view class="esp-col esp-col-8">
+      <view class="emp-col emp-col-8">
         span: 8
       </view>
     </view>
   </view>
 
-  <view class="esp-panel-title">offset</view>
-  <view class="doc-description">添加 esp-col-offset-x 类可以设置列的偏移宽度，计算方式与 span 相同</view>
-  <view class="esp-panel">
-    <view class="esp-row">
-      <view class="esp-col esp-col-4">span: 4</view>
-      <view class="esp-col esp-col-10 esp-col-offset-4">offset: 4, span: 10</view>
+  <view class="emp-panel-title">offset</view>
+  <view class="doc-description">添加 emp-col-offset-x 类可以设置列的偏移宽度，计算方式与 span 相同</view>
+  <view class="emp-panel">
+    <view class="emp-row">
+      <view class="emp-col emp-col-4">span: 4</view>
+      <view class="emp-col emp-col-10 emp-col-offset-4">offset: 4, span: 10</view>
     </view>
-    <view class="esp-row">
-      <view class="esp-col esp-col-12 esp-col-offset-12">offset: 12, span: 12</view>
+    <view class="emp-row">
+      <view class="emp-col emp-col-12 emp-col-offset-12">offset: 12, span: 12</view>
     </view>
   </view>
 

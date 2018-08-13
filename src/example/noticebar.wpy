@@ -7,21 +7,21 @@
 <template>
 <view class="container">
 
-  <view class="doc-title esp-hairline-bottom">NOTICEBAR</view>
+  <view class="doc-title emp-hairline-bottom">NOTICEBAR</view>
 
-  <view class="esp-panel-title">滚动通告栏</view>
-  <view class="esp-panel">
-    <espNoticebar1 :text="longText" componentId="movable" ></espNoticebar1>
+  <view class="emp-panel-title">滚动通告栏</view>
+  <view class="emp-panel">
+    <empNoticebar1 :text="longText" componentId="movable" ></empNoticebar1>
   </view>
 
-  <view class="esp-panel-title">静止通告栏1</view>
-  <view class="esp-panel">
-    <espNoticebar2 :text="shortText" componentId="static1" ></espNoticebar2>
+  <view class="emp-panel-title">静止通告栏1</view>
+  <view class="emp-panel">
+    <empNoticebar2 :text="shortText" componentId="static1" ></empNoticebar2>
   </view>
 
-  <view class="esp-panel-title">静止通告栏2（3秒后滚动）</view>
-  <view class="esp-panel">
-    <espNoticebar3 :text="longText" componentId="static2" ></espNoticebar3>
+  <view class="emp-panel-title">静止通告栏2（3秒后滚动）</view>
+  <view class="emp-panel">
+    <empNoticebar3 :text="longText" componentId="static2" ></empNoticebar3>
   </view>
 
 </view>
@@ -29,16 +29,16 @@
 
 <script>
 import wepy from 'wepy'
-import espNoticebar from '../components/noticebar'
+import empNoticebar from '../components/noticebar'
 
 export default class Noticebar extends wepy.page {
   config = {
     navigationBarTitleText: 'Noticebar 通告栏'
   }
   components = {
-    espNoticebar1: espNoticebar,
-    espNoticebar2: espNoticebar,
-    espNoticebar3: espNoticebar
+    empNoticebar1: empNoticebar,
+    empNoticebar2: empNoticebar,
+    empNoticebar3: empNoticebar
   }
   data = {
     longText: '新点软件新点软件新点软件新点软件新点软件新点软件新点软件新点软件新点软件',
@@ -48,12 +48,12 @@ export default class Noticebar extends wepy.page {
   onLoad() {}
   onReady() {
     // 滚动通告栏需要initScroll
-    this.$invoke('espNoticebar1', 'initEspNoticeBarScroll')
+    this.$invoke('empNoticebar1', 'initEmpNoticeBarScroll')
     // initScroll的通告栏如果宽度足够显示内容将保持静止
-    this.$invoke('espNoticebar2', 'initEspNoticeBarScroll')
+    this.$invoke('empNoticebar2', 'initEmpNoticeBarScroll')
     // 不进行initScroll的通告栏也将保持静止
     setTimeout(() => {
-      this.$invoke('espNoticebar3', 'initEspNoticeBarScroll')
+      this.$invoke('empNoticebar3', 'initEmpNoticeBarScroll')
     }, 3000)
   }
 }

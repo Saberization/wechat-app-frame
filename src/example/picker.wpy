@@ -10,9 +10,9 @@
 <template>
   <docPage title="Picker">
     <panel>
-      <view class="esp-cell">
-        <view class="esp-cell-bd">单行列表</view>
-        <view class="esp-cell-ft">
+      <view class="emp-cell">
+        <view class="emp-cell-bd">单行列表</view>
+        <view class="emp-cell-ft">
           <picker
             type="selector"
             index="0"
@@ -23,9 +23,9 @@
         </view>
       </view>
 
-      <view class="esp-cell">
-        <view class="esp-cell-bd">多行列表</view>
-        <view class="esp-cell-ft">
+      <view class="emp-cell">
+        <view class="emp-cell-bd">多行列表</view>
+        <view class="emp-cell-ft">
           <multiPicker
             type="multiSelector"
             :index="multiIndex"
