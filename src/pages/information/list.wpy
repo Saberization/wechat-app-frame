@@ -1,19 +1,19 @@
 <style lang="css">
 @import '/empui/cell.wxss';
 
-.esp-cell:active {
+.emp-cell:active {
   background-color: #d1d1d1;
 }
 </style>
 
 <template>
     <panel-list>
-        <view class="esp-cell esp-cell-access" wx:for="{{list}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
-            <view class="esp-cell-bd">
-                <view class="esp-cell-text">{{item.title}}</view>
-                <view class="esp-cell-desc">附加描述</view>
+        <view class="emp-cell emp-cell-access" wx:for="{{list}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
+            <view class="emp-cell-bd">
+                <view class="emp-cell-text">{{item.title}}</view>
+                <view class="emp-cell-desc">附加描述</view>
             </view>
-            <view class="esp-cell-ft">{{item.date}}</view>
+            <view class="emp-cell-ft">{{item.date}}</view>
         </view>
     </panel-list>
 </template>

@@ -8,41 +8,41 @@
 </style>
 
 <template>
-    <view class="esp-panel">
+    <view class="emp-panel">
         <repeat for="{{component_field}}" key="index" index="index" item="item">
             <field :options="item" :value="value" :componentId="item.name" triggerChange="handleChange" triggerFocus="handleFocus" triggerBlur="handleBlur"></field>
         </repeat>
 
-        <view class="esp-cell esp-field">
-            <view class="esp-cell-hd esp-field-title">验证码</view>
-            <input type="text" placeholder="请输入短信验证码" class="esp-field-input esp-cell-bd" />
-            <view class="esp-cell-ft">
-                <button class="esp-btn esp-btn-mini esp-btn-primary">获取验证码</button>
+        <view class="emp-cell emp-field">
+            <view class="emp-cell-hd emp-field-title">验证码</view>
+            <input type="text" placeholder="请输入短信验证码" class="emp-field-input emp-cell-bd" />
+            <view class="emp-cell-ft">
+                <button class="emp-btn emp-btn-mini emp-btn-primary">获取验证码</button>
             </view>
         </view>
 
-        <view class="esp-cell">
-            <view class="esp-cell-bd">选择日期</view>
-            <view class="esp-cell-ft">
+        <view class="emp-cell">
+            <view class="emp-cell-bd">选择日期</view>
+            <view class="emp-cell-ft">
                 <date-picker type="date" placeholder="请选择时间" success="chooseDate"></date-picker>
             </view>
         </view>
 
-        <view class="esp-cell">
-            <view class="esp-cell-bd">事项</view>
-            <view class="esp-cell-ft">
+        <view class="emp-cell">
+            <view class="emp-cell-bd">事项</view>
+            <view class="emp-cell-ft">
                 <single-picker type='selector' placeholder="请选择事项" success="choosePicker"></single-picker>
             </view>
         </view>
 
-        <view class="esp-cell">
-            <view class="esp-cell-bd">类别</view>
-            <view class="esp-cell-ft">
+        <view class="emp-cell">
+            <view class="emp-cell-bd">类别</view>
+            <view class="emp-cell-ft">
                 <multi-picker type="multiSelector" placeholder="请选择类别" :index="multiIndex" success="chooseMultiPicker"></multi-picker>
             </view>
         </view>
 
-        <button class="esp-btn esp-btn-primary mt10" @tap="submit">提交</button>
+        <button class="emp-btn emp-btn-primary mt10" @tap="submit">提交</button>
     </view>
 </template>
 
