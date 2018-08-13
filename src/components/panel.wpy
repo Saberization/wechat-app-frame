@@ -1,23 +1,23 @@
 <style>
-  .esp-panel {
+  .emp-panel {
     position: relative;
     overflow: hidden;
   }
 
-  .esp-panel-title {
+  .emp-panel-title {
     font-size: 14px;
     line-height: 1;
     color: #999;
     padding: 20px 15px 10px 15px;
   }
 
-  .esp-panel-content {
+  .emp-panel-content {
     position: relative;
     background: #fff;
     overflow: hidden;
   }
 
-  .esp-panel-content::after {
+  .emp-panel-content::after {
     content: '';
     position: absolute;
     top: 0;
@@ -35,16 +35,16 @@
     border-bottom-width: 1px;
   }
 
-  .esp-panel-without-border::after {
+  .emp-panel-without-border::after {
     border: 0 none;
   }
 </style>
 
 <template>
-  <view class="esp-panel">
-    <view wx:if="{{title}}" class="esp-panel-title">{{title}}</view>
+  <view class="emp-panel">
+    <view wx:if="{{title}}" class="emp-panel-title">{{title}}</view>
 
-    <view class="esp-panel-content {{ hideBorder ? 'esp-panel-without-border' : '' }}">
+    <view class="emp-panel-content {{ hideBorder ? 'emp-panel-without-border' : '' }}">
       <slot></slot>
     </view>
   </view>
