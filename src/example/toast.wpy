@@ -6,34 +6,34 @@
 <block>
   <view class="container">
 
-    <view class="doc-title esp-hairline-bottom">TOAST</view>
+    <view class="doc-title emp-hairline-bottom">TOAST</view>
 
-    <view class="esp-btns" style="margin-top: 30vh;">
-      <button class="esp-btn" @tap="showToast">
+    <view class="emp-btns" style="margin-top: 30vh;">
+      <button class="emp-btn" @tap="showToast">
         显示toast
       </button>
     </view>
   </view>
 
-  <espToast></espToast>
+  <empToast></empToast>
 </block>
 </template>
 
 <script>
 import wepy from 'wepy'
-import espToast from '../components/toast'
+import empToast from '../components/toast'
 
 export default class Toast extends wepy.page {
   config = {
     navigationBarTitleText: 'Toast 轻提示'
   }
   components = {
-    espToast
+    empToast
   }
   data = {}
   methods = {
     showToast() {
-      this.$invoke('espToast', 'showEspToast', { title: 'Toast的内容', timeout: 2000 })
+      this.$invoke('empToast', 'showEmpToast', { title: 'Toast的内容', timeout: 2000 })
     }
   }
   onLoad() {}
