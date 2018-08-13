@@ -1,9 +1,9 @@
 <style lang="less">
-.esp-stepper {
+.emp-stepper {
   color: #666;
 }
 
-.esp-stepper view {
+.emp-stepper view {
   display: inline-block;
   line-height: 20px;
   padding: 5px 0;
@@ -15,12 +15,12 @@
   border: 1rpx solid #999;
 }
 
-.esp-stepper .esp-stepper-minus {
+.emp-stepper .emp-stepper-minus {
   border-right: none;
   border-radius: 2px 0 0 2px;
 }
 
-.esp-stepper .esp-stepper-text {
+.emp-stepper .emp-stepper-text {
   border: 1rpx solid #999;
   display: inline-block;
   text-align: center;
@@ -31,33 +31,33 @@
   line-height: 30px;
 }
 
-.esp-stepper .esp-stepper-plus {
+.emp-stepper .emp-stepper-plus {
   border-left: none;
   border-radius: 0 2px 2px 0;
 }
 
-.esp-stepper .esp-stepper-disabled {
+.emp-stepper .emp-stepper-disabled {
   background: #f8f8f8;
   color: #bbb;
   border-color: #e8e8e8;
 }
 
-.esp-stepper-small view {
+.emp-stepper-small view {
   min-width: 36px;
   line-height: 18px;
 }
 
-.esp-stepper-small .esp-stepper-text {
+.emp-stepper-small .emp-stepper-text {
   width: 36px;
   line-height: 28px;
   height: 28px;
 }
 </style>
 <template>
-  <view class="esp-stepper {{ size === 'small' ? 'esp-stepper-small' : '' }}">
-    <view class="esp-stepper-minus {{ stepper <= min ? 'esp-stepper-disabled' : '' }}" data-component-id="{{ componentId }}" data-stepper="{{ stepper }}" data-disabled="{{ stepper <= min }}" bindtap="handleEspStepperMinus">-</view>
-    <input class="esp-stepper-text {{ min >= max ? 'esp-stepper-disabled' : '' }}" type="number" data-component-id="{{ componentId }}" data-min="{{ min }}" data-max="{{ max }}" value="{{ stepper }}" disabled="{{ min >= max }}" bindblur="handleEspStepperBlur"></input>
-    <view class="esp-stepper-plus {{ stepper >= max ? 'esp-stepper-disabled' : '' }}" data-component-id="{{ componentId }}" data-stepper="{{ stepper }}" data-disabled="{{ stepper >= max }}" bindtap="handleEspStepperPlus">+</view>
+  <view class="emp-stepper {{ size === 'small' ? 'emp-stepper-small' : '' }}">
+    <view class="emp-stepper-minus {{ stepper <= min ? 'emp-stepper-disabled' : '' }}" data-component-id="{{ componentId }}" data-stepper="{{ stepper }}" data-disabled="{{ stepper <= min }}" bindtap="handleEmpStepperMinus">-</view>
+    <input class="emp-stepper-text {{ min >= max ? 'emp-stepper-disabled' : '' }}" type="number" data-component-id="{{ componentId }}" data-min="{{ min }}" data-max="{{ max }}" value="{{ stepper }}" disabled="{{ min >= max }}" bindblur="handleEmpStepperBlur"></input>
+    <view class="emp-stepper-plus {{ stepper >= max ? 'emp-stepper-disabled' : '' }}" data-component-id="{{ componentId }}" data-stepper="{{ stepper }}" data-disabled="{{ stepper >= max }}" bindtap="handleEmpStepperPlus">+</view>
   </view>
 </template>
 <script>
@@ -85,15 +85,15 @@ export default class Stepper extends wepy.component {
   }
   data = {}
   methods = {
-    handleEspStepperMinus(e) {
+    handleEmpStepperMinus(e) {
       this.handle(e, -1)
     },
 
-    handleEspStepperPlus(e) {
+    handleEmpStepperPlus(e) {
       this.handle(e, +1)
     },
 
-    handleEspStepperBlur(e) {
+    handleEmpStepperBlur(e) {
       let dataset = e.currentTarget.dataset
       let componentId = dataset.componentId
       let max = +dataset.max
@@ -135,9 +135,9 @@ export default class Stepper extends wepy.component {
   callback(componentId, stepper) {
     stepper = +stepper
     let e = { componentId, stepper }
-    console.info('[esp:stepper:change]', e)
+    console.info('[emp:stepper:change]', e)
 
-    this.$emit('espStepperChange', e)
+    this.$emit('empStepperChange', e)
   }
 }
 </script>
