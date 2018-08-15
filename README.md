@@ -3,7 +3,7 @@
 ![build](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![coverage](	https://img.shields.io/coveralls/github/jekyll/jekyll.svg)
 ![npm](https://img.shields.io/badge/npm-6.1.0-blue.svg)
-![wepy](https://img.shields.io/badge/wepy-1.7.3-blue.svg)
+![wepy](https://img.shields.io/badge/wepy-1.7.2-blue.svg)
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## 入门指南
