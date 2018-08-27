@@ -23,7 +23,7 @@
         current="{{current}}"
         current-item-id="{{currentItemId}}">
 
-        <block wx:for="{{imgUrls}}" wx:key="{{*this.id}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this.id">
             <swiper-item item-id="{{item.id}}" @tap="triggerTap({{item.id}})">
                 <text wx:if="{{item.title}}" class="swiper-item-text" style="background-color: {{fontBg}}; color: {{fontColor}}; font-size: {{fontSize}}">{{item.title}}</text>
                 <image src="{{item.url}}" />

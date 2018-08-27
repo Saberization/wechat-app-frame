@@ -8,7 +8,7 @@
 
 <template>
     <panel-list>
-        <view class="emp-cell emp-cell-access" wx:for="{{list}}" wx:key="{{*this.guid}}" @tap="openList({{item.guid}})">
+        <view class="emp-cell emp-cell-access" wx:for="{{list}}" wx:key="*this.guid" @tap="openList({{item.guid}})">
             <view class="emp-cell-bd">
                 <view class="emp-cell-text">{{item.title}}</view>
                 <view class="emp-cell-desc">附加描述</view>
